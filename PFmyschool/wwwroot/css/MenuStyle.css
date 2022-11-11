@@ -156,7 +156,7 @@ html,body {
 
 
 .filtar-btn {
-    width: 100%;
+    width: 150px;
     height: 40px;
     background: #017bab;
     border: none;
@@ -176,11 +176,13 @@ html,body {
     }
 
 .sc-2 {
-    background-color: #263c5e;
+    background-color: #004e85;
     padding-left: 10%;
     display: flex;
     opacity: 0.95;
     margin-bottom: 5%;
+
+
 }
 
 .txtbienvenida {
@@ -203,18 +205,29 @@ html,body {
     padding-right: 2%;
     padding-bottom: 1%;
     border-style: solid;
-    border-color: rgba(0, 0, 0, 0.2);
-    color: #08b9ff;
-    border-radius: 5px;
+    border-color: #263c5e;
+    color: #263c5e;
+    border-radius: 10px;
     margin-bottom: 5%;
     border-width: 3px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border: #263c5e 3px 3px 8px 3px;
+    transition: 0.5s;
 }
     .empezarbtn:hover {
         border-style: solid;
         border-color: #08b9ff;
-        border-width:3px;
+        border-width: 3px;
+        transition: 0.5s;
+        color: #08b9ff;
     }
+
+    .empezarbtn:focus {
+        border-style: none;
+        background-color: #08b9ff;
+        color: white;
+        transition: 0.5s;
+    }
+
 .sc-01 {
     background-color: white;
     margin-left: 2%;
@@ -265,6 +278,7 @@ width: 200px;
   .labelfil{
 font-size: 16px;
 font-weight: bold;
+width:100px;
   }
 
   .links{
@@ -458,6 +472,16 @@ margin-bottom: 5%;
     padding: 5px 15px 5px 15px;
     max-height: 100%;   
   }
+
+.cardboy li{
+    text-decoration:none;
+}
+
+    .cardboy i {
+        margin-right:15px;
+    }
+
+
 
   /* #343A40 */
   
