@@ -1,0 +1,748 @@
+.InformacionP{
+z-index: 1;
+position: relative;
+background-color:transparent;
+transition: 0.5s;
+text-decoration: none;
+opacity: 0.95;
+border-radius: 10px;
+box-shadow: 8px 8px 16px 8px rgba(43, 43, 43, 0.2);
+}
+
+body{
+  background-image: url('https://img.freepik.com/free-vector/abstract-background-with-monochrome-low-poly-design_1048-14453.jpg?w=900&t=st=1664459462~exp=1664460062~hmac=7dd924bafe502746067e1acaa4e80b92d2030c863d1afa6c0cf7a3c56e45942d');
+  background-size: 100%;
+}
+
+  /* Dropdown */
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+    text-align: left;
+  }
+  
+.coment{
+  background-color: rgb(202, 202, 202);
+  height: auto;
+  width: auto;
+margin: 1%;
+padding: 25px;
+border-radius: 10px;
+margin-top: 3%;
+}
+
+.coment2{
+  background-color: #243959;
+  height: auto;
+  width: auto;
+margin: 1%;
+padding: 25px;
+border-radius: 10px;
+margin-top: 3%;
+}
+
+.inicom{
+  margin: 5%;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.userc{
+  display: flex;
+  cursor: pointer;
+}
+
+.cometarios h6{
+  color: #999999;
+  text-align: center;
+}
+
+.userc h5{
+  margin-top: 1%;
+  margin-left: 2%;
+}
+
+  .cometarios{
+    height: auto;
+    width: auto;
+border-radius: 10px;
+margin-top: 3%;
+color: rgb(255, 255, 255);
+
+  }
+
+  
+  .dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 8px 8px 16px 8px rgba(43, 43, 43, 0.2);
+    padding: 12px 16px;
+    z-index: 99;
+    margin-left: -120px;
+    text-align: left;
+  }
+
+  .linkuser{
+    font-size: 12px;
+    color: #343A40;
+    padding: 5px 10px;
+    display: list-item;
+    list-style: none;
+    font-family: segoe-vf,sans-serif;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .linkuser:hover{
+    background-color: rgb(224, 224, 224);
+    border-radius: 5px;
+    color: #243959;
+    
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 10;
+    text-align: left;
+  }
+
+/* Dropdown */
+
+.NVIAR{
+  display: flex;
+  width: auto;
+  height: auto;
+  margin-bottom: 2%;
+  margin-top: 5%;
+
+}
+
+
+.InfRelevante
+{
+ 
+height: 95%;
+width: 100%;
+background-color:#e6e6e6 ;
+padding: 25px;
+border-width: 0.5px;
+border-color: gray;
+border-style: solid;
+margin-right: 7%;
+}
+
+.in{
+margin-left: 7%;
+margin-right: 1%;
+width: 100%;
+height: auto;
+
+}
+
+.accordion-button{
+background-color: transparent;
+
+}
+
+
+.link{
+  text-decoration: none;
+  transition: 5s;
+  height: auto;
+}
+
+.informacionb{
+width: 100%;
+height: auto;
+border-radius: 10px;
+margin-top: 2%;
+background-color: #343A40;
+box-shadow: 8px 8px 16px 8px rgba(43, 43, 43, 0.2);
+margin-bottom: 2%;
+
+
+}
+
+.pot{
+  background-color: #e6e6e6;
+  border-width: 0.5px;
+border-color: gray;
+border-style: solid;
+}
+ 
+.cardtitulo{
+  color: white;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  display:inline-flex;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cardlist{
+  margin-top: 3%;
+  list-style: none;
+  margin-left: 1%;
+
+}
+
+.texto{
+  margin-top: 2%;
+  display:inline;
+  color: #fd7310;
+  font-family: segoe-vf,sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+.xd{
+  position: fixed;
+  margin-left: 2%;  
+}
+
+
+.flecha{
+    height: 170px;
+    width: 70px;
+ 
+    padding: 10px 10px 15px 10px;
+    z-index: 1;
+    position: relative;
+    cursor: pointer;
+    
+  }
+
+  .flecha:hover{
+    background-color: #e2e2e2;
+    border-radius: 180px;
+  }
+
+  
+  .Mythlogo{
+    position: relative;
+    height: 35px;
+    width: 190px;
+    margin-left: .5%;
+    margin-top: .15%;
+  }
+
+  nav{
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-color: #263c5e;
+    z-index: 9;
+    position: fixed;  
+    padding: 10px 0px 5px 10px;
+    display: flex;
+    opacity: 0.95;
+  }
+  
+    .labelfil{
+  font-size: 16px;
+  font-weight: bold;
+
+    }
+  
+    .links{
+      text-decoration: none;
+    
+    }
+  
+    nav .logo{
+      border-width: 2px;
+      border-radius: 50px;
+    } 
+    
+    .dropdown{
+      padding: 0px 0px 0px 10px;
+    }
+    nav a{
+      font-size: 15px;
+      text-transform:  uppercase;
+      color: rgb(255, 0, 0);
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+    
+    nav .logopequeno{
+      height: auto;
+      max-width: 100%;
+      position: static;
+      transition: 0.5s; 
+      margin-left: 5%;
+      margin-top: -0.2%; 
+  
+    }
+  
+    nav .logopequeno:hover{
+      -webkit-transform: rotate(-15deg);
+      -moz-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+      transform: rotate(-15deg);
+      transition: 0.5s;
+    }
+  
+    nav .Main{
+      background-color: #ffffff;
+     margin-top: auto;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      transition: 1s;
+    }
+  
+    .link{
+      text-decoration: none;
+    }
+  
+    .resul{
+      background-color: rgb(186, 186, 186);
+      border-radius: 5px;
+      padding: 0px 10px 0px 10px;
+      height: auto;
+      transition: 0.5s;
+      text-decoration: none;
+    }
+  
+    .row row-cols-1 row-cols-md-3 g-4{
+      height: 60%;
+    }
+  
+    .resul:hover{
+      background-color: rgb(186, 186, 186);
+      border-radius: 5px;
+      padding: 10px 10px 10px 10px;
+      height: 105%;
+      width: 105%;
+      transition: 0.5s;
+    }
+  
+    .cardboy{
+      background-color: transparent;
+      padding: 5px 15px 25px 5px;
+  height: auto;
+      
+    }
+  
+  
+    .containerMen{
+      padding: 2% 1% 1% 2%;
+    }
+    
+    .cardtitulo{
+      color: white;
+      position: static;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  
+
+    nav .IniciarSesion{
+      font-size: 15px;
+      color: rgb(180, 180, 180);
+      background-color: transparent;
+      border-style: none;
+      border-radius: 10px;
+      height: 10%;
+      width: 100%;
+      font-weight: bold;
+      text-align: center;
+      padding: 5px 5px 5px 5px;
+      transition: 0.5s;
+      margin-right: -1%;
+    }
+
+    .espacio{
+      width: 20%;
+    }
+
+    .bar{
+      height: 35px;
+      width:100%;
+      border-radius: 10px;
+      background-color: #ffffff;
+      border-style: none;
+      color: rgb(49, 49, 49);
+      padding: 0px 15px 0px 15px;
+    }
+    
+    nav .Buscar{
+      font-size: 16px;
+      background-color: transparent;
+      border-style: none;
+      border-radius: 10px;
+      height: auto;
+      width: auto;
+      padding: 5px 15px 5px 15px;
+      color: rgb(104, 104, 104);
+      transition: 0.5s;
+    
+    }
+    .espacio2{
+      min-width: 10%;
+      width: 15%;
+    }
+  
+    nav .Buscar:hover{
+      color: white;
+      transition: 0.5s;
+    
+    }
+    
+    nav .IniciarSesion:hover{
+      color: white;
+      transition: 0.5s;
+    
+    }
+    
+    .selecthoover:hover{
+       height: 50px;
+    }
+  
+  
+    nav .buscarMain{
+      height: 35px;
+      width: 30%;
+      border-radius: 10px;
+      background-color: #ffffff;
+      border-style: none;
+      color: rgb(49, 49, 49);
+      display:flex;
+      position: relative;
+    }
+    
+    
+    .buscarMain:focus{
+      color: white;
+      background-color: #344257;
+    }
+  
+/* STYLES SPECIFIC TO FOOTER  */
+.footerMain{
+  background-color: rgba(0,0,0,.9);
+  width: 100%;
+  height: auto;
+  z-index: 5;
+  position: relative;
+  opacity: 0.95;
+  margin-top: 3%;
+  bottom: 0;
+  
+
+}
+    
+    .footerMain .col {
+      width: 24%;
+      height: auto;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      padding: 2% 0px 5% 0px;
+      text-align: center;
+      display:inline-flex;
+    }
+    .footerMain .col h1 {
+      margin: 0;
+      margin-left: 10%;
+      font-size: 12px;
+      padding: 0px 0px 5px 0px;
+      color: rgb(0, 0, 0);
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.250em;
+    }
+
+    .footerMain .col h6 {
+      color: #999999;
+      font-size: 12;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor:default;
+    }
+
+    .footerMain .col ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    
+    .footerMain .col ul li {
+      color: #999999;
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      padding: 0px 0px 5px 0px;
+      cursor: pointer;
+      transition: .2s;
+      -webkit-transition: .2s;
+      -moz-transition: .2s;
+    }
+    .social ul li {
+      display: inline-block;
+      padding-right: 5px !important;
+    }
+    
+    .footerMain .col ul li:hover {
+      color: rgb(255, 255, 255);
+      transition: .1s;
+      -webkit-transition: .1s;
+      -moz-transition: .1s;
+    }
+    .clearfix {
+      clear: both;
+    }
+    @media only screen and (min-width: 1280px) {
+      .contain {
+        width: 1200px;
+        margin: 0 auto;
+      }
+    }
+    @media only screen and (max-width: 1139px) {
+      .contain .social {
+        width: 1000px;
+        display: block;
+      }
+      .social h1 {
+        margin: 0px;
+      }
+    }
+    @media only screen and (max-width: 950px) {
+      .footerMain .col {
+        width: 33%;
+      }
+      .footerMain .col h1 {
+        font-size: 14px;
+      }
+      .footerMain .col ul li {
+        font-size: 13px;
+      }
+    }
+    @media only screen and (max-width: 500px) {
+        .footerMain .col {
+          width: 50%;
+        }
+        .footerMain .col h1 {
+          font-size: 14px;
+        }
+        .footerMain .col ul li {
+          font-size: 13px;
+        }
+    }
+    @media only screen and (max-width: 340px) {
+      .footerMain .col {
+        width: 100%;
+      }
+    }
+
+    /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: transparent;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 18px;
+  background-color: transparent;
+  display: none;
+  overflow: hidden;
+}
+
+.panel {
+  padding: 18px;
+  background-color: transparent;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel li{
+  padding: 10px;
+  font-weight: bold;
+  color: rgb(236, 124, 44);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  list-style: square;
+}
+
+.panel li:hover{
+  padding: 10px;
+  font-weight: bold;
+  color: rgb(248, 153, 86);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  list-style: square;
+  cursor: pointer;
+}
+
+
+#myImg {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+
+#myImg1 {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg1:hover {opacity: 0.7;}
+
+#myImg2 {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg2:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 3%;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close1 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 3%;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.close2 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 3%;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+.w-100{
+  height: 440px;
+  border-radius: 10px;
+}

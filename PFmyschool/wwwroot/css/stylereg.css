@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:0;
+}
+
+.form-Login{
+    width: 470px;
+    height: 560px;
+    background: #1b1818;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px 30px;
+    border-top: 4px solid #017bab;
+    color: white;
+    border-radius: 10px;
+}
+body
+{
+    font-family: Arial;
+    background-color: #506584;
+}
+.form-Login h5{
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+    
+}
+
+.controls{
+    width: 95%;
+    border: 1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #252323;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10PX;
+
+}
+.checks{
+    text-align: right;
+    }
+.buttons{
+
+    width: 100%;
+    height: 40px;
+    background: #017bab;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.custom-radio-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: arial;
+    margin-bottom: 20px;
+}
+
+
+
+
+.buttons:hover{
+
+    background: #08b9ff;
+    cursor: pointer;
+}
+
+.form-Login p{
+height: 40px;
+text-align: center;
+opacity: 0.95;
+}
+
+.form-Login a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.form-Login a:hover{
+    text-decoration: underline;
+
+}
+

@@ -1,0 +1,699 @@
+.InformacionP{
+    height: 330px;
+    width: 550px;
+    position: fixed;
+    background-color:transparent;
+
+    text-decoration: none;
+    opacity: 0.95;
+
+    }
+    .dropdownPK {
+      position: relative;
+      display: inline-block;
+      z-index: 10;
+      text-align: left;
+    }
+    
+    
+    .dropdown-contentPK {
+      display: none;
+      position: fixed;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 8px 8px 16px 8px rgba(43, 43, 43, 0.2);
+      padding: 12px 16px;
+      z-index: 99;
+      margin-left: -120px;
+      text-align: left;
+    }
+  
+    .linkuser{
+      font-size: 12px;
+      color: #343A40;
+      padding: 5px 10px;
+      display: list-item;
+      list-style: none;
+      font-family: segoe-vf,sans-serif;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .linkuser:hover{
+      background-color: rgb(224, 224, 224);
+      border-radius: 5px;
+      color: #243959;
+      
+    }
+    
+    .dropdownPK:hover .dropdown-contentPK {
+      display: block;
+      z-index: 10;
+      text-align: left;
+    }
+
+    .pork{
+      display: flex;
+    }
+
+    .porkP{
+      margin-right: 16%;
+      margin-left: 1%;
+      font-family: sans-serif;
+      margin-bottom: -3%;
+      color: #999999;
+      font-size: 20px;
+    }
+    
+    body{
+      background-image: url('https://img.freepik.com/free-vector/abstract-background-with-monochrome-low-poly-design_1048-14453.jpg?w=900&t=st=1664459462~exp=1664460062~hmac=7dd924bafe502746067e1acaa4e80b92d2030c863d1afa6c0cf7a3c56e45942d');
+      background-size: 100%;
+      height: auto;
+    }
+    
+      /* Dropdown */
+    
+      .dropdownHC {
+        font-weight: 100;
+        text-align: center;
+        background: #6d7175;
+        border-radius: 10px;
+        color: #ffffff;
+        font-size: 20px;
+        font-family: segoe-vf,sans-serif;
+        height: 7%;
+        width: 100%;
+        text-align: left;
+        padding: 10px 10px 10px 10px;
+        border-color: #5C636A;
+        border-style: solid;
+        border-width: 0.5px;
+        cursor: pointer;
+      }
+
+      .dropdownHC:hover{
+        background-color: #5C636A;
+      }
+      
+    
+    
+      .linkuser{
+        font-size: 12px;
+        color: #343A40;
+        padding: 5px 10px;
+        display: list-item;
+        list-style: none;
+        font-family: segoe-vf,sans-serif;
+        font-weight: bold;
+      }
+      
+.botoncar{
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+        border-radius: 10px;
+        height: 50px;
+        padding: 10px 15px 10px 15px;
+        font-size: 16px;
+        background:#017bab;
+        color: #ffffff;
+}
+
+.botoncar:hover{
+  color: #ffffff;
+  background: #08b9ff;
+}
+
+      .NombreCarrera{
+        margin-top: 1%;
+        margin-bottom: 3%;
+      }
+
+
+      .controlscarrera{
+        width: 100%;
+        margin-top: 2%;
+        border-radius: 10px;
+        height: 50px;
+        padding: 0px 5px 0px 5px;
+        font-size: 16px;
+        border-color: #999999;
+        border-style: solid;
+        background-color: #f0f0f0;
+      }
+
+
+      .textareascarrera{
+        width: 100%;
+        border-radius: 10px;
+        height: 100px;
+        padding: 0px 5px 0px 5px;
+        font-size: 16px;
+        border-color: #999999;
+        border-style: solid;
+        background-color: #f0f0f0;
+      }
+
+      .modalDialog {
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity:0;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+      }
+      .modalDialog:target {
+        opacity:1;
+        pointer-events: auto;
+      }
+      .modalDialog > div {
+        width: 800px;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        -webkit-transition: opacity 400ms ease-in;
+      -moz-transition: opacity 400ms ease-in;
+      transition: opacity 400ms ease-in;
+      }
+      .close {
+        background: #606061;
+        color: #FFFFFF;
+        line-height: 25px;
+        position: absolute;
+        right: -12px;
+        text-align: center;
+        top: -10px;
+        width: 24px;
+        text-decoration: none;
+        font-weight: bold;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+        -moz-box-shadow: 1px 1px 3px #000;
+        -webkit-box-shadow: 1px 1px 3px #000;
+        box-shadow: 1px 1px 3px #000;
+      }
+      .close:hover { background: #00d9ff; }
+
+    /* Dropdown */
+    
+    .NVIAR{
+        margin-top: 2.9%;
+      display: flex;
+      width: 100%;
+      height: auto;
+      border-style: none;
+    }
+    
+    
+    
+    .InfRelevante
+    {
+    width: 100%;
+    background-color:transparent;
+    padding: 25px 130px 80px 120px;
+    border-width: 1px;
+    display: block;
+    
+    }
+    
+/* .dropdown */
+
+
+.despliege{
+  transition: 1s;
+  border-radius: 10px;
+}
+
+
+
+.buttons{
+  width: 100%;
+  height: 40px;
+  background: #017bab;
+  border: none;
+  color: white;
+  margin-bottom: 16px;
+  transition: 0.5s;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+}
+
+.buttons:hover{
+
+   
+  background: #08b9ff;
+cursor: pointer;
+
+}
+
+
+.dropdown {
+  position: relative;
+  display: flex;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  transition: 1s;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+/* dropdown */
+
+.espaciodropdowns{
+  display: flex;
+  padding: 25px 0px 25px 0px;
+  width: auto;
+  height: auto;
+}
+
+
+    .buttons
+    {
+        width: 100px;
+        height: 75;
+        margin: auto;
+        
+    }
+
+
+    .red{
+      color: crimson;
+    }
+
+    .in{
+      width: 100%;
+      height: 100%;
+    }
+    .ImagesU
+    {
+            position: fixed;
+box-shadow:
+inset 0 -4em 4em rgba(0,0,0,0.1),
+      0 0  0 2px rgb(190, 190, 190),
+      0.4em 0.4em 2em rgba(0,0,0,0.3);
+    }
+    
+    .accordion-button{
+    background-color: transparent;
+    
+    }
+    
+    .link{
+      text-decoration: none;
+      transition: 5s;
+      height: auto;
+    }
+
+
+
+
+    .controls
+    {
+        font-weight: 100;
+        text-align: center;
+        background: #f2f2f2;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-family: segoe-vf,sans-serif;
+        height: 60px;
+        width: 100%;
+        text-align: left;
+        padding: 0px 10px 0px 10px;
+        border-color: #999999;
+        border-style: solid;
+        border-width: 0.5px;
+
+    }
+    
+    .informacionb{
+    width: 100%;
+    height: auto;
+    margin-top: 2%;
+    
+    }
+     
+    .cardtitulo{
+      color: white;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      display:inline-flex;
+      text-decoration: none;
+    }
+    
+    .cardlist{
+      margin-top: 3%;
+      list-style: none;
+      margin-left: 1%;
+    
+    }
+
+    .hrefag{
+      text-decoration: none;
+      color: rgb(156, 156, 156);
+  
+    }
+    
+
+
+
+    .texto{
+      color: #fd7310;
+      font-family: segoe-vf,sans-serif;
+      font-size: 10px;
+      text-align: left;
+    }
+    
+  
+      
+      .Mythlogo{
+        position: relative;
+        height: 35px;
+        width: 190px;
+        margin-left: .5%;
+        margin-top: .15%;
+      }
+    
+      nav{
+        overflow: hidden;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background-color: #263c5e;
+        z-index: 9;
+        position: fixed;  
+        padding: 10px 0px 5px 10px;
+        display: flex;
+        opacity: 0.95;
+      }
+      
+        .labelfil{
+      font-size: 16px;
+      font-weight: bold;
+    
+        }
+      
+        .links{
+          text-decoration: none;
+        
+        }
+      
+        nav .logo{
+          border-width: 2px;
+          border-radius: 50px;
+        } 
+        
+        .dropdown{
+          padding: 0px 0px 0px 10px;
+        }
+        nav a{
+          font-size: 15px;
+          text-transform:  uppercase;
+          color: rgb(255, 0, 0);
+          text-decoration: none;
+          display: inline-block;
+          text-align: center;
+        }
+        
+        nav .logopequeno{
+          height: auto;
+          max-width: 100%;
+          position: static;
+          transition: 0.5s; 
+          margin-left: 5%;
+          margin-top: -0.2%; 
+      
+        }
+      
+        nav .logopequeno:hover{
+          -webkit-transform: rotate(-15deg);
+          -moz-transform: rotate(-15deg);
+          -ms-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+          transition: 0.5s;
+        }
+      
+        nav .Main{
+          background-color: #ffffff;
+         margin-top: auto;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+          transition: 1s;
+        }
+      
+        .link{
+          text-decoration: none;
+        }
+ 
+      
+        .containerMen{
+          padding: 2% 1% 1% 2%;
+        }
+        
+    
+    
+        nav .IniciarSesion{
+          font-size: 15px;
+          color: rgb(180, 180, 180);
+          background-color: transparent;
+          border-style: none;
+          border-radius: 10px;
+          height: 10%;
+          width: 100%;
+          font-weight: bold;
+          text-align: center;
+          padding: 5px 5px 5px 5px;
+          transition: 0.5s;
+          margin-right: -1%;
+        }
+    
+        .espacio{
+          width: 20%;
+        }
+    
+        .bar{
+          height: 35px;
+          width:100%;
+          border-radius: 10px;
+          background-color: #ffffff;
+          border-style: none;
+          color: rgb(49, 49, 49);
+          padding: 0px 15px 0px 15px;
+        }
+        
+        nav .Buscar{
+          font-size: 16px;
+          background-color: transparent;
+          border-style: none;
+          border-radius: 10px;
+          height: auto;
+          width: auto;
+          padding: 5px 15px 5px 15px;
+          color: rgb(104, 104, 104);
+          transition: 0.5s;
+        
+        }
+        .espacio2{
+          min-width: 10%;
+          width: 15%;
+        }
+      
+        nav .Buscar:hover{
+          color: white;
+          transition: 0.5s;
+        
+        }
+        
+        nav .IniciarSesion:hover{
+          color: white;
+          transition: 0.5s;
+        
+        }
+        
+        .selecthoover:hover{
+           height: 50px;
+        }
+      
+      
+        nav .buscarMain{
+          height: 35px;
+          width: 30%;
+          border-radius: 10px;
+          background-color: #ffffff;
+          border-style: none;
+          color: rgb(49, 49, 49);
+          display:flex;
+          position: relative;
+        }
+        
+        
+        .buscarMain:focus{
+          color: white;
+          background-color: #344257;
+        }
+
+    .accordion {
+      background-color: transparent;
+      color: rgb(88, 88, 88);
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+      background: #017bab;;
+    }
+    
+    /* Style the accordion panel. Note: hidden by default */
+    .panel {
+      padding: 18px;
+      background-color: transparent;
+      display: none;
+      overflow: hidden;
+    }
+
+    .carreas{
+     color: rgb(143, 143, 143);
+     text-align: center;
+     border-radius: 10px;
+     background: #f2f2f2;
+        font-family: segoe-vf,sans-serif;
+        padding: 0px 10px 0px 10px;
+        border-color: #999999;
+        border-style: solid;
+        border-width: 0.5px;
+        margin-bottom: 2%;
+        display: block;
+    }
+
+  
+
+    .bodycar{  
+     border-radius: 10px;
+     background: #e4e4e4;
+        font-family: segoe-vf,sans-serif;
+        border-color: #999999;
+        border-style: solid;
+        border-width: 0.5px;
+        padding: 5px 10px 5px 10px;
+        cursor: pointer;
+      }
+
+  
+    .imgag{
+      height: 25px;
+      width: 25px;
+      margin-bottom: 2%;
+      margin-top: 2%;
+    }
+
+.texto p{
+  font-size: 20px;
+}
+    .btnagregar{
+      border-radius: 30px;
+      border-style: none;
+      background-color: transparent;
+      text-align: left;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      color: #263c5e;
+
+    }
+    
+    .panel {
+      padding: 18px;
+      background-color: transparent;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+    .panel li{
+      padding: 10px;
+      font-weight: bold;
+      color: rgb(236, 124, 44);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      list-style: square;
+    }
+    
+    .panel li:hover{
+      padding: 10px;
+      font-weight: bold;
+      color: rgb(248, 153, 86);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      list-style: square;
+      cursor: pointer;
+    }
+
+
+    .Aceptar{
+text-align: center;
+margin: auto;
+margin-top: 5%;
+    }
+
+    .xd{
+      position: fixed;
+      margin-left: 2%; 
+      z-index: 99; 
+      margin-top: 2%;
+    }
+    
+    
+    .flecha{
+        height: 170px;
+        width: 70px;
+     
+        padding: 10px 10px 15px 10px;
+        z-index: 99;
+        position: relative;
+        cursor: pointer;
+        
+      }
+    
+      .flecha:hover{
+        background-color: #e2e2e2;
+        border-radius: 180px;
+      }

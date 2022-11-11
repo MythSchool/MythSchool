@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PFmyschool</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/MenuStyle.css">
+    <script src="https://kit.fontawesome.com/590d7b9e48.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="hidden">
+
+            <a asp-action="Index" asp-controller="Home" class="logopequeno"><img src="~/images/LogoCorto.png" height="45" width="50"></a><img src="~/images/Menu/MythSchool.png" id="logcort" class="Mythlogo"><a class="espacio2"></a>
+
+
+
+            <div class="buscarMain">
+                <input placeholder="Buscar por nombres, carreras, niveles, etc..." class="bar" type="search"><a href="Menu.html" class="abus"><button type="button" class="Buscar"><img src="~/images/Main/Lupa2.png" class="lupa" height="20" width="20"></button></a>
+            </div>
+            <a class="espacio"></a>
+
+            <div class="dropdown">
+                <img src="~/images/Menu/user.png" class="logo" height="40" width="40">
+                <div class="dropdown-content">
+                    <a asp-action="Login" asp-controller="Home" class="linkuser"><p><img src="~/images/Menu/enter.png" class="logo" height="20" width="20"> Iniciar Sesion</p></a>
+                    <a class="linkuser"><p><img src="~/images/Menu/edit.png" class="logo" height="20" width="20"> Registrarse</p></a>
+                    <a class="linkuser"><p><img src="~/images/Menu/stationery.png" class="logo" height="20" width="20"> Registrar Escuela</p></a>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+   <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+ 
+
+    <footer>
+
+  <!-- Footer -->
+  <div class="footerMain">
+    <div class="contain">
+    <div class="col">
+      <br></br>
+      <ul>
+        <a href="Acerca.html" class="links"><li>Acerca de nosotros</li></a>
+      </ul>
+    </div>
+    <div class="col">
+      <br></br>
+      <ul>
+        <a href="TerminosYCondiciones.html" class="links"><li>Terminos y condiciones</li></a>
+      </ul>
+    </div>
+    <div class="col">
+      <br></br>
+      <ul>
+        <a href="contactanos.html" class="links"><li>Contactanos <img src="Images/email.png" width="32" style="width: 32px;"></img></li> </a>
+        <br></br>
+  <br></br>
+      </ul>
+    </div>
+
+    <div class="col">
+      <br></br>
+      <ul>
+        <h6>ver 2.6.0</h6> 
+        <br></br>
+  <br></br>
+      </ul>
+    </div>
+  </div>
+  </div>
+  </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,342 @@
+﻿@model IEnumerable<PFmyschool.Models.Escuelas>
+@{
+    ViewData["Title"] = "Menu";
+}
+<html>
+<link rel="stylesheet" href="~/css/MenuStyle.css">
+<script src="~/js/cargar.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<body id="demo-textarea" class="hidden" style="background-color:#ffffff">
+
+    <div class="centradogx" id="onload">
+        <div class="lds-default">
+
+            <div></div>
+
+            <div></div>
+
+            <div></div>
+
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <br></br>
+
+
+
+    <div class="containerGH">
+        <div class="divfiltrado">
+            <div id="filt" class="btn-group">
+                <p class="labelfil">Filtrar por: </p>
+                <div class="dropdown">
+                    <select class="btn btn-secondary dropdown-toggle" data-placeholder="Municipio">
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                        <option class="dropdown-item">Municipio</option></li>
+                        <li>
+                        <option class="dropdown-item ">Actual</option></li>
+                        <li>
+                        <option class="dropdown-item">Benito Juarez</option></li>
+                        <li>
+                        <option class="dropdown-item">Felipe carrillo puerto</option></li>
+                        <li>
+                        <option class="dropdown-item">Othon P. Blanco</option></li>
+                        </ul>
+
+                    </select>
+
+                </div>
+                <div class="dropdown">
+                    <select class="btn btn-secondary dropdown-toggle" data-placeholder="Nivel educativo">
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                        <option class="dropdown-item">Nivel Educativo</option></li>
+                        <li>
+                        <option class="dropdown-item">Superior</option></li>
+                        <li>
+                        <option class="dropdown-item">Media-Superior</option></li>
+                        </ul>
+
+                    </select>
+
+                </div>
+
+                <div class="dropdown">
+                    <select class="btn btn-secondary dropdown-toggle" data-placeholder="Sostenimiento">
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                        <option class="dropdown-item">Sostenimiento</option></li>
+                        <li>
+                        <option class="dropdown-item ">Publica</option></li>
+                        <li>
+                        <option class="dropdown-item">Privada</option></li>
+                        </ul>
+                    </select>
+
+                </div>
+
+                <div class="dropdown">
+                    <select class="btn btn-secondary dropdown-toggle" data-placeholder="Puntuacion Media">
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                        <option class="dropdown-item">Ordenar de: </option></li>
+                        <li>
+                        <option class="dropdown-item">Mayor a menor</option></li>
+                        <li>
+                        <option class="dropdown-item">Menor a mayor</option></li>
+                        </ul>
+                    </select>
+
+                </div>
+                <!-- BOTON DE AGREAR (temporal...)-->
+                <button id="agregar" class="filtar-btn" onclick="Agregar()"><i class="fa-solid fa-filter"></i>   Filtrar</button>
+            </div>
+        </div>
+
+
+        <!--FIN DEL AREA DE FILTROS  -->
+        <!-- AREA DE LAS PAGINITAS DE ESCUELAS -->
+
+
+        <div class="containerMen">
+            <div id="contant" class="row row-cols-1 row-cols-md-3 g-3">
+                <div id="elemento" class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="https://i0.wp.com/lucesdelsiglo.com/wp-content/uploads/2021/08/N3-UNI-POLITE%CC%81CNICA-P.jpeg?fit=1200%2C675&ssl=1" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad politecnica Q.Roo</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Benito Juarez / Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Publica</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 4.5 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="http://s3.thingpic.com/images/Em/RpSDmtPW1hCPbTUXmaWUKfu8.jpeg" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad Anáhuac Cancún</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Benito Juarez / Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Privada</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 4.6 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="http://l21.mx/wp-content/uploads/2017/08/ucaribe1.jpg" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad del Caribe</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Benito Juarez / Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Publica</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 4.6 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="https://i.ytimg.com/vi/yeFpAgk9V_A/maxresdefault.jpg" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad la salle Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Benito Juarez / Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Privada</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 4.8 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="https://www.uqroo.mx/imagen2021/demo_imagen/campus/playa.jpg" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad A. del E. de Q.Roo</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Othon P. Blanco / Chetumal</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Publica</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 4.7 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="https://www.uqroo.mx/imagen2021/demo_imagen/campus/UqrooCancun_338.jpg" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad de Quintana Roo</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Benito Juarez / Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Publica</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 4.7 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad Riviera</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Solidaridad / Playa del carmen</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Privada</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 3.7 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="https://pr1.nicelocal.com.mx/9jEYoFbyr_JCO83pMP56tA/640x360,q85/4px-BW84_n2bwNWsh4g848PT4EpKp3bWnYUsgbUtKJ8ZgVELGs5D8VezJNnQe4_DxCWZig0hXHD57fj1hND2d-2Bpxp6qRkQamArvV7YoA2f2-IQ0q-AbKayfb3Q4anJzoAN33wVXRMbOPxNhcU3kpKm4EUFlhI0OUf3_94oQcfBqJwRyp-T46Z0rKtZWrhLM8xAewBuBg9Cwt599uNtf02SYCgYGKC71m6lmg8jAnFfuAwB1sQ2SCX55BgJK8JFVqkfzkO03L1Sbbp0xSvVYlTao0UoVMn9UM9BdDWdsao" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> CBTIS N°111</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Benito Juarez / Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Media-Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Publica</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 4.0 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="https://pbs.twimg.com/media/EDeWFetXkAUKQea.jpg" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Instituto Tecnologico Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Felipe carrillo / Felipe carrillo</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Publica</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 3.8 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a class="link" href="Informacion.html">
+                        <div class="resul">
+                            <img src="https://pr0.nicelocal.com.mx/0Fj6WCUzp9qN0gzKOkr00w/640x427,q85/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2XiEYSN7IidfK0X8oABwtp3M8PFBYzqCOvMw9x8G9WhRepIpxcLTXPhVeg5KWtJ3dQ" class="card-img-top" alt="...">
+                            <div class="cardboy">
+                                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Colegio Boston Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Ubicacion: </h1><p class="texto"> Benito Juarez / Cancun</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Media-Superior</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Privada</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo">Puntuacion media: </h1><p class="texto"> 4.4 / 5</p></li>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- FIN DE AREA DE LAS PAGINITAS DE ESCUELAS -->
+    <!-- EL PAGINATION -->
+
+    <div class="pagination justify-content-center">
+        <div class="pagination pagination-lg">
+            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#">...</a></li>
+            <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    //SCRIPT OBTENER EL ALTO Y ANCHO DE LA PAGINA WEB
+
+
+    const resize_ob = new ResizeObserver(function (entries) {
+        let rect = entries[0].contentRect;
+
+
+        let width = rect.width;
+        let height = rect.height;
+
+        console.log('Current Width : ' + width);
+        console.log('Current Height : ' + height);
+
+
+        if (width < 1366) {
+            document.getElementById('contant').className = "row row-cols-1 row-cols-md-2 g-3";
+        } else {
+            document.getElementById('contant').className = "row row-cols-1 row-cols-md-3 g-3";
+        }
+
+        if (width < 970) {
+            document.getElementById('contant').className = "row row-cols-1 row-cols-md-2 g-3";
+        }
+
+
+        if (width < 900) {
+            document.getElementById('logcort').style.height = '0px';
+            document.getElementById('logcort').style.width = '0px';
+            document.getElementById('filt').style.display = 'block';
+            document.getElementById('filt').style.marginLeft = '5%';
+            document.getElementById('filt').style.marginRight = '0';
+        } else {
+            document.getElementById('logcort').style.height = '35px';
+            document.getElementById('logcort').style.width = '190px';
+        }
+
+    });
+
+    resize_ob.observe(document.querySelector("#demo-textarea"));
+
+
+
+
+
+
+
+</script>

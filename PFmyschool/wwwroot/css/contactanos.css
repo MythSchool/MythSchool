@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:0;
+}
+
+.wrng{
+margin: 5px;
+visibility: hidden;
+color: #ff0000;
+}
+
+.logoPrincipal{
+  z-index: 5;
+  text-align: center;
+  max-width: 100%;
+  height: 10%;
+  height: 150px;
+  margin-left: 35%;
+}
+
+.logoSec{
+  margin-top: 2%;
+  z-index: 5;
+  text-align: center;
+  max-width: 100%;
+  height: 50%;
+  
+}
+
+.logosJunt{
+  display: flex;
+  margin: auto;
+margin-top: 2%;
+}
+
+  .form-Login h6{
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: normal;
+  }
+
+  .cor
+  {
+
+    display: flex;
+  }
+
+.nam{
+    display: flex;
+}
+
+  .mysc{
+    display: flex;
+  }
+  
+  .form-Login h4{
+    color: #017bab;
+    margin-left: 4%;
+  }
+
+.form-Login{
+    width: 600px;
+    height: 590px;
+    background: #1b1818;
+    margin: auto;
+    margin-top: 2%;
+    padding: 20px 30px;
+    border-top: 4px solid #017bab;
+    color: white;
+    opacity: 0.95;
+    border-radius: 10px;
+}
+body
+{
+    font-family: Arial;
+    background-image: url("../images/terms/schoolone.jpg");
+}
+.form-Login h5{
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+    
+}
+
+
+
+
+.controls{
+    width: 94%;
+    border: 1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #252323;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10PX;
+
+}
+
+
+.controls2{
+    width: 94%;
+    border: 1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #252323;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10PX;
+    margin-left: 4%;
+
+}
+.vol{
+  cursor: pointer;
+}
+
+.buttons{
+
+    width: 100%;
+    height: 40px;
+    background: #017bab;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    transition: 0.5s;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+}
+
+.link{
+text-decoration: none;
+cursor:pointer;
+}
+
+.buttons:hover{
+
+   
+    background: #08b9ff;
+cursor: pointer;
+
+}
+
+.form-Login p{
+height: 40px;
+text-align: center;
+}
+
+.form-Login a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    
+}
+
+.form-Login a:hover{
+    text-decoration: underline;
+
+}
+
+
+
+

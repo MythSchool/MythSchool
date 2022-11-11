@@ -1,0 +1,93 @@
+﻿@model IEnumerable<PFmyschool.Models.Usuario>
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<html>
+<link rel="stylesheet" href="~/css/stylelogin.css">
+<link rel="stylesheet" href="~/css/MenuStyle.css">
+<script src="~/js/cargar.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<body id="demo-textarea">
+
+
+
+
+    <div class="logosJunt">
+        <img src="~/images/LogoCorto.png" id="lc" class="logoPrincipal"><img id="myth" src="~/images/Menu/MythSchool.png" class="logoSec">
+    </div>
+    <section class="form-Login">
+        <h5>Iniciar Sesion</h5>
+        <label id="wrong" class="wrng">El nombre o contraseña son incorrectos</label>
+        <div class="acomod">
+            <img src="~/images/login/logus.png" height="25px" width="25px" class="img"><input id="user" class="controls"
+                                                                                            type="text" name="usuario" value="" placeholder="Usuario">
+        </div>
+        <div class="acomod">
+            <img src="~/images/login/padlock.png" height="25px" width="25px" class="img"><input id="contra" class="controls"
+                                                                                              type="password" name="contrasena" value="" placeholder="Contraseña">
+        </div>
+
+
+        <button id="btnAceptar" class="buttons" type="submit" name="" value="Ingresar">Ingresar</button>
+        <h6 class="ingre">─────── O puedes ingresar con ───────</h6>
+        <div class="flexclass">
+            <img src="https://derbyrunner.co.uk/wp-content/uploads/2022/05/Offers-page-Facebook-logo-.png" height="25px" width="25px" class="appslogo">
+            <img src="https://www.axarquiaplus.es/wp-content/uploads_cloud/2020/12/image-20150902-6700-t2axrz.jpg" height="25px" width="25px" class="appslogo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhv6aEr-Ye2tL0wE20ZL9h1-SEjnFVDGVQZIjXiaKUtIe5_86wtImIyLE5XizgU2DEMG4&usqp=CAU" height="25px" width="25px" class="appslogo">
+
+        </div>
+
+
+
+        <p><a href="Reg.html"> Registrate</a></p>
+        <p><a href="OlvContra.html"> ¿Olvidaste tu contraseña?</a></p>
+        <p><a href="Main.html"> Cancelar</a></p>
+
+    </section>
+
+
+
+    <script src="Js/InicioSesionP.js"></script>
+
+</body>
+
+</html>
+
+
+<script>
+    //SCRIPT OBTENER EL ALTO Y ANCHO DE LA PAGINA WEB
+
+
+    const resize_ob = new ResizeObserver(function (entries) {
+        let rect = entries[0].contentRect;
+
+
+        let width = rect.width;
+        let height = rect.height;
+
+        console.log('Current Width : ' + width);
+        console.log('Current Height : ' + height);
+
+
+        if (width < 1599) {
+            document.getElementById("lc").style.marginLeft = '30%'
+        } else {
+            document.getElementById("lc").style.marginLeft = '35%'
+        }
+
+    });
+
+    resize_ob.observe(document.querySelector("#demo-textarea"));
+
+
+
+
+
+
+
+</script>
+

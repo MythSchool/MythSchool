@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:0;
+}
+
+.wrng{
+margin: 5px;
+visibility: hidden;
+color: #ff0000;
+}
+
+.link{
+  text-decoration: none;
+}
+
+
+.logoPrincipal{
+  z-index: 5;
+  text-align: center;
+  max-width: 100%;
+  height: 150px;
+  margin-left: 35%;
+}
+
+.logoSec{
+  margin-top: 2%;
+  z-index: 5;
+  text-align: center;
+  max-width: 100%;
+  height: 50%;
+  
+}
+
+.ingre{
+  margin-top: 2%;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 2%;
+}
+
+.flexclass{
+  display: flex;
+margin-left: 30%;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+
+.appslogo{
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.logosJunt{
+  display: flex;
+  margin: auto;
+margin-top: 2%;
+}
+
+  .form-Login h6{
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+.form-Login{
+    width: 450px;
+    height: 470px;
+    background: #1b1818;
+    margin: auto;
+    margin-top: 2%;
+    padding: 20px 30px;
+    border-top: 4px solid #017bab;
+    color: white;
+    opacity: 0.95;
+    border-radius: 10px;
+
+}
+body
+{
+    font-family: Arial;
+    background-color: #506584;
+}
+.form-Login h5{
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+    
+}
+
+.controls{
+    width: 94%;
+    border: 1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #252323;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10PX;
+
+}
+
+.buttons{
+
+    width: 100%;
+    height: 40px;
+    background: #017bab;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    transition: 0.5s;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+}
+
+.link{
+text-decoration: none;
+cursor:pointer;
+}
+
+.buttons:hover{
+
+   
+    background: #08b9ff;
+cursor: pointer;
+
+}
+
+.form-Login p{
+height: 40px;
+text-align: center;
+}
+
+.form-Login a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    
+}
+
+.form-Login a:hover{
+    text-decoration: underline;
+
+}
+
+.footerMain{
+    margin-left: 35%;
+    
+}
+
+
+  .footerMain .col {
+    width:15%;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-align: center;
+    margin-left: 1px;
+
+  }
+
+
+.acomod{
+  display: flex;
+}
+
+.img{
+  margin-right: 1%;
+  margin-top: 1%;
+}
+
+  .footerMain .col h1 {
+    margin: 0;
+    margin-left: 10%;
+    font-size: 12px;
+    padding: 0px 0px 5px 0px;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 0.250em;
+  }
+  .footerMain .col ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .footerMain .col ul li {
+    color: #ffffff;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px 0px 5px 0px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+  }
+  .social ul li {
+    display: inline-block;
+    padding-right: 5px !important;
+  }
+  
+  .footerMain .col ul li:hover {
+    color: #ff0000;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+  }
+ 
