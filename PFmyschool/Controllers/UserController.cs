@@ -9,7 +9,7 @@ namespace PFmyschool.Controllers
 {
     public class UserController : Controller
     {
-        // GET: UserController
+        // GET: UserController124
         public ActionResult Index()
         {
             return View();
