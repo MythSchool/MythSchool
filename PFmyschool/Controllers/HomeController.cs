@@ -47,6 +47,13 @@ namespace PFmyschool.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Informacion()
+        {
+            return View();
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

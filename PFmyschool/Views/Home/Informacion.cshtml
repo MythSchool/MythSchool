@@ -1,0 +1,181 @@
+﻿@model IEnumerable<PFmyschool.Models.Escuelas>
+@{
+    ViewData["Title"] = "Informacion";
+}
+
+<link rel="stylesheet" href="~/css/InformacionStyle.css">
+<script src="~/js/cargar.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<div class="xd">
+    <a onclick="history.back()" class="flecha"><img id="flechaid" src="Images/left-arrow.png" height="40" width="30"></a>
+</div>
+
+<div id="main" class="NVIAR">
+    <div class="in">
+        <div id="img" class="InformacionP">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img id="myImg" src="https://i0.wp.com/lucesdelsiglo.com/wp-content/uploads/2022/05/N2-UPQROO.jpeg?fit=1200%2C630&ssl=1" class="d-block w-100" height="300" alt="...">
+
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="carousel-item">
+                        <img id="myImg1" src="https://pr0.nicelocal.com.mx/tByq-UpZV0Sqa8M5uC4IwQ/1120x700,q85/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2U_knrPyPH-txkIV-FWKJ2d5GdFt94qwC3YNn9dQWwlsTe0C1en8PeBg7AYAnIjlrA" class="d-block w-100" height="300" alt="...">
+                        <div id="myModal1" class="modal">
+                            <span class="close1">&times;</span>
+                            <img class="modal-content" id="img02">
+                            <div id="caption"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img id="myImg2" src="https://upqroo.edu.mx/wp-content/uploads/2022/05/terapia-1.jpg" class="d-block w-100" height="300" alt="...">
+                        <div id="myModal2" class="modal">
+                            <span class="close2">&times;</span>
+                            <img class="modal-content" id="img03">
+                            <div id="caption"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div class="informacionb">
+
+            <div class="cardboy">
+                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad Politecnica de Quintana Roo</p></li>
+                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
+                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Publica</p></li>
+                <div class="puntuacion">
+                    <li class="cardlist">
+                        <h1 class="cardtitulo">Puntuacion media: </h1><img src="Images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
+                        <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
+                        <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
+                        <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
+                        <img src="~/images/Informacion/estrellaymedia.png" height="20px" width="20px">
+                    </li>
+                </div>
+
+            </div>
+        </div>
+        <div class="pot">
+            <button class="accordion"><img src="~/images/Informacion/comment.png" height="35" width="30"> Comentarios</button>
+            <div class="panel">
+                <div class="cometarios">
+                    <div class="coment">
+                        <div class="userc">
+                            <img src="~/images/usuario.png" height="45" width="45"><h5>MythSchool</h5>
+                        </div>
+                        <div class="comentario">
+                            <p>Estupendas instalaciones y muy buenos maestros...</p>
+                        </div>
+                        <h6 clas="responder">Responder</h6>
+                    </div>
+                    <div class="coment2">
+                        <div class="userc">
+                            <img src="~/images/usuario.png" height="45" width="45"><h5>Juan P.</h5>
+                        </div>
+                        <div class="comentario">
+                            <p>Muy buena escuela, la recomiendo mucho...</p>
+                        </div>
+                        <h6 clas="responder">Responder</h6>
+                    </div>
+                    <div class="coment">
+                        <div class="userc">
+                            <img src="~/images/usuario.png" height="45" width="45"><h5>JulioProfe</h5>
+                        </div>
+                        <div class="comentario">
+                            <p>Ta chida...</p>
+                        </div>
+                        <h6 clas="responder">Responder</h6>
+                    </div>
+                    <div class="coment2">
+                        <div class="userc">
+                            <img src="~/images/usuario.png" height="45" width="45"><h5>Walter White</h5>
+                        </div>
+                        <div class="comentario">
+                            <p>Exelente laboratorio de quimica.</p>
+                        </div>
+                        <h6 clas="responder">Responder</h6>
+                    </div>
+                    <div class="coment">
+                        <div class="userc">
+                            <img src="~/images/usuario.png" height="45" width="45"><h5>Ing.Ramirez</h5>
+                        </div>
+                        <div class="comentario">
+                            <p>Exelente universidad, en ella pase los mejores años de mi vida...</p>
+                        </div>
+                        <h6 clas="responder">Responder</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mainRel" class="InfRelevante">
+        <button class="accordion"><img src="~/images/Informacion/boton-de-informacion.png" height="25" width="25"> Informacion</button>
+        <div class="panel">
+            <p>
+                Fundada en el año 2010, la Universidad Politécnica de Quintana Roo, es una institución pública que imparte educación superior basada en
+                competencias para preparar a profesionales con una sólida formación científica y un liderazgo
+                tecnológico con base en valores que coadyuven al progreso económico y social del estado de Quintana Roo respetando el medio ambiente y la cultura.
+            </p>
+            <p>
+                La Universidad cuenta con instalaciones con tecnología de punta, desde laboratorios
+                para microorganismos, hasta espacios para entrenamiento de terapia física. Los alumnos que integran este orgulloso instituto buscan no solo completar sus metas al
+                perseguir sus sueños, buscan sobresalir en el mundo laboral como verdaderos
+                profesionales con altos estándares en sus valores y competencias.
+            </p>
+        </div>
+
+        <button class="accordion"><img src="~/images/Informacion/sombrero-de-graduacion.png" height="35" width="30"> Ofertas Educativas</button>
+        <div class="panel">
+            <li>Ingenieria en Biomedica</li>
+            <li>Ingenieria en Biotecnologia</li>
+            <li>Ingenieria en Software</li>
+            <li>Licenciatura en terapia fisica</li>
+            <li>Ingenieria financiera</li>
+            <li>Licenciatura en administracion y gestion empresarial</li>
+        </div>
+
+        <a target="_blank" href="https://upqroo.edu.mx/"><button class="accordion"><img src="~/images/Informacion/vinculado.png" height="25" width="25"> Link de la pagina oficial</button></a>
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+<script src="Js/Js_Informacion.js"></script>
