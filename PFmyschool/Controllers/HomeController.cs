@@ -29,15 +29,15 @@ namespace PFmyschool.Controllers
             return View();
         }
 
- 
-
-
         [HttpGet]
 
         public IActionResult Menu()
         {
             return View();
         }
+
+
+        [HttpGet]
 
         public IActionResult Privacy()
         {

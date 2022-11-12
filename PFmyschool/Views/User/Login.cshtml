@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PFmyschool.Models.Usuario>
+﻿@model PFmyschool.Models.Usuario
 @{
     ViewData["Title"] = "Login";
 }
@@ -14,24 +14,27 @@
 
 
 
-    <section class="form-Login">
+    <form class="form-Login" asp-action="Bienvenido" asp-controller="User" method="get">
         <h5>Iniciar Sesion</h5>
         <label id="wrong" class="wrng">El nombre o contraseña son incorrectos</label>
         <div class="acomod">
             <div class="controls">
-               <i class="fa-solid fa-user"></i><input id="user" class="inputg" type="text" name="usuario" value="" placeholder="Usuario">
+               <i class="fa-solid fa-user"></i><input asp-for="User" id="user" class="inputg" type="text" name="usuario" value="" placeholder="Usuario" required>
             </div>
 
         </div>
         <div class="acomod">
             <div class="controls"> 
-                  <i class="fa-solid fa-lock"></i><input id="contra" class="inputg" type="password" name="contrasena" value="" placeholder="Contraseña">
+                  <i class="fa-solid fa-lock"></i><input asp-for="Password" id="contra" class="inputg" type="password" name="contrasena" value="" placeholder="Contraseña" required>
             </div>
            
         </div>
 
 
         <button id="btnAceptar" class="buttons" type="submit" name="" value="Ingresar">Ingresar</button>
+
+
+
         <h6 class="ingre">─────── O puedes ingresar con ───────</h6>
         <div class="flexclass">
             <img src="https://derbyrunner.co.uk/wp-content/uploads/2022/05/Offers-page-Facebook-logo-.png" height="25px" width="25px" class="appslogo">
@@ -44,9 +47,9 @@
 
         <p><a href="Reg.html"> Registrate</a></p>
         <p><a href="OlvContra.html"> ¿Olvidaste tu contraseña?</a></p>
-        <p><a asp-action="Main" asp-controller="User"> Cancelar</a></p>
+        <p><a asp-action="Index" asp-controller="Home"> Cancelar</a></p>
 
-    </section>
+    </form>
 
 
 

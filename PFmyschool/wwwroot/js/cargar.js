@@ -9,9 +9,9 @@ window.onload = function(){
 // AGREGA LA CANTIDAD DE PAGINITAS DE ESCUELA SEGUN EN NUMERO DEL FOR
 
 
-    // for(i = 0;i < 12;i++){
-    //     Agregar();
-    //         }
+     for(i = 0;i < 12;i++){
+         Agregar();
+             }
 
 
 }
@@ -46,7 +46,7 @@ switch(x){
     break;
 }
 
-var Nombre = "Universidad Politecnica de QR",Ubicacion = "Benito Juarez",Nivel = "Superior",Sostenimiento = "Publica",Puntuacion = "3.5 / 5";
+    var Nombre = '<%=NomEscuela%>' ,Ubicacion = "Benito Juarez",Nivel = "Superior",Sostenimiento = "Publica",Puntuacion = "3.5 / 5";
 var linkto="Informacion.html";
 
 
