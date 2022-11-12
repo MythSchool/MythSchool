@@ -1,3 +1,9 @@
+html body{
+    background-color:blue;
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -56,10 +62,27 @@ margin-left: 30%;
   cursor: pointer;
 }
 
-.logosJunt{
-  display: flex;
-  margin: auto;
-margin-top: 2%;
+
+.controls i {
+    font-size: 16px;
+    margin-left:10px;
+}
+
+.inputg {
+    background-color: transparent;
+    border-style: none;
+    margin-left: 2%;
+    
+    font-weight: bold;
+    color: white;
+    padding: 11px 10px;
+    width:90%;
+}
+
+.logosJunt {
+    display: flex;
+    margin: auto;
+    margin-top: 2%;
 }
 
   .form-Login h6{
@@ -69,7 +92,7 @@ margin-top: 2%;
 
 .form-Login{
     width: 450px;
-    height: 470px;
+    height: auto;
     background: #1b1818;
     margin: auto;
     margin-top: 2%;
@@ -96,14 +119,10 @@ body
 }
 
 .controls{
-    width: 94%;
+    width: 100%;
     border: 1px solid #017bab;
     margin-bottom: 15px;
-    padding: 11px 10px;
     background: #252323;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
     border-radius: 10PX;
 
 }
@@ -137,7 +156,7 @@ cursor: pointer;
 }
 
 .form-Login p{
-height: 40px;
+height: auto;
 text-align: center;
 }
 
