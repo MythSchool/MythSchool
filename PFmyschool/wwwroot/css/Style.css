@@ -83,6 +83,10 @@ html,body {
 
 }
 
+.Buscar:hover {
+    background-color: gainsboro;
+}
+
 
 .Titulo {
   text-align: center;

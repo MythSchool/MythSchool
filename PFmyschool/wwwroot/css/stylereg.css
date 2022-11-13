@@ -4,16 +4,18 @@
     box-sizing:0;
 }
 
-.form-Login{
+.form-Login {
     width: 470px;
-    height: 560px;
+    height: 100%;
     background: #1b1818;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 5%;
     padding: 20px 30px;
     border-top: 4px solid #017bab;
     color: white;
+    opacity: 0.95;
     border-radius: 10px;
+    margin-bottom:2%;
 }
 body
 {
@@ -31,7 +33,7 @@ body
 }
 
 .controls{
-    width: 95%;
+    width: 100%;
     border: 1px solid #017bab;
     margin-bottom: 15px;
     padding: 11px 10px;

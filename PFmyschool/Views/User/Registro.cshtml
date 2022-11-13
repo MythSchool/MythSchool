@@ -1,5 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Registro";
 }
+
+<link rel="stylesheet" href="~/css/stylereg.css">
+
+<section class="form-Login">
+    <h5>Registro</h5>
+    <input class="controls" type="text" name="Nombre" value="" placeholder="Nombre(s)">
+    <input class="controls" type="text" name="Apellido" value="" placeholder="Apellido(s)">
+    <input class="controls" type="text" name="Correo" value="" placeholder="Correo">
+    <input class="controls" type="text" name="NombreUS" value="" placeholder="Usuario">
+    <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
+
+    <input class="custom-radio-checkbox" type="checkbox"> Aceptas nuestros <a href="TerminosYCondiciones.html">terminos y condiciones</a>
+    <br><input class="custom-radio-checkbox" type="checkbox"> Aceptas recibir actualizaciones del sitio</br>
+    <p></p>
+
+
+    <button class="buttons" type="submit" name="" value="Registrate">
+        <div class="icono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            </input>
+            <span>Registrarse</span>
+        </div>
+
+    </button>
+
+
+    <p><a asp-action="Login" asp-controller="User"> Inicia sesión</a></p>
+</section>

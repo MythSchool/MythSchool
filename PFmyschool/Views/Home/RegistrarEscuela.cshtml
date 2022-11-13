@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Registrar escuela";
+}
+
+
+<link rel="stylesheet" href="~/css/RegEsc.css">
+<script src="~/js/cargar.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+<div class="xd">
+    <a onclick="history.back()" class="flecha"><img id="flechaid" src="~/images/left-arrow.png" height="40" width="30"></a>
+</div>
+
+
+<div id="main" class="NVIAR">
+    <div class="in">
+        <img id="imagen" src="~/images/RegU/op.png" class="ImagesU">
+    </div>
+
+
+    <form class="InfRelevante">
+
+        <input id="nombre" class="controls" type="text" name="nombres" value="" placeholder="Nombre(s)">
+        <input id="ape" class="controls" type="text" name="apellidos" value="" placeholder="Apellidos">
+        <input id="ape" class="controls" type="email" name="mail" value="" placeholder="Email">
+        <input id="nombre" class="controls" type="text" name="nombreInst" value="" placeholder="Nombre de la institución">
+        <div class="pork">
+            <p class="porkP">Municipio</p> <p class="porkP">Localidad</p> <p class="porkP">Nivel</p> <p class="porkP">Sostenimiento</p>
+        </div>
+
+        <div class="espaciodropdowns">
+
+
+
+
+            <select id="muni" class="dropdownHC" data-placeholder=" Municipio " onchange="CambioMuni()">
+                <div id="myDropdown" class="dropdown-content">
+                <option class="despliege" value="Benito Juarez">Benito Juarez</option>
+                <option class="despliege" value="Solidaridad">Solidaridad</option>
+                <option class="despliege" value="Felipe carrillo puerto">Felipe carrillo puerto</option>
+                <option class="despliege" value="Othon P. Blanco">Othon P. Blanco</option>
+        </div>
+        </select >
+
+        <select id="localidad" class="dropdownHC" data-placeholder=" Localidad ">
+            <div id="myDropdown" class="dropdown-content">
+            <option class="despliege" value="Benito Juarez">Cancun</option>
+            <option class="despliege" value="Solidaridad">Alfredo V. Bonfil</option>
+</div>
+              </select >
+
+<select class="dropdownHC" data-placeholder="Nivel educativo">
+    <div id="myDropdown" class="dropdown-content">
+    <option class="despliege" value="Superior">Superior</option>
+    <option class="despliege" value="Media-Superior">Media-Superior</option>
+    </div>
+</select>
+<select class="dropdownHC" data-placeholder="Modalidad">
+    <div id="myDropdown2" class="dropdown-content">
+    <option class="despliege" value="Publica">Publica</option>
+    <option class="despliege" value="Privada">Privada</option>
+    </div>
+</select>
+       </div>
+<input id="ape" class="controls" type="text" name="cct" value="" placeholder="CCT">
+
+
+
+<input id="ape" class="controls" type="tel" name="tel" value="" placeholder="Numero de telefono de la institución">
+
+<textarea id="ta" style="resize: none;" class="controls" placeholder="Informacion / presentacion de la institución"></textarea>
+<div class="carreas" aria-required="true">
+    <h4 class="tituloc">Carreras / Carreras tecnicas o cursos</h4>
+    <div id="carrerasag" class="texto"> </div>
+    <div class="Agregar">
+        <a class="hrefag" href="#openModal">Agregar <img class="imgag" src="Images/RegU/mas.png"></a>
+
+        <div id="openModal" class="modalDialog">
+            <div>
+                <h2>Agregar carrera</h2>
+
+                <div class="NombreCarrera">
+                    <input id="nomcar" class="controlscarrera" type="text" name="NombreCarrera" value="" placeholder="Nombre">
+                </div>
+
+                <div class="NombreCarrera">
+                    <textarea id="descar" class="textareascarrera" rows="5" style="resize: none;" placeholder="Breve descripcion de la carrera"></textarea>
+                </div>
+
+                <div class="NombreCarrera">
+                    <a class="botoncar" href="#close">Cancelar</a>      <a class="botoncar" onclick="btnAgregar()">Agregar</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="Aceptar">
+    <button class="buttons" type="submit" onclick="btnAceptar()">Aceptar</button>
+</div>
+
+
+
+      </form>
+
+      </div>
+<script src="Js/Js_Informacion.js"></script>
+<script src="Js/carreras.js"></script>

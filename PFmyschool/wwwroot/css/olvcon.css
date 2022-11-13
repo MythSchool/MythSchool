@@ -15,6 +15,16 @@ color: #ff0000;
   text-decoration: none;
 }
 
+.inputg {
+    background-color: transparent;
+    border-style: none;
+    margin-left: 2%;
+    font-weight: bold;
+    color: white;
+    padding: 11px 10px;
+    width: 90%;
+}
+
 
 .logoPrincipal{
   z-index: 5;
@@ -47,7 +57,7 @@ margin-top: 2%;
 
 .form-Login{
     width: 400px;
-    height: 220px;
+    height: auto;
     background: #1b1818;
     margin: auto;
     margin-top: 2%;
@@ -73,18 +83,18 @@ body
     
 }
 
-.controls{
-    width: 94%;
+.controls {
+    width: 100%;
     border: 1px solid #017bab;
     margin-bottom: 15px;
-    padding: 11px 10px;
     background: #252323;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
     border-radius: 10PX;
-
 }
+
+    .controls i {
+        font-size: 16px;
+        margin-left: 10px;
+    }
 
 .buttons{
 
