@@ -9,9 +9,9 @@ window.onload = function(){
 // AGREGA LA CANTIDAD DE PAGINITAS DE ESCUELA SEGUN EN NUMERO DEL FOR
 
 
-     for(i = 0;i < 12;i++){
-         Agregar();
-             }
+     //for(i = 0;i < 12;i++){
+     //    Agregar();
+     //        }
 
 
 }

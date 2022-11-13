@@ -29,11 +29,13 @@ namespace PFmyschool.Controllers
             return View();
         }
 
-        [HttpGet]
 
-        public IActionResult Menu()
+
+        [HttpGet]
+        public async Task<IActionResult> Menu()
         {
-            return View();
+            var schools = await _context.Escuelas.Include(z => z.Ubicacion).Include(z => z.Sostenimiento).Include(z => z.Nivel).Include(z => z.Ubicacion.Localidad).ToListAsync();
+            return View(schools);
         }
 
 

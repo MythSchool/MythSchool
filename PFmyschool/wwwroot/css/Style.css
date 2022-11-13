@@ -106,7 +106,7 @@ nav{
   height: auto;
   background-color: transparent;
   font-size: 0;
-  z-index: 10;
+  z-index: 99;
   display: flex;
   text-align: right;
   padding: 10px 10px 10px 10px;
@@ -238,15 +238,19 @@ nav a{
 }
 
 
+.dropdown{
+    z-index:99;
+}
+
 .footerMain .col ul li {
-  color: #999999;
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0px 0px 5px 0px;
-  cursor: pointer;
-  transition: .2s;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
+    color: #999999;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px 0px 5px 0px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
 }
 .social ul li {
   display: inline-block;

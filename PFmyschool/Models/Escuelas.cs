@@ -14,7 +14,7 @@ namespace PFmyschool.Models
 
         public string DescEscuela { get; set; }
 
-        public double PuntEscuela { get; set; }
+        public decimal PuntEscuela { get; set; }
 
         public string LinkEscuela { get; set; }
 

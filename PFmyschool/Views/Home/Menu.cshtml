@@ -111,21 +111,34 @@
 
         <div class="containerMen">
             <div id="contant" class="row row-cols-1 row-cols-md-3 g-3">
+
+                @if (Model.Count() > 0)
+                {
+                    @foreach (var item in Model)
+                    {
                 <div id="elemento" class="col">
                     <a asp-action="Informacion" asp-controller="Home" class="link">
                         <div class="resul">
-                            <img src="https://i0.wp.com/lucesdelsiglo.com/wp-content/uploads/2021/08/N3-UNI-POLITE%CC%81CNICA-P.jpeg?fit=1200%2C675&ssl=1" class="card-img-top" alt="...">
+                            <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
                             <div class="cardboy">
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> Universidad politecnica Q.Roo</p></li>
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicacion: </h1><p class="texto"> Benito Juarez / Cancun</p></li>
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto"> Superior</p></li>
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto"> Publica</p></li>
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-star"></i>Puntuacion media: </h1><p class="texto"> 4.5 / 5</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> @Html.DisplayFor(x => item.NomEscuela)</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicacion: </h1><p class="texto"> @Html.DisplayFor(x => item.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Ubicacion.Localidad.NomLocalidad)</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">  @Html.DisplayFor(x => item.Nivel.NomNivel)</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">  @Html.DisplayFor(x => item.Sostenimiento.NomSostenimiento)</p></li>
+                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-star"></i>Puntuacion media: </h1><p class="texto">  @Html.DisplayFor(x => item.PuntEscuela) / 5</p></li>
                             </div>
                         </div>
                     </a>
                 </div>
-                </div>
+
+                            }
+                            }
+                            else
+                            {
+                            <p>No hay registros</p>
+                            }
+                        
+                    </div>
             </div>
     </div>
 
