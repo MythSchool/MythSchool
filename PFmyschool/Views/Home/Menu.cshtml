@@ -117,7 +117,7 @@
                     @foreach (var item in Model)
                     {
                 <div id="elemento" class="col">
-                    <a asp-action="Informacion" asp-controller="Home" class="link">
+                    <a asp-action="Informacion" asp-route-id="@item.PkEscuela" class="link">
                         <div class="resul">
                             <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
                             <div class="cardboy">

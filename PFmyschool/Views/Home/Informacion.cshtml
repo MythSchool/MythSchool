@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PFmyschool.Models.Escuelas>
+﻿@model PFmyschool.Models.Escuelas
 @{
     ViewData["Title"] = "Informacion";
 }
@@ -70,9 +70,9 @@
         <div class="informacionb">
 
             <div class="cardboy">
-                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"> Universidad Politecnica de Quintana Roo</p></li>
-                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"> Superior</p></li>
-                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"> Publica</p></li>
+                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"><input class="ju" asp-for="NomEscuela"></p></li>
+                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"><input class="ju" asp-for="Nivel.NomNivel"></p></li>
+                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"><input class="ju" asp-for="Sostenimiento.NomSostenimiento"></p></li>
                 <div class="puntuacion">
                     <li class="cardlist">
                         <h1 class="cardtitulo">Puntuacion media: </h1><img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">

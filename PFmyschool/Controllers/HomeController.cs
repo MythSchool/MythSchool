@@ -39,6 +39,9 @@ namespace PFmyschool.Controllers
         }
 
 
+
+
+
         [HttpGet]
 
         public IActionResult Privacy()
@@ -47,10 +50,23 @@ namespace PFmyschool.Controllers
         }
 
         [HttpGet]
-        public IActionResult Informacion()
+
+        public IActionResult Informacion(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var schools = _context.Escuelas.Find(id);
+            if (schools == null)
+            {
+                return NotFound();
+            }
+
+            return View(schools);
+
         }
+
 
 
         public IActionResult RegistrarEscuela()
