@@ -25,31 +25,11 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img id="myImg" src="https://i0.wp.com/lucesdelsiglo.com/wp-content/uploads/2022/05/N2-UPQROO.jpeg?fit=1200%2C630&ssl=1" class="d-block w-100" height="300" alt="...">
+                        <img id="myImg" src="@Html.DisplayFor(x => x.ImagEscuela)" class="d-block w-100" height="300" alt="...">
 
                         <div id="myModal" class="modal">
                             <span class="close">&times;</span>
                             <img class="modal-content" id="img01">
-                            <div id="caption"></div>
-                        </div>
-
-
-
-
-                    </div>
-                    <div class="carousel-item">
-                        <img id="myImg1" src="https://pr0.nicelocal.com.mx/tByq-UpZV0Sqa8M5uC4IwQ/1120x700,q85/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2U_knrPyPH-txkIV-FWKJ2d5GdFt94qwC3YNn9dQWwlsTe0C1en8PeBg7AYAnIjlrA" class="d-block w-100" height="300" alt="...">
-                        <div id="myModal1" class="modal">
-                            <span class="close1">&times;</span>
-                            <img class="modal-content" id="img02">
-                            <div id="caption"></div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img id="myImg2" src="https://upqroo.edu.mx/wp-content/uploads/2022/05/terapia-1.jpg" class="d-block w-100" height="300" alt="...">
-                        <div id="myModal2" class="modal">
-                            <span class="close2">&times;</span>
-                            <img class="modal-content" id="img03">
                             <div id="caption"></div>
                         </div>
                     </div>
@@ -70,10 +50,10 @@
         <div class="informacionb">
 
             <div class="cardboy">
-                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"><input class="ju" asp-for="NomEscuela" onfocus="this.blur()" readonly="readonly"></p></li>
-                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"><input class="ju" asp-for="FkUbicaion" onfocus="this.blur()" readonly="readonly"></p></li>
-                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto"><input class="ju" asp-for="FkNivel" onfocus="this.blur()" readonly="readonly"></p></li>
-                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto"><input id="asd" class="ju" asp-for="FkSostenimiento" onfocus="this.blur()" readonly="readonly"></p></li>
+                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto">@Html.DisplayFor(x => x.NomEscuela)</p></li>
+                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto">@Html.DisplayFor(x => x.Ubicacion.NombreUbi)</p></li>
+                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">@Html.DisplayFor(x => x.Nivel.NomNivel)</p></li>
+                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">@Html.DisplayFor(x => x.Sostenimiento.NomSostenimiento)</p></li>
                 <div class="puntuacion">
                     <li class="cardlist">
                         <h1 class="cardtitulo">Puntuacion media: </h1>

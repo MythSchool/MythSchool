@@ -33,7 +33,7 @@ body{
     font-family: segoe-vf,sans-serif;
     font-size: 18px;
     font-weight: bold;
-    width:85%;
+    width:75%;
 }
 
     .ju:focus {
@@ -213,13 +213,13 @@ margin-bottom: 2%;
 }
 
 .texto{
-  margin-top: 2%;
+  margin-top: 1%;
   display:inline;
   color: #fd7310;
   font-family: segoe-vf,sans-serif;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 
 .xd{
