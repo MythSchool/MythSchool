@@ -13,7 +13,7 @@ namespace PFmyschool.Models
 
         public string DescOferta { get; set; }
 
-        [ForeignKey("Escuela")]
+        [ForeignKey("Escuelas")]
 
         public int FkEscuela { get; set; }
 

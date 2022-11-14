@@ -14,15 +14,13 @@ namespace PFmyschool.Models
 
         public string DescEscuela { get; set; }
 
-        public decimal PuntEscuela { get; set; }
+        public int PuntEscuela { get; set; }
 
         public string LinkEscuela { get; set; }
 
-        public string Password { get; set; }
+        [ForeignKey("Ubicacion")]
 
-        [ForeignKey("Ubicaion")]
-
-        public int FkUbicaion { get; set; }
+        public int FkUbicacion { get; set; }
 
         public Ubicacion Ubicacion { get; set; }
 

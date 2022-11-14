@@ -11,12 +11,14 @@ namespace PFmyschool.Models
         public string ApellidoUser { get; set; }
         public string CorreoUser { get; set; }
         public string? FotoperfUser { get; set; }
-        public string User { get; set; }
-        public string Password { get; set; }
-        [ForeignKey("Roles")]
+
+        public string NicknameU { get; set; }
+
+        public string Contraseña { get; set; }
+        [ForeignKey("Rol")]
 
         public int? FkRol { get; set; }
 
-        public Rol Roles { get; set; }
+        public Rol Rol { get; set; }
     }
 }

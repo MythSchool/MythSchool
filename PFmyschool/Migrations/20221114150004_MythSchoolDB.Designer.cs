@@ -10,7 +10,7 @@ using PFmyschool.Context;
 namespace PFmyschool.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221109165555_MythSchoolDB")]
+    [Migration("20221114150004_MythSchoolDB")]
     partial class MythSchoolDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,7 +37,7 @@ namespace PFmyschool.Migrations
                     b.Property<int>("FkSostenimiento")
                         .HasColumnType("int");
 
-                    b.Property<int>("FkUbicaion")
+                    b.Property<int>("FkUbicacion")
                         .HasColumnType("int");
 
                     b.Property<string>("ImagEscuela")
@@ -49,13 +49,7 @@ namespace PFmyschool.Migrations
                     b.Property<string>("NomEscuela")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("PuntEscuela")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("UbicacionPkUbicacion")
+                    b.Property<int>("PuntEscuela")
                         .HasColumnType("int");
 
                     b.HasKey("PkEscuela");
@@ -64,7 +58,7 @@ namespace PFmyschool.Migrations
 
                     b.HasIndex("FkSostenimiento");
 
-                    b.HasIndex("UbicacionPkUbicacion");
+                    b.HasIndex("FkUbicacion");
 
                     b.ToTable("Escuelas");
                 });
@@ -109,9 +103,6 @@ namespace PFmyschool.Migrations
                     b.Property<string>("DescOferta")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("EscuelasPkEscuela")
-                        .HasColumnType("int");
-
                     b.Property<int>("FkEscuela")
                         .HasColumnType("int");
 
@@ -120,7 +111,7 @@ namespace PFmyschool.Migrations
 
                     b.HasKey("PkOfertasEdu");
 
-                    b.HasIndex("EscuelasPkEscuela");
+                    b.HasIndex("FkEscuela");
 
                     b.ToTable("OfertasEdu");
                 });
@@ -185,6 +176,9 @@ namespace PFmyschool.Migrations
                     b.Property<string>("ApellidoUser")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Contraseña")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CorreoUser")
                         .HasColumnType("nvarchar(max)");
 
@@ -194,13 +188,10 @@ namespace PFmyschool.Migrations
                     b.Property<string>("FotoperfUser")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NicknameU")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NombreUser")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("User")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PkUsuario");
@@ -226,7 +217,9 @@ namespace PFmyschool.Migrations
 
                     b.HasOne("PFmyschool.Models.Ubicacion", "Ubicacion")
                         .WithMany()
-                        .HasForeignKey("UbicacionPkUbicacion");
+                        .HasForeignKey("FkUbicacion")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Nivel");
 
@@ -239,7 +232,9 @@ namespace PFmyschool.Migrations
                 {
                     b.HasOne("PFmyschool.Models.Escuelas", "Escuelas")
                         .WithMany()
-                        .HasForeignKey("EscuelasPkEscuela");
+                        .HasForeignKey("FkEscuela")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Escuelas");
                 });
@@ -257,11 +252,11 @@ namespace PFmyschool.Migrations
 
             modelBuilder.Entity("PFmyschool.Models.Usuario", b =>
                 {
-                    b.HasOne("PFmyschool.Models.Rol", "Roles")
+                    b.HasOne("PFmyschool.Models.Rol", "Rol")
                         .WithMany()
                         .HasForeignKey("FkRol");
 
-                    b.Navigation("Roles");
+                    b.Navigation("Rol");
                 });
 #pragma warning restore 612, 618
         }

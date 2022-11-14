@@ -57,21 +57,22 @@ namespace PFmyschool.Controllers
 
         [HttpGet]
 
-        public IActionResult Menu(Usuario request)
+        public IActionResult Bienvenido(Usuario request)
         {
             if (request == null)
             {
                 return NotFound();
             }
-            var usuario = _context.Usuario.Find(request.User);
+            Usuario usuario = new Usuario();
+            usuario = _context.Usuario.Find(request.NicknameU);
 
-            if (usuario == null)
+            if (usuario.NicknameU == request.NicknameU)
             {
-                return NotFound();
+                return View();
             }
             else
             {
-                return View();
+                return NotFound();
             }
 
 

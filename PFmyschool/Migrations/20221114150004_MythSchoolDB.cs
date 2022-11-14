@@ -88,8 +88,8 @@ namespace PFmyschool.Migrations
                     ApellidoUser = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CorreoUser = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FotoperfUser = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    User = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NicknameU = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Contraseña = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FkRol = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -112,11 +112,9 @@ namespace PFmyschool.Migrations
                     NomEscuela = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImagEscuela = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DescEscuela = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PuntEscuela = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PuntEscuela = table.Column<int>(type: "int", nullable: false),
                     LinkEscuela = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FkUbicaion = table.Column<int>(type: "int", nullable: false),
-                    UbicacionPkUbicacion = table.Column<int>(type: "int", nullable: true),
+                    FkUbicacion = table.Column<int>(type: "int", nullable: false),
                     FkSostenimiento = table.Column<int>(type: "int", nullable: false),
                     FkNivel = table.Column<int>(type: "int", nullable: false)
                 },
@@ -136,11 +134,11 @@ namespace PFmyschool.Migrations
                         principalColumn: "PkSostenimiento",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Escuelas_Ubicacion_UbicacionPkUbicacion",
-                        column: x => x.UbicacionPkUbicacion,
+                        name: "FK_Escuelas_Ubicacion_FkUbicacion",
+                        column: x => x.FkUbicacion,
                         principalTable: "Ubicacion",
                         principalColumn: "PkUbicacion",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -151,18 +149,17 @@ namespace PFmyschool.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NomOferta = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DescOferta = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FkEscuela = table.Column<int>(type: "int", nullable: false),
-                    EscuelasPkEscuela = table.Column<int>(type: "int", nullable: true)
+                    FkEscuela = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OfertasEdu", x => x.PkOfertasEdu);
                     table.ForeignKey(
-                        name: "FK_OfertasEdu_Escuelas_EscuelasPkEscuela",
-                        column: x => x.EscuelasPkEscuela,
+                        name: "FK_OfertasEdu_Escuelas_FkEscuela",
+                        column: x => x.FkEscuela,
                         principalTable: "Escuelas",
                         principalColumn: "PkEscuela",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -176,14 +173,14 @@ namespace PFmyschool.Migrations
                 column: "FkSostenimiento");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Escuelas_UbicacionPkUbicacion",
+                name: "IX_Escuelas_FkUbicacion",
                 table: "Escuelas",
-                column: "UbicacionPkUbicacion");
+                column: "FkUbicacion");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OfertasEdu_EscuelasPkEscuela",
+                name: "IX_OfertasEdu_FkEscuela",
                 table: "OfertasEdu",
-                column: "EscuelasPkEscuela");
+                column: "FkEscuela");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ubicacion_FkLocalidad",
