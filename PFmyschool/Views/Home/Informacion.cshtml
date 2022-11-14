@@ -70,16 +70,18 @@
         <div class="informacionb">
 
             <div class="cardboy">
-                <li class="cardlist"><h1 class="cardtitulo">Nombre: </h1><p class="texto"><input class="ju" asp-for="NomEscuela"></p></li>
-                <li class="cardlist"><h1 class="cardtitulo">Nivel: </h1><p class="texto"><input class="ju" asp-for="Nivel.NomNivel"></p></li>
-                <li class="cardlist"><h1 class="cardtitulo">Sostenimiento: </h1><p class="texto"><input class="ju" asp-for="Sostenimiento.NomSostenimiento"></p></li>
+                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"><input class="ju" asp-for="NomEscuela" onfocus="this.blur()" readonly="readonly"></p></li>
+                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"><input class="ju" asp-for="FkUbicaion" onfocus="this.blur()" readonly="readonly"></p></li>
+                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto"><input class="ju" asp-for="FkNivel" onfocus="this.blur()" readonly="readonly"></p></li>
+                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto"><input id="asd" class="ju" asp-for="FkSostenimiento" onfocus="this.blur()" readonly="readonly"></p></li>
                 <div class="puntuacion">
                     <li class="cardlist">
-                        <h1 class="cardtitulo">Puntuacion media: </h1><img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
-                        <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
-                        <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
-                        <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
-                        <img src="~/images/Informacion/estrellaymedia.png" height="20px" width="20px">
+                        <h1 class="cardtitulo">Puntuacion media: </h1>
+                        @for (var i = 0;i < 4; i++)
+                        {
+                            <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
+                        }
+
                     </li>
                 </div>
 

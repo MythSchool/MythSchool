@@ -27,14 +27,19 @@ body{
 .ju{
     background-color: transparent;
     border-style: none;
-    margin-top: 2%;
+    margin-left:5px;
     display: inline;
     color: #fd7310;
     font-family: segoe-vf,sans-serif;
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 2%;
+    width:85%;
 }
+
+    .ju:focus {
+        border-style: solid;
+        border-color: #343A40;
+    }
 
 .coment {
     background-color: rgb(202, 202, 202);
@@ -137,17 +142,17 @@ color: rgb(255, 255, 255);
 }
 
 
-.InfRelevante
-{
- 
-height: 95%;
-width: 100%;
-background-color:#e6e6e6 ;
-padding: 25px;
-border-width: 0.5px;
-border-color: gray;
-border-style: solid;
-margin-right: 7%;
+.InfRelevante {
+    height: 95%;
+    width: 100%;
+    background-color: white;
+    padding: 25px;
+    border-width: 0.5px;
+    border-color: gainsboro;
+    border-style: solid;
+    border-width: 2px;
+    margin-right: 7%;
+    border-radius: 10px;
 }
 
 .in{
@@ -182,11 +187,13 @@ margin-bottom: 2%;
 
 }
 
-.pot{
-  background-color: #e6e6e6;
-  border-width: 0.5px;
-border-color: gray;
-border-style: solid;
+.pot {
+    background-color: white;
+    border-width: 0.5px;
+    border-color: gainsboro;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
 }
  
 .cardtitulo{
@@ -559,23 +566,30 @@ border-style: solid;
 
     /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  background-color: transparent;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-  font-size: 16px;
-  font-weight: bold;
+    background-color: transparent;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
-  background-color: #ccc;
-}
+    .active, .accordion:hover {
+        background-color: orange;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #142844;
+        color: white;
+    }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
