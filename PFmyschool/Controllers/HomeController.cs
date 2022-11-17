@@ -57,14 +57,13 @@ namespace PFmyschool.Controllers
             {
                 return NotFound();
             }
-            var schools = _context.Escuelas.Find(id);
-            if (schools == null)
+            var ofertas = _context.Escuelas.Find(id);
+
+            if (ofertas == null)
             {
                 return NotFound();
             }
-
-            return View(schools);
-
+            return View(ofertas);
         }
 
 
@@ -78,6 +77,23 @@ namespace PFmyschool.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+
+        public IActionResult Filtrar()
+        {
+            try
+            {
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Surgio un error" + ex.Message);
+
+            }
         }
     }
 }

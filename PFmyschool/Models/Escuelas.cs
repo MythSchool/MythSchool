@@ -36,5 +36,6 @@ namespace PFmyschool.Models
 
         public Nivel Nivel { get; set; }
 
+
     }
 }
