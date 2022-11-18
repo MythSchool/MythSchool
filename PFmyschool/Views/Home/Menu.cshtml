@@ -97,8 +97,8 @@
                     </select>
 
                 </div>
-                <!-- BOTON DE AGREAR (temporal...)-->
-                <button asp-action="Filtrar" asp-controller="Home" id="btnFiltro" class="filtar-btn"><i class="fa-solid fa-filter"></i>   Filtrar</button>
+                <!-- BOTON DE Filtrar (temporal...)-->
+                <button id="btnFiltro" class="filtar-btn"><i class="fa-solid fa-filter"></i>   Filtrar</button>
             </div>
         </div>
 
@@ -215,7 +215,7 @@
 </script>
 
 
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
 
         $("#btnFiltro").click(function () {
@@ -224,66 +224,81 @@
             var Nivel = $("#Sl_Nivel").val();
             var Sostenimiento = $("#Sl_Sostenimiento").val();
             var Ordenar = $("#Sl_Order").val();
+            var ValorUbi = null;
+            var ValorNivel = null;
+            var ValorSotenimiento = null;
+            var ValorOrder = null;
 
             //Ubicacion
 
             if (Ubicacion == "Municipio") {
                 Ubicacion = 0;
-                var ValorUbi = null;
+                ValorUbi = null;
             }
             else {
                 Ubicacion = 1;
-                var ValorUbi = $("#Sl_Ubi").val();
+                ValorUbi = $("#Sl_Ubi").val();
             }
             //Nivel
 
             if (Nivel == "Nivel Educativo") {
                 Nivel = 0;
-                var ValorNivel = null;
+                ValorNivel = null;
             }
             else {
                 Nivel = 1;
-                var ValorNivel = $("#Sl_Nivel").val();
+                ValorNivel = $("#Sl_Nivel").val();
             }
             //Sostenimiento
 
             if (Sostenimiento == "Sostenimiento") {
                 Sostenimiento = 0;
-                var ValorSotenimiento = null;
+                ValorSotenimiento = null;
             }
             else {
                 Sostenimiento = 1;
-                var ValorSotenimiento = $("#Sl_Sostenimiento").val();
+                ValorSotenimiento = $("#Sl_Sostenimiento").val();
             }
             //Ordenar
 
             if (Ordenar == "Puntuacion Media" || Ordenar == "Ordenar de:") {
                 Ordenar = 0;
-                var ValorOrder = null;
+                ValorOrder = null;
             }
             else {             
                 if (Ordenar == "Mayor a menor") {
-                    var ValorOrder = 2;
+                    ValorOrder = 2;
                 } else if (Ordenar == "Menor a mayor"){
-                    var ValorOrder = 1;
+                    ValorOrder = 1;
                 }
                 Ordenar = 1;
             }
-            //alert("This is alert " + user)
-            //console.log("Contraseña " + password)
 
-            var data = {
-                "Ubicacion": Ubicacion,
-                "Nivel": Nivel,
-                "Sostenimiento": Sostenimiento,
-                "Ordenar": Ordenar,
-                "ValorUbicacion": ValorUbi,
-                "ValorNivel": ValorNivel,
-                "ValorSostenimiento": ValorSotenimiento,
-                "ValorOdernar": ValorOrder,
-            };
-            
-            console.log(data)
+            $.ajax({
+                url: "/Home/Filtrar",
+                type: "POST",
+                datos: {
+                "ubicacion" : Ubicacion,
+                "nivel" : Nivel,
+                "sostenimiento" : Sostenimiento,
+                "order" : Ordenar,
+                "ValorUbicacion" : ValorUbi,
+                "ValorNivel" : ValorNivel,
+                "valorSostenimiento" : ValorSotenimiento,
+                "ValorOrder" : ValorOrder
+            },
+                dataType: "Html",
+                success: function (datos) {
+                    alert("Correcto");
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+
+
+
+
 
         });
 

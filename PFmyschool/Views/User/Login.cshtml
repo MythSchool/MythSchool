@@ -14,24 +14,24 @@
 
 
 
-    <form class="form-Login" asp-action="Bienvenido" asp-controller="User" method="get">
+    <div class="form-Login">
         <h5>Iniciar Sesion</h5>
         <label id="wrong" class="wrng">El nombre o contraseña son incorrectos</label>
         <div class="acomod">
             <div class="controls">
-               <i class="fa-solid fa-user"></i><input asp-for="NicknameU" id="user" class="inputg" type="text" name="usuario" value="" placeholder="Usuario" required>
+               <i class="fa-solid fa-user"></i><input id="user" class="inputg" type="text" placeholder="Usuario" required>
             </div>
 
         </div>
         <div class="acomod">
             <div class="controls"> 
-                  <i class="fa-solid fa-lock"></i><input asp-for="Contraseña" id="contra" class="inputg" type="password" name="contrasena" value="" placeholder="Contraseña" required>
+                  <i class="fa-solid fa-lock"></i><input id="password" class="inputg" type="password" placeholder="Contraseña" required>
             </div>
            
         </div>
 
 
-        <button id="btnAceptar" class="buttons" type="submit" name="" value="Ingresar">Ingresar</button>
+        <button id="btnAceptar" class="buttons">Ingresar</button>
 
 
 
@@ -49,11 +49,7 @@
         <p><a asp-action="OlvContra" asp-controller="User"> ¿Olvidaste tu contraseña?</a></p>
         <p><a asp-action="Index" asp-controller="Home"> Cancelar</a></p>
 
-    </form>
 
-
-
-    <script src="Js/InicioSesionP.js"></script>
 
 </body>
 
@@ -91,5 +87,50 @@
 
 
 
+</script>
+
+
+
+<script>
+    $(document).ready(function(){
+
+        $("#btnAceptar").click(function(){
+
+            var user = $("#user").val();
+            var password = $("#password").val();
+            if (user == null && password == null) {
+                alert("Llene todos lo campos");
+            }
+            else {
+
+
+                $.ajax({
+                    url: "/User/LoginUser",
+                    type: "POST",
+                    data: {
+                        "user": user,
+                        "password": password
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response)
+                        if (response.success == 1) {
+
+                            window.location.href = "@Url.Action("Index", "Home")";
+                        }
+                        else if (response.success == 2) {
+
+                            window.location.href = "@Url.Action("Bienvenido", "User")";                     
+                        }
+                        else
+                            alert("El nombre o contraseña son incorrectos");
+                    },
+                    error: function () {
+                        console.log('Login Fail    !!!!');
+                    }
+                });
+            }
+        });
+    });
 </script>
 

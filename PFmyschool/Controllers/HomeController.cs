@@ -9,6 +9,10 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using Dapper;
+
 
 namespace PFmyschool.Controllers
 {
@@ -18,11 +22,14 @@ namespace PFmyschool.Controllers
 
         private readonly ApplicationDbContext _context;
 
+
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
             _context = context;
         }
+
+
 
         public IActionResult Index()
         {
@@ -78,15 +85,35 @@ namespace PFmyschool.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-
-
-        public IActionResult Filtrar()
+      
+        [HttpPost]
+        public IActionResult Filtrar(int ubicacion, int nivel, int sostenimiento, int order, string ValorUbicacion, string ValorNivel, string ValorSostnimiento, int ValorOrder)
         {
             try
             {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+               "Data Source=DESKTOP-2NBP7F1;" +
+                 "Initial Catalog=MythSchoolDB;" +
+                 "Integrated Security=True;";
+                conn.Open();
+                var p = new DynamicParameters();
+                p.Add("@valorUbicacion", ValorUbicacion);
+                p.Add("@valorNivel", ValorNivel);
+                p.Add("@valorSostenimiento", ValorSostnimiento);
+                p.Add("@valorOrder", ValorOrder);
+                p.Add("@Ubicacion", ubicacion);
+                p.Add("@Nivel", nivel);
+                p.Add("@Sostenimiento", sostenimiento);
+                p.Add("@Order", order);
 
-                return View();
+
+
+                var escuela = conn.Execute("StpFiltrado", p, commandType: CommandType.StoredProcedure);
+
+                conn.Close();
+                return View(escuela);
+
             }
             catch (Exception ex)
             {
@@ -95,5 +122,9 @@ namespace PFmyschool.Controllers
 
             }
         }
+
+
+        
+       
     }
 }

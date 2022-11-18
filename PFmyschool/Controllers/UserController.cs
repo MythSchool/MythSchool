@@ -54,28 +54,33 @@ namespace PFmyschool.Controllers
             return View();
         }
 
-
-        [HttpGet]
-
-        public IActionResult Bienvenido(Usuario request)
+        [HttpPost]
+        public JsonResult LoginUser(string user, string password)
         {
-            if (request == null)
+            try
             {
-                return NotFound();
+                var response = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == password).ToList();
+                
+                if (response.Count > 0)
+                {
+                    var usuario = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == password && x.FkRol == 2).ToList();
+                    if(usuario.Count > 0)
+                    {
+                        return Json(new { Success = 1 });
+                    }
+                    return Json(new { Success = 2 });
+                }
+                else
+                {
+                    return Json(new { Success = false });
+                }
             }
-            Usuario usuario = new Usuario();
-            usuario = _context.Usuario.Find(request.NicknameU);
-
-            if (usuario.NicknameU == request.NicknameU)
+            catch (Exception ex)
             {
-                return View();
-            }
-            else
-            {
-                return NotFound();
-            }
 
+                throw new Exception("Surgio un error" + ex.Message);
 
+            }
         }
 
     }
