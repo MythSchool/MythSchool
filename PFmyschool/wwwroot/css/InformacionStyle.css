@@ -212,15 +212,15 @@ margin-bottom: 2%;
 
 }
 
-.texto{
-  margin-top: 1%;
-  display:inline;
-  color: #fd7310;
-  font-family: segoe-vf,sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 1%;
-  margin-left:5%;
+.texto {
+    margin-top: 1%;
+    display: inline;
+    color: #FF5900;
+    font-family: segoe-vf,sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1%;
+    margin-left: 2%;
 }
 
 .xd{
@@ -577,19 +577,13 @@ margin-bottom: 2%;
     outline: none;
     font-size: 16px;
     font-weight: bold;
-    border-style: solid;
-    border-width: 2px;
-    border-color: white;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
     .active, .accordion:hover {
-        background-color: orange;
+        background-color: #FF5900;
         border-radius: 10px;
-        border-style: solid;
-        border-width: 2px;
-        border-color: #142844;
-        color: white;
+        color:white;
     }
 
 /* Style the accordion panel. Note: hidden by default */
@@ -657,7 +651,7 @@ margin-bottom: 2%;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 130px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -669,10 +663,11 @@ margin-bottom: 2%;
 
 /* Modal Content (image) */
 .modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 600px;
 }
 
 /* Caption of Modal Image */
@@ -774,3 +769,6 @@ margin-bottom: 2%;
   height: 440px;
   border-radius: 10px;
 }
+
+
+

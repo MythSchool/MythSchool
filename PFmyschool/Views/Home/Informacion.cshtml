@@ -1,5 +1,5 @@
 ﻿
-@model PFmyschool.Models.Escuelas
+@model IEnumerable<PFmyschool.Models.OfertasEdu>
 @{
     ViewData["Title"] = "Informacion";
 }
@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="~/css/InformacionStyle.css">
 <script src="~/js/cargar.js"></script>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
@@ -31,7 +32,22 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img id="myImg" src="@Html.DisplayFor(x => x.ImagEscuela)" class="d-block w-100" height="300" alt="...">
+                        @if (Model.Count() > 0)
+                        {
+                            int i = 0;
+                            @foreach (var item in Model)
+                            {
+
+                                if (i < 1)
+                                {
+                                    <img id="myImg" src="@Html.DisplayFor(x => item.Escuelas.ImagEscuela)" class="d-block w-100" height="300" alt="...">
+                                }
+                                i++;
+
+                            }
+                        }
+
+
 
                         <div id="myModal" class="modal">
                             <span class="close">&times;</span>
@@ -54,27 +70,38 @@
         </div>
 
         <div class="informacionb">
+            @if (Model.Count() > 0)
+            {
+                int g = 0;
+                @foreach (var item in Model)
+                {
+                    if (g < 1)
+                    {
+                        <div class="cardboy">
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.NomEscuela)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Escuelas.Ubicacion.Localidad.NomLocalidad)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Nivel.NomNivel)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Sostenimiento.NomSostenimiento)</p></li>
+                            <div class="puntuacion">
+                                <li class="cardlist">
+                                    <h1 class="cardtitulo">Puntuacion media: </h1>
+                                    @for (var i = 0; i < Convert.ToInt32(Html.ValueFor(x => item.Escuelas.PuntEscuela)); i++)
+                                    {
+                                        <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
+                                    }
 
-            <div class="cardboy">
-                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto">@Html.DisplayFor(x => x.NomEscuela)</p></li>
-                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto">@Html.DisplayFor(x => x.Ubicacion.NombreUbi)</p></li>
-                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">@Html.DisplayFor(x => x.Nivel.NomNivel)</p></li>
-                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">@Html.DisplayFor(x => x.Sostenimiento.NomSostenimiento)</p></li>
-                <div class="puntuacion">
-                    <li class="cardlist">
-                        <h1 class="cardtitulo">Puntuacion media: </h1>
-                        @for (var i = 0; i < 4; i++)
-                        {
-                            <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
-                        }
+                                </li>
+                            </div>
 
-                    </li>
-                </div>
+                        </div>
+                    }
+                    g++;
+                }
+            }
 
-            </div>
         </div>
         <div class="pot">
-            <button class="accordion"><img src="~/images/Informacion/comment.png" height="35" width="30"> Comentarios</button>
+            <button class="accordion"><i class="fa-solid fa-comments"></i> Comentarios</button>
             <div class="panel">
                 <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
             </div>
@@ -83,22 +110,61 @@
 
 
     <div id="mainRel" class="InfRelevante">
-        <button class="accordion"><img src="~/images/Informacion/boton-de-informacion.png" height="25" width="25"> Informacion</button>
+        <button class="accordion"><i class="fa-solid fa-circle-info"></i> Informacion</button>
         <div class="panel">
-            <p>@Html.DisplayFor(x => x.DescEscuela)</p>
+
+            @if (Model.Count() > 0)
+            {
+                int i = 0;
+                @foreach (var item in Model)
+                {
+                    if (i < 1)
+                    {
+                        <p>@Html.DisplayFor(x => item.Escuelas.DescEscuela)</p>
+                    }
+                    i++;
+
+                }
+
+            }
+
+
+
         </div>
 
-        <button class="accordion"><img src="~/images/Informacion/sombrero-de-graduacion.png" height="35" width="30"> Ofertas Educativas</button>
+        <button class="accordion"><i class="fa-sharp fa-solid fa-graduation-cap"></i> Ofertas Educativas</button>
         <div class="panel">
-            <li>Ingenieria en Biomedica</li>
-            <li>Ingenieria en Biotecnologia</li>
-            <li>Ingenieria en Software</li>
-            <li>Licenciatura en terapia fisica</li>
-            <li>Ingenieria financiera</li>
-            <li>Licenciatura en administracion y gestion empresarial</li>
+            @if (Model.Count() > 0)
+            {
+                int i = 0;
+                if (i < 1)
+                {
+                    @foreach (var item in Model)
+                    {
+
+                        <li><a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="@Html.DisplayFor(x => item.NomOferta)" data-bs-content="@Html.DisplayFor(x => item.DescOferta)">@Html.DisplayFor(x => item.NomOferta)</a></li>
+                    }
+                }
+                i++;
+
+            }
+
         </div>
 
-        <a target="_blank" href="@Html.DisplayFor(x => x.LinkEscuela)"><button class="accordion"><img src="~/images/Informacion/vinculado.png" height="25" width="25"> Link de la pagina oficial</button></a>
+        @if (Model.Count() > 0)
+        {
+            int i = 0;
+            @foreach (var item in Model)
+            {
+                if (i < 1)
+                {
+                    <a target="_blank" href="@Html.DisplayFor(x => item.Escuelas.LinkEscuela)"><button class="accordion"><i class="fa-solid fa-link"></i> Link de la pagina oficial</button></a>
+                }
+                i++;
+
+            }
+        }
+
 
         <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
 
@@ -113,3 +179,30 @@
 </div>
 
 <script src="~/js/js_Informacion.js"></script>
+
+
+<script>
+
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+        trigger: 'focus'
+    })
+
+</script>

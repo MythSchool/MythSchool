@@ -65,7 +65,7 @@ namespace PFmyschool.Controllers
                 return NotFound();
             }
 
-            var informacion = _context.Escuelas.Include(z => z.Ubicacion).Include(z => z.Sostenimiento).Include(z => z.Nivel).Include(z => z.Ubicacion.Localidad).Where(x => x.PkEscuela == id).FirstOrDefault();
+            var informacion = _context.OfertasEdu.Include(z => z.Escuelas).Include(z => z.Escuelas.Ubicacion).Include(z => z.Escuelas.Sostenimiento).Include(z => z.Escuelas.Nivel).Include(z => z.Escuelas.Ubicacion.Localidad).Where(x => x.Escuelas.PkEscuela == id).ToList();
 
             if (informacion == null)
             {
