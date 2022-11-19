@@ -30,7 +30,6 @@ namespace PFmyschool.Controllers
         }
 
 
-
         public IActionResult Index()
         {
             return View();
@@ -60,17 +59,19 @@ namespace PFmyschool.Controllers
 
         public IActionResult Informacion(int? id)
         {
-            if (id == null)
+            int? PkEscuela = id;
+            if (PkEscuela == null)
             {
                 return NotFound();
             }
-            var ofertas = _context.Escuelas.Find(id);
 
-            if (ofertas == null)
+            var informacion = _context.Escuelas.Include(z => z.Ubicacion).Include(z => z.Sostenimiento).Include(z => z.Nivel).Include(z => z.Ubicacion.Localidad).Where(x => x.PkEscuela == id).FirstOrDefault();
+
+            if (informacion == null)
             {
                 return NotFound();
             }
-            return View(ofertas);
+            return View(informacion);
         }
 
 

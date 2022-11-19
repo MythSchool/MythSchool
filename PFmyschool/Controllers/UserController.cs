@@ -9,6 +9,7 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using PFmyschool.Permisos;
 
 namespace PFmyschool.Controllers
 {
@@ -56,19 +57,24 @@ namespace PFmyschool.Controllers
 
         [HttpPost]
         public JsonResult LoginUser(string user, string password)
-        {
+        {  
+
             try
             {
                 var response = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == password).ToList();
                 
                 if (response.Count > 0)
                 {
+
                     var usuario = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == password && x.FkRol == 2).ToList();
                     if(usuario.Count > 0)
                     {
                         return Json(new { Success = 1 });
                     }
                     return Json(new { Success = 2 });
+                    
+
+
                 }
                 else
                 {
@@ -81,6 +87,15 @@ namespace PFmyschool.Controllers
                 throw new Exception("Surgio un error" + ex.Message);
 
             }
+        }
+
+
+        [HttpGet]
+
+        public IActionResult Session(string user)
+        {
+            var session = _context.Usuario.Find(user);
+            return View(session);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿@model PFmyschool.Models.Escuelas
+﻿
+@model PFmyschool.Models.Escuelas
 @{
     ViewData["Title"] = "Informacion";
 }
@@ -10,9 +11,14 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v15.0" nonce="etN0A1b3"></script>
 <div class="xd">
     <a onclick="history.back()" class="flecha"><img id="flechaid" src="~/images/left-arrow.png" height="40" width="30"></a>
 </div>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v15.0" nonce="8nrKWt3K"></script>
 
 <div id="main" class="NVIAR">
     <div class="in">
@@ -57,7 +63,7 @@
                 <div class="puntuacion">
                     <li class="cardlist">
                         <h1 class="cardtitulo">Puntuacion media: </h1>
-                        @for (var i = 0;i < 4; i++)
+                        @for (var i = 0; i < 4; i++)
                         {
                             <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
                         }
@@ -70,53 +76,7 @@
         <div class="pot">
             <button class="accordion"><img src="~/images/Informacion/comment.png" height="35" width="30"> Comentarios</button>
             <div class="panel">
-                <div class="cometarios">
-                    <div class="coment">
-                        <div class="userc">
-                            <img src="~/images/usuario.png" height="45" width="45"><h5>MythSchool</h5>
-                        </div>
-                        <div class="comentario">
-                            <p>Estupendas instalaciones y muy buenos maestros...</p>
-                        </div>
-                        <h6 clas="responder">Responder</h6>
-                    </div>
-                    <div class="coment2">
-                        <div class="userc">
-                            <img src="~/images/usuario.png" height="45" width="45"><h5>Juan P.</h5>
-                        </div>
-                        <div class="comentario">
-                            <p>Muy buena escuela, la recomiendo mucho...</p>
-                        </div>
-                        <h6 clas="responder">Responder</h6>
-                    </div>
-                    <div class="coment">
-                        <div class="userc">
-                            <img src="~/images/usuario.png" height="45" width="45"><h5>JulioProfe</h5>
-                        </div>
-                        <div class="comentario">
-                            <p>Ta chida...</p>
-                        </div>
-                        <h6 clas="responder">Responder</h6>
-                    </div>
-                    <div class="coment2">
-                        <div class="userc">
-                            <img src="~/images/usuario.png" height="45" width="45"><h5>Walter White</h5>
-                        </div>
-                        <div class="comentario">
-                            <p>Exelente laboratorio de quimica.</p>
-                        </div>
-                        <h6 clas="responder">Responder</h6>
-                    </div>
-                    <div class="coment">
-                        <div class="userc">
-                            <img src="~/images/usuario.png" height="45" width="45"><h5>Ing.Ramirez</h5>
-                        </div>
-                        <div class="comentario">
-                            <p>Exelente universidad, en ella pase los mejores años de mi vida...</p>
-                        </div>
-                        <h6 clas="responder">Responder</h6>
-                    </div>
-                </div>
+                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
             </div>
         </div>
     </div>
@@ -138,8 +98,9 @@
             <li>Licenciatura en administracion y gestion empresarial</li>
         </div>
 
-        <a target="_blank" href="https://upqroo.edu.mx/"><button class="accordion"><img src="~/images/Informacion/vinculado.png" height="25" width="25"> Link de la pagina oficial</button></a>
+        <a target="_blank" href="@Html.DisplayFor(x => x.LinkEscuela)"><button class="accordion"><img src="~/images/Informacion/vinculado.png" height="25" width="25"> Link de la pagina oficial</button></a>
 
+        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
 
 
     </div>
