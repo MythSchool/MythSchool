@@ -215,7 +215,7 @@ margin-bottom: 2%;
 .texto {
     margin-top: 1%;
     display: inline;
-    color: #FF5900;
+    color: rgb(216, 122, 0);
     font-family: segoe-vf,sans-serif;
     font-size: 18px;
     font-weight: bold;
@@ -581,9 +581,9 @@ margin-bottom: 2%;
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
     .active, .accordion:hover {
-        background-color: #FF5900;
+        background-color: rgb(216, 122, 0);
         border-radius: 10px;
-        color:white;
+        color: white;
     }
 
 /* Style the accordion panel. Note: hidden by default */
