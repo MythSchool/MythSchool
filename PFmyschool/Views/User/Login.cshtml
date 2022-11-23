@@ -1,33 +1,37 @@
 ﻿@model PFmyschool.Models.Usuario
 @{
-    ViewData["Title"] = "Login";
+    Layout = "_LoginLayout";
 }
 
 
 <html>
-<link rel="stylesheet" href="~/css/stylelogin.css">
+
 <script src="~/js/cargar.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <!-- BOOTSTRAP JAVASCRIPT -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="~/css/stylelogin.css">
+<link rel="stylesheet" href="~/css/FooterLogin.css">
 <body id="demo-textarea">
 
 
-
+    <div class="logosJunt">
+        <img src="~/Images/LogoCorto.png" id="lc" class="logoPrincipal"><img id="myth" src="~/Images/Menu/MythSchool.png" class="logoSec">
+    </div>
     <div class="form-Login">
         <h5>Iniciar Sesion</h5>
         <label id="wrong" class="wrng">El nombre o contraseña son incorrectos</label>
         <div class="acomod">
             <div class="controls">
-               <i class="fa-solid fa-user"></i><input id="user" class="inputg" type="text" placeholder="Usuario" required>
+                <i class="fa-solid fa-user"></i><input id="user" class="inputg" type="text" placeholder="Usuario" required>
             </div>
 
         </div>
         <div class="acomod">
-            <div class="controls"> 
-                  <i class="fa-solid fa-lock"></i><input id="password" class="inputg" type="password" placeholder="Contraseña" required>
+            <div class="controls">
+                <i class="fa-solid fa-lock"></i><input id="password" class="inputg" type="password" placeholder="Contraseña" required>
             </div>
-           
+
         </div>
 
 
@@ -120,7 +124,7 @@
                         }
                         else if (response.success == 2) {
 
-                            window.location.href = "@Url.Action("Bienvenido", "User")";                     
+                            window.location.href = "@Url.Action("Bienvenido", "User")";
                         }
                         else
                             alert("El nombre o contraseña son incorrectos");

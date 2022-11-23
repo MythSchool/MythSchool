@@ -1,13 +1,11 @@
-html body{
-    background-color:blue;
-}
-
-
-
 *{
     margin: 0;
     padding: 0;
     box-sizing:0;
+}
+body {
+    font-family: Arial;
+    background-color: #263c5e;
 }
 
 .wrng{
@@ -83,6 +81,7 @@ margin-left: 30%;
     display: flex;
     margin: auto;
     margin-top: 2%;
+    text-align:center;
 }
 
   .form-Login h6{
@@ -95,19 +94,15 @@ margin-left: 30%;
     height: auto;
     background: #1b1818;
     margin: auto;
-    margin-top: 8%;
+    margin-top: 1%;
     padding: 20px 30px;
     border-top: 4px solid #017bab;
     color: white;
     opacity: 0.95;
     border-radius: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
-body
-{
-    font-family: Arial;
-    background-color: #506584;
-}
+
 .form-Login h5{
     margin: 0;
     text-align: center;
@@ -158,6 +153,7 @@ cursor: pointer;
 .form-Login p{
 height: auto;
 text-align: center;
+
 }
 
 .form-Login a{

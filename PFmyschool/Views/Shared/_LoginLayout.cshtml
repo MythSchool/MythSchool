@@ -1,0 +1,56 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PFmyschool</title>
+    <link rel="stylesheet" href="~/css/FooterLogin.css">
+    <script src="https://kit.fontawesome.com/590d7b9e48.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+
+    <footer>
+
+        <!-- Footer -->
+        <div class="footerMain">
+            <div class="contain">
+                <div class="col">
+                    <br></br>
+                    <ul>
+                        <a href="Acerca.html" class="link">
+                        <li>Acerca de nosotros</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="col">
+                    <br></br>
+                    <ul>
+                        <a href="TerminosYCondiciones.html" class="link">
+                        <li>Terminos y condiciones</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="col">
+                    <br></br>
+                    <ul>
+                        <a class="link" href="contactanos.html">
+                        <li>Contactanos</li>
+                        </a>
+                        <br></br>
+                        <br></br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
