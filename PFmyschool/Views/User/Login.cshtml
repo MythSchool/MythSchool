@@ -20,7 +20,10 @@
     </div>
     <div class="form-Login">
         <h5>Iniciar Sesion</h5>
-        <label id="wrong" class="wrng">El nombre o contraseña son incorrectos</label>
+        <div id="Wrong">
+
+        </div>
+
         <div class="acomod">
             <div class="controls">
                 <i class="fa-solid fa-user"></i><input id="user" class="inputg" type="text" placeholder="Usuario" required>
@@ -127,7 +130,7 @@
                             window.location.href = "@Url.Action("Bienvenido", "User")";
                         }
                         else
-                            alert("El nombre o contraseña son incorrectos");
+                            $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>El nombre o contraseña son incorrectos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
                     },
                     error: function () {
                         console.log('Login Fail    !!!!');

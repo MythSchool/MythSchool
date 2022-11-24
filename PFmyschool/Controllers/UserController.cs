@@ -1,15 +1,17 @@
 ﻿using PFmyschool.Context;
 using PFmyschool.Models;
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using PFmyschool.Permisos;
 
 namespace PFmyschool.Controllers
 {
@@ -28,6 +30,7 @@ namespace PFmyschool.Controllers
             _context = context;
         }
 
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2NBP7F1; initial catalog=MythSchoolDB; Integrated Security= True");
         public IActionResult Index()
         {
             return View();
@@ -36,6 +39,22 @@ namespace PFmyschool.Controllers
         public IActionResult Registro()
         {
             return View();
+        }
+
+
+        [HttpPost]
+
+        public JsonResult RegistrarUsuario(string NombreUser,string ApellidoUser,string CorreoUser,string NicknameU,string Contraseña)
+        {
+          try
+            {
+                connection.QueryAsync<Usuario>("StpRegistro_Usuario", new { NombreUser, ApellidoUser, CorreoUser, NicknameU, Contraseña }, commandType: CommandType.StoredProcedure);
+                return Json(new { Success = true});
+            }
+                catch (Exception ex)
+                {
+                return Json(new { Success = false });
+            }
         }
 
         public IActionResult Login()
@@ -96,6 +115,35 @@ namespace PFmyschool.Controllers
         {
             var session = _context.Usuario.Find(user);
             return View(session);
+        }
+
+
+
+
+
+        [HttpPost]
+        public JsonResult verifUser(string correo, string user)
+        {
+
+            try
+            {
+                var response = _context.Usuario.Where(x => x.NicknameU == user && x.CorreoUser == correo).ToList();
+
+                if (response.Count > 0)
+                {
+                    return Json(new { Success = true });
+                }
+                else
+                {
+                    return Json(new { Success = false });
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Surgio un error" + ex.Message);
+
+            }
         }
 
     }
