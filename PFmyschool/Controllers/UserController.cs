@@ -95,7 +95,7 @@ namespace PFmyschool.Controllers
         public JsonResult LoginUser(string user, string password)
         {
 
-            string contraseña = DesEncip(password);
+            string contraseña = Encrip(password);
 
             try
             {
@@ -212,7 +212,7 @@ namespace PFmyschool.Controllers
 
         public string DesEncip(string mensaj)
         {
-            string hash = "codigo de 2c";
+            string hash = "coding con c";
             byte[] data = Convert.FromBase64String(mensaj);
 
             MD5 md5 = MD5.Create();
