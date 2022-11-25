@@ -179,12 +179,6 @@ namespace PFmyschool.Controllers
 
             }
         }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> parent of 89bda36 (Dash)
-
 
         //Zona de Encriptado
         //public string Encrip (string mensj)
