@@ -38,26 +38,7 @@ namespace PFmyschool.Controllers
             return View();
         }
 
-        public IActionResult Registro()
-        {
-            return View();
-        }
-
-
-        [HttpPost]
-
-        public JsonResult RegistrarUsuario(string NombreUser,string ApellidoUser,string CorreoUser,string NicknameU,string Contraseña)
-        {
-          try
-            {
-                connection.QueryAsync<Usuario>("StpRegistro_Usuario", new { NombreUser, ApellidoUser, CorreoUser, NicknameU, Contraseña }, commandType: CommandType.StoredProcedure);
-                return Json(new { Success = true});
-            }
-                catch (Exception ex)
-                {
-                return Json(new { Success = false });
-            }
-        }
+        
 
 
         [HttpPost]
@@ -180,39 +161,66 @@ namespace PFmyschool.Controllers
             }
         }
 
+
+
+        public IActionResult Registro()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+
+        public JsonResult RegistrarUsuario(string NombreUser, string ApellidoUser, string CorreoUser, string NicknameU, string ContraseñaDes)
+        {
+
+            string Contraseña = Encrip(ContraseñaDes);
+
+            try
+            {
+                connection.QueryAsync<Usuario>("StpRegistro_Usuario", new { NombreUser, ApellidoUser, CorreoUser, NicknameU, Contraseña }, commandType: CommandType.StoredProcedure);
+                return Json(new { Success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Success = false });
+            }
+        }
+
+
         //Zona de Encriptado
-        //public string Encrip (string mensj)
-        //{
-        //    string hasd = "codigo de c";
-        //    byte[] data = UTF8Encoding.UTF8.GetBytes(mensj);
+        public string Encrip(string mensj)
+        {
+            string hasd = "codigo de c";
+            byte[] data = UTF8Encoding.UTF8.GetBytes(mensj);
 
-        //    MD5 md5 = MD5.Create();
-        //    TripleDES tripledes = TripleDES.Create();
+            MD5 md5 = MD5.Create();
+            TripleDES tripledes = TripleDES.Create();
 
-        //    tripledes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hasd));
-        //    tripledes.Mode = CipherMode.ECB;
+            tripledes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hasd));
+            tripledes.Mode = CipherMode.ECB;
 
-        //    ICryptoTransform transform = tripledes.CreateEncryptor();
-        //    byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+            ICryptoTransform transform = tripledes.CreateEncryptor();
+            byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
 
-        //    return Convert.ToBase64String(result);
-        //}
-        
-        //public string DesEncip (string mensaj)
-        //{
-        //    string hash = "codigo de 2c";
-        //    byte[] data = Convert.FromBase64String(mensaj);
+            return Convert.ToBase64String(result);
+        }
 
-        //    MD5 md5 = MD5.Create();
-        //    TripleDES tripledes = TripleDES.Create();
+        public string DesEncip(string mensaj)
+        {
+            string hash = "codigo de 2c";
+            byte[] data = Convert.FromBase64String(mensaj);
 
-        //    tripledes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
-        //    tripledes.Mode = CipherMode.ECB;
+            MD5 md5 = MD5.Create();
+            TripleDES tripledes = TripleDES.Create();
 
-        //    ICryptoTransform transform = tripledes.CreateEncryptor();
-        //    byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+            tripledes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+            tripledes.Mode = CipherMode.ECB;
 
-        //    return Convert.ToBase64String(result);
-        //}
+            ICryptoTransform transform = tripledes.CreateDecryptor();
+            byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+
+            return UTF8Encoding.UTF8.GetString(result);
+        }
     }
 }
