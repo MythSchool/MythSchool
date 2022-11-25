@@ -59,8 +59,10 @@ namespace PFmyschool.Controllers
 
         [HttpPost]
 
-        public JsonResult updatecontra(string correo,string contraseña)
+        public JsonResult updatecontra(string correo,string contraseñaDes)
         {
+            string contraseña = Encrip(contraseñaDes);
+
             try
             {
                 connection.QueryAsync<Usuario>("Sp_RecuperarContraseña", new { correo,contraseña }, commandType: CommandType.StoredProcedure);
