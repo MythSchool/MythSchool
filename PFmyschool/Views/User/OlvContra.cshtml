@@ -47,7 +47,7 @@
             var correo = $("#email").val();
             var password = $("#ncontra").val();
             var confirm = $("#reptcontra").val();
-            if (correo == null && password == null && confirm == null) {
+            if (correo == null || password == null || confirm == null) {
                 alert("Llene todos lo campos");
             }
             else {
