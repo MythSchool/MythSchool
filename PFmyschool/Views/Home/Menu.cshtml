@@ -37,72 +37,43 @@
 
 
     <div class="containerGH">
-        <div class="divfiltrado">
-            <div id="filt" class="btn-group">
-                <div class="dropdown">
-                    <select id="Sl_Ubi" class="btn btn-secondary dropdown-toggle" data-placeholder="Municipio">
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li>
-                        <option class="dropdown-item">Municipio</option></li>
-                        <li>
-                        <option class="dropdown-item">Benito Juarez</option></li>
-                        <li>
-                        <option class="dropdown-item">Felipe carrillo puerto</option></li>
-                        <li>
-                        <option class="dropdown-item">Othon P. Blanco</option></li>
-                        </ul>
+        @{int i = 0;
+            foreach (var item in Model)
+            {
+                if (i < 1)
+                {
+                    <section class="divfiltrado">
+                        <div id="filt" class="btn-group">
+                            <div class="dropdown">
+                                <select asp-items="ViewBag.EscuelasUbi" id="Sl_Ubi" class="btn btn-secondary dropdown-toggle" data-placeholder="Municipio">
+                                    <option value="">--Selecciona--</option>
+                                </select>
 
-                    </select>
+                            </div>
+                            <div class="dropdown">
 
-                </div>
-                <div class="dropdown">
-                    <select id="Sl_Nivel" class="btn btn-secondary dropdown-toggle" data-placeholder="Nivel Educativo">
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li>
-                        <option class="dropdown-item">Nivel Educativo</option></li>
-                        <li>
-                        <option class="dropdown-item">Superior</option></li>
-                        <li>
-                        <option class="dropdown-item">Media-Superior</option></li>
-                        </ul>
+                                <select asp-items="ViewBag.EscuelasNivel" id="Sl_Nivel" class="btn btn-secondary dropdown-toggle" data-placeholder="Nivel Educativo">
+                                    <option value="">--Selecciona--</option>
+                                </select>
 
-                    </select>
+                            </div>
 
-                </div>
+                            <div class="dropdown">
+                                <select asp-items="ViewBag.EscuelasSos" id="Sl_Sostenimiento" class="btn btn-secondary dropdown-toggle" data-placeholder="Sostenimiento">
+                                    <option value="">--Selecciona--</option>
+                                </select>
 
-                <div class="dropdown">
-                    <select id="Sl_Sostenimiento" class="btn btn-secondary dropdown-toggle" data-placeholder="Sostenimiento">
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li>
-                        <option class="dropdown-item">Sostenimiento</option></li>
-                        <li>
-                        <option class="dropdown-item ">Publica</option></li>
-                        <li>
-                        <option class="dropdown-item">Privada</option></li>
-                        </ul>
-                    </select>
+                            </div>
+                            <!-- BOTON DE Filtrar (temporal...)-->
+                            <button id="btnFiltro" class="filtar-btn"><i class="fa-solid fa-filter"></i>   Filtrar</button>
+                        </div>
+                    </section>
+                }
+                i++;
 
-                </div>
+            }
 
-                <div class="dropdown">
-                    <select id="Sl_Order" class="btn btn-secondary dropdown-toggle" data-placeholder="Puntuacion Media">
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li>
-                        <option class="dropdown-item">Ordenar de:</option></li>
-                        <li>
-                        <option class="dropdown-item">Mayor a menor</option></li>
-                        <li>
-                        <option class="dropdown-item">Menor a mayor</option></li>
-                        </ul>
-                    </select>
-
-                </div>
-                <!-- BOTON DE Filtrar (temporal...)-->
-                <button id="btnFiltro" class="filtar-btn"><i class="fa-solid fa-filter"></i>   Filtrar</button>
-            </div>
-        </div>
-
-
+        }
         <!--FIN DEL AREA DE FILTROS  -->
         <!-- AREA DE LAS PAGINITAS DE ESCUELAS -->
 
@@ -114,30 +85,30 @@
                 {
                     @foreach (var item in Model)
                     {
-                <div id="elemento" class="col">
-                    <a asp-action="Informacion" asp-route-id="@item.PkEscuela" class="link">
-                        <div class="resul">
-                            <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
-                            <div class="cardboy">
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> @Html.DisplayFor(x => item.NomEscuela)</p></li>
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"> @Html.DisplayFor(x => item.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Ubicacion.Localidad.NomLocalidad)</p></li>
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">  @Html.DisplayFor(x => item.Nivel.NomNivel)</p></li>
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">  @Html.DisplayFor(x => item.Sostenimiento.NomSostenimiento)</p></li>
-                                <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-star"></i>Puntuacion media: </h1><p class="texto">  @Html.DisplayFor(x => item.PuntEscuela) / 5</p></li>
-                            </div>
+                        <div id="elemento" class="col">
+                            <a asp-action="Informacion" asp-route-id="@item.PkEscuela" class="link">
+                                <div class="resul">
+                                    <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
+                                    <div class="cardboy">
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> @Html.DisplayFor(x => item.NomEscuela)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"> @Html.DisplayFor(x => item.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Ubicacion.Localidad.NomLocalidad)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">  @Html.DisplayFor(x => item.Nivel.NomNivel)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">  @Html.DisplayFor(x => item.Sostenimiento.NomSostenimiento)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-star"></i>Puntuacion media: </h1><p class="texto">  @Html.DisplayFor(x => item.PuntEscuela) / 5</p></li>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
 
-                            }
-                            }
-                            else
-                            {
-                            <p>No hay registros</p>
-                            }
-                        
-                    </div>
+                    }
+                }
+                else
+                {
+                    <p>No hay registros</p>
+                }
+
             </div>
+        </div>
     </div>
 
 
@@ -215,7 +186,7 @@
 </script>
 
 
-<script type="text/javascript">
+<script>
     $(document).ready(function () {
 
         $("#btnFiltro").click(function () {
@@ -223,85 +194,15 @@
             var Ubicacion = $("#Sl_Ubi").val();
             var Nivel = $("#Sl_Nivel").val();
             var Sostenimiento = $("#Sl_Sostenimiento").val();
-            var Ordenar = $("#Sl_Order").val();
-            var ValorUbi = null;
-            var ValorNivel = null;
-            var ValorSotenimiento = null;
-            var ValorOrder = null;
 
-            //Ubicacion
-
-            if (Ubicacion == "Municipio") {
-                Ubicacion = 0;
-                ValorUbi = null;
-            }
-            else {
-                Ubicacion = 1;
-                ValorUbi = $("#Sl_Ubi").val();
-            }
-            //Nivel
-
-            if (Nivel == "Nivel Educativo") {
-                Nivel = 0;
-                ValorNivel = null;
-            }
-            else {
-                Nivel = 1;
-                ValorNivel = $("#Sl_Nivel").val();
-            }
-            //Sostenimiento
-
-            if (Sostenimiento == "Sostenimiento") {
-                Sostenimiento = 0;
-                ValorSotenimiento = null;
-            }
-            else {
-                Sostenimiento = 1;
-                ValorSotenimiento = $("#Sl_Sostenimiento").val();
-            }
-            //Ordenar
-
-            if (Ordenar == "Puntuacion Media" || Ordenar == "Ordenar de:") {
-                Ordenar = 0;
-                ValorOrder = null;
-            }
-            else {             
-                if (Ordenar == "Mayor a menor") {
-                    ValorOrder = 2;
-                } else if (Ordenar == "Menor a mayor"){
-                    ValorOrder = 1;
-                }
-                Ordenar = 1;
-            }
-
-            $.ajax({
-                url: "/Home/Filtrar",
-                type: "POST",
-                datos: {
-                "ubicacion" : Ubicacion,
-                "nivel" : Nivel,
-                "sostenimiento" : Sostenimiento,
-                "order" : Ordenar,
-                "ValorUbicacion" : ValorUbi,
-                "ValorNivel" : ValorNivel,
-                "valorSostenimiento" : ValorSotenimiento,
-                "ValorOrder" : ValorOrder
-            },
-                dataType: "Html",
-                success: function (datos) {
-                    alert("Correcto");
-                },
-                error: function () {
-                    alert("Error");
-                }
-            });
-
-
-
-
-
+            $.get("/Home/Filtrar",
+                {
+                    "PkUbicacion": Ubicacion,
+                    "PkNivel": Nivel,
+                    "PkSostenimiento": Sostenimiento
+                }, function (response) { });
         });
 
 
-    })
+    });
 </script>

@@ -1,22 +1,37 @@
 ﻿@{
     ViewData["Title"] = "Recuperar Contraseña";
+    Layout = "_LoginLayout";
 }
 
-<link rel="stylesheet" href="~/css/olvcon.css">
+
 <script src="~/js/cargar.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <!-- BOOTSTRAP JAVASCRIPT -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="~/css/olvcon.css">
 
 <section class="form-Login">
     <h5>Recuperar contraseña</h5>
+    <div id="Wrong">
+
+    </div>
     <div class="acomod">
         <div class="controls">
-            <i class="fa-solid fa-envelope"></i><input id="email" class="inputg" type="email" name="email" value="" placeholder="Email">
+            <i class="fa-solid fa-envelope"></i><input id="email" class="inputg" type="email" value="" placeholder="Email">
         </div>
-       
     </div>
+    <div class="acomod">
+        <div class="controls">
+            <i class="fa-solid fa-lock"></i><input id="ncontra" class="inputg" type="password" name="email" placeholder="Nueva contraseña">
+        </div>
+    </div>
+    <div class="acomod">
+        <div class="controls">
+            <i class="fa-solid fa-lock"></i><input id="reptcontra" class="inputg" type="password" name="email" placeholder="Repetir nueva contraseña">
+        </div>
+    </div>
+
+
 
 
     <button id="btnAceptar" class="buttons" type="submit" name="" value="Aceptar">Aceptar</button>
@@ -24,4 +39,73 @@
 
 </section>
 
-<script src="Js/InicioSesionP.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $("#btnAceptar").click(function(){
+
+            var correo = $("#email").val();
+            var password = $("#ncontra").val();
+            var confirm = $("#reptcontra").val();
+            if (correo == null && password == null && confirm == null) {
+                alert("Llene todos lo campos");
+            }
+            else {
+
+                if (password != confirm) {
+                    $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Las contraseñas deben coincidir</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
+
+                }
+                else {
+
+                     $.ajax({
+                    url: "/User/OlvideContra",
+                    type: "POST",
+                    data: {
+                        "correo": correo,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response)
+                        if (response.success == true) {
+
+                             $.ajax({
+                    url: "/User/updatecontra",
+                    type: "POST",
+                    data: {
+                        "correo": correo,
+                        "contraseña": password,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response)
+                        if (response.success == true) {
+
+                            window.location.href = "@Url.Action("Login", "User")";
+                        }
+                        else
+                            $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Error inesperado intentelo de nuevo mas tarde</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
+                    },
+                    error: function () {
+                        console.log('Login Fail    !!!!');
+                    }
+                });
+                        }
+                        else
+                            $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>El correo no existe</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
+                    },
+                    error: function () {
+                        console.log('Login Fail    !!!!');
+                    }
+                });
+
+
+                }
+
+
+
+
+            }
+        });
+    });
+</script>

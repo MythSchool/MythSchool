@@ -12,7 +12,8 @@ using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using Dapper;
-
+using PFmyschool.Models.Reporte;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PFmyschool.Controllers
 {
@@ -29,7 +30,7 @@ namespace PFmyschool.Controllers
             _context = context;
         }
 
-
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2NBP7F1; initial catalog=MythSchoolDB; Integrated Security= True");
         public IActionResult Index()
         {
             return View();
@@ -40,13 +41,31 @@ namespace PFmyschool.Controllers
         [HttpGet]
         public async Task<IActionResult> Menu()
         {
+
+
+            ViewBag.EscuelasUbi = _context.Ubicacion.Select(p => new SelectListItem()
+            {
+                Text = p.NombreUbi,
+                Value = p.PkUbicacion.ToString()
+            });
+
+            ViewBag.EscuelasNivel = _context.Nivel.Select(p => new SelectListItem()
+            {
+                Text = p.NomNivel,
+                Value = p.PkNivel.ToString()
+            });
+
+            ViewBag.EscuelasSos = _context.Sostenimiento.Select(p => new SelectListItem()
+            {
+                Text = p.NomSostenimiento,
+                Value = p.PkSostenimiento.ToString()
+            });
+
+
+
             var schools = await _context.Escuelas.Include(z => z.Ubicacion).Include(z => z.Sostenimiento).Include(z => z.Nivel).Include(z => z.Ubicacion.Localidad).ToListAsync();
             return View(schools);
         }
-
-
-
-
 
         [HttpGet]
 
@@ -87,45 +106,40 @@ namespace PFmyschool.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
       
-        [HttpPost]
-        public IActionResult Filtrar(int ubicacion, int nivel, int sostenimiento, int order, string ValorUbicacion, string ValorNivel, string ValorSostnimiento, int ValorOrder)
+
+        [HttpGet]
+        public async Task<IActionResult> Filtrar(int PkUbicacion, int PkNivel, int PkSostenimiento)
         {
             try
             {
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
-               "Data Source=DESKTOP-2NBP7F1;" +
-                 "Initial Catalog=MythSchoolDB;" +
-                 "Integrated Security=True;";
-                conn.Open();
-                var p = new DynamicParameters();
-                p.Add("@valorUbicacion", ValorUbicacion);
-                p.Add("@valorNivel", ValorNivel);
-                p.Add("@valorSostenimiento", ValorSostnimiento);
-                p.Add("@valorOrder", ValorOrder);
-                p.Add("@Ubicacion", ubicacion);
-                p.Add("@Nivel", nivel);
-                p.Add("@Sostenimiento", sostenimiento);
-                p.Add("@Order", order);
-
-
-
-                var escuela = conn.Execute("StpFiltrado", p, commandType: CommandType.StoredProcedure);
-
-                conn.Close();
-                return View(escuela);
-
+                var response = await connection.QueryAsync<ReporteEscuela>("pruebafil", new { PkUbicacion, PkNivel, PkSostenimiento}, commandType: CommandType.StoredProcedure);
+                return View(response);
             }
             catch (Exception ex)
             {
-
-                throw new Exception("Surgio un error" + ex.Message);
+                return NotFound();
 
             }
         }
 
 
-        
-       
+
+        [HttpGet]
+        public async Task<IActionResult> Buscar(string parametro)
+        {
+            try
+            {
+                var response = await connection.QueryAsync<ReporteEscuela>("spBus", new {parametro}, commandType: CommandType.StoredProcedure);
+                return View(response);
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+
+            }
+        }
+
+
+
     }
 }

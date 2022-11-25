@@ -1,0 +1,100 @@
+﻿@model IEnumerable<PFmyschool.Models.Reporte.ReporteEscuela>
+@{
+    ViewData["Title"] = "Filtrado";
+}
+<html>
+<link rel="stylesheet" href="~/css/MenuStyle.css">
+<script src="~/js/cargar.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- BOOTSTRAP JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<body id="demo-textarea" class="hidden" style="background-color:#ffffff">
+
+    <div class="centradogx" id="onload">
+        <div class="lds-default">
+
+            <div></div>
+
+            <div></div>
+
+            <div></div>
+
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <br></br>
+
+
+   
+    <div class="containerGH">
+        <!--FIN DEL AREA DE FILTROS  -->
+        <!-- AREA DE LAS PAGINITAS DE ESCUELAS -->
+
+
+        <div class="containerMen">
+            <div id="contant" class="row row-cols-1 row-cols-md-3 g-4">
+
+                @if (Model.Count() > 0)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div id="elemento" class="col">
+                            <a asp-action="Informacion" asp-route-id="@item.PkEscuela" class="link">
+                                <div class="resul">
+                                    <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
+                                    <div class="cardboy">
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> @Html.DisplayFor(x => item.NomEscuela)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"> @Html.DisplayFor(x => item.NombreUbi) / @Html.DisplayFor(x => item.NomLocalidad)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">  @Html.DisplayFor(x => item.NomNivel)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">  @Html.DisplayFor(x => item.NomSostenimiento)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-star"></i>Puntuacion media: </h1><p class="texto">  @Html.DisplayFor(x => item.PuntEscuela) / 5</p></li>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    }
+                }
+                else
+                {
+                    <p>No hay registros</p>
+                }
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <!-- FIN DE AREA DE LAS PAGINITAS DE ESCUELAS -->
+        <!-- EL PAGINATION -->
+
+        <div class="pagination justify-content-center">
+            <div class="pagination pagination-lg">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item"><a class="page-link" href="#">...</a></li>
+                <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+
+            </div>
+        </div>
+
+
+    </body>
+
+</html>

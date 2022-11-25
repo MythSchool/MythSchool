@@ -12,6 +12,8 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace PFmyschool.Controllers
 {
@@ -30,7 +32,7 @@ namespace PFmyschool.Controllers
             _context = context;
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=LAPKINGZ; initial catalog=MythSchoolDB; Integrated Security= True");
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2NBP7F1; initial catalog=MythSchoolDB; Integrated Security= True");
         public IActionResult Index()
         {
             return View();
@@ -53,6 +55,38 @@ namespace PFmyschool.Controllers
             }
                 catch (Exception ex)
                 {
+                return Json(new { Success = false });
+            }
+        }
+
+
+        [HttpPost]
+
+        public JsonResult OlvideContra(string correo)
+        {
+            try
+            {
+                _context.Usuario.Where(x => x.CorreoUser == correo);
+                return Json(new { Success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Success = false });
+            }
+        }
+
+
+        [HttpPost]
+
+        public JsonResult updatecontra(string correo,string contraseña)
+        {
+            try
+            {
+                connection.QueryAsync<Usuario>("Sp_RecuperarContraseña", new { correo,contraseña }, commandType: CommandType.StoredProcedure);
+                return Json(new { Success = true });
+            }
+            catch (Exception ex)
+            {
                 return Json(new { Success = false });
             }
         }
@@ -145,22 +179,46 @@ namespace PFmyschool.Controllers
 
             }
         }
-        [HttpGet]
-        public async Task<IActionResult> Bienvenido()
-        {
-            try
-            {
-                
-                var response = await connection.QueryAsync<Usuario>("spGetUsuario", new { }, commandType: CommandType.StoredProcedure);
+<<<<<<< HEAD
 
-                return View(response);
 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Surgio un error " + ex.Message);
-            }
-        }
+=======
+>>>>>>> parent of 89bda36 (Dash)
 
+
+        //Zona de Encriptado
+        //public string Encrip (string mensj)
+        //{
+        //    string hasd = "codigo de c";
+        //    byte[] data = UTF8Encoding.UTF8.GetBytes(mensj);
+
+        //    MD5 md5 = MD5.Create();
+        //    TripleDES tripledes = TripleDES.Create();
+
+        //    tripledes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hasd));
+        //    tripledes.Mode = CipherMode.ECB;
+
+        //    ICryptoTransform transform = tripledes.CreateEncryptor();
+        //    byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+
+        //    return Convert.ToBase64String(result);
+        //}
+        
+        //public string DesEncip (string mensaj)
+        //{
+        //    string hash = "codigo de 2c";
+        //    byte[] data = Convert.FromBase64String(mensaj);
+
+        //    MD5 md5 = MD5.Create();
+        //    TripleDES tripledes = TripleDES.Create();
+
+        //    tripledes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+        //    tripledes.Mode = CipherMode.ECB;
+
+        //    ICryptoTransform transform = tripledes.CreateEncryptor();
+        //    byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
+
+        //    return Convert.ToBase64String(result);
+        //}
     }
 }

@@ -68,10 +68,9 @@ margin-top: 2%;
     border-radius: 10px;
     margin-top: 15%;
 }
-body
-{
+body {
     font-family: Arial;
-    background-color: #506584;
+    background-color: #263c5e;
 }
 .form-Login h5{
     margin: 0;
