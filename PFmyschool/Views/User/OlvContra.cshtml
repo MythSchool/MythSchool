@@ -47,18 +47,18 @@
             var correo = $("#email").val();
             var password = $("#ncontra").val();
             var confirm = $("#reptcontra").val();
-            if (correo == null) {
+            if ($("#email").val().length > 0) {
                 $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>LLene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
             }
             else {
 
-                if (password == null)
+                if ($("#ncontra").val().length > 0)
                 {
                     $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>LLene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
                 }
                 else
                 {
-                    if (confirm == null)
+                    if ($("#reptcontra").val().length > 0)
                     {
                         $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>LLene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
                     }
