@@ -93,16 +93,18 @@ namespace PFmyschool.Controllers
 
         [HttpPost]
         public JsonResult LoginUser(string user, string password)
-        {  
+        {
+
+            string contraseña = DesEncip(password);
 
             try
             {
-                var response = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == password).ToList();
+                var response = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == contraseña).ToList();
                 
                 if (response.Count > 0)
                 {
 
-                    var usuario = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == password && x.FkRol == 2).ToList();
+                    var usuario = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == contraseña && x.FkRol == 2).ToList();
                     if(usuario.Count > 0)
                     {
                         return Json(new { Success = 1 });
