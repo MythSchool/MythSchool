@@ -30,7 +30,7 @@ namespace PFmyschool.Controllers
             _context = context;
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2NBP7F1; initial catalog=MythSchoolDB; Integrated Security= True");
+        SqlConnection connection = new SqlConnection("Data Source=LAPKINGZ; initial catalog=MythSchoolDB; Integrated Security= True");
         public IActionResult Index()
         {
             return View();
@@ -143,6 +143,22 @@ namespace PFmyschool.Controllers
 
                 throw new Exception("Surgio un error" + ex.Message);
 
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> Bienvenido()
+        {
+            try
+            {
+                
+                var response = await connection.QueryAsync<Usuario>("spGetUsuario", new { }, commandType: CommandType.StoredProcedure);
+
+                return View(response);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
             }
         }
 
