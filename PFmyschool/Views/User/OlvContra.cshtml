@@ -47,75 +47,82 @@
             var correo = $("#email").val();
             var password = $("#ncontra").val();
             var confirm = $("#reptcontra").val();
-            if ($("#email").val().length > 0) {
+
+            if (correo == null && password == null && confirm == null) {
                 $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>LLene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
-            }
-            else {
-
-                if ($("#ncontra").val().length > 0)
-                {
+            } else {
+                if ($("#email").val().length <= 0) {
                     $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>LLene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
-                }
-                else
-                {
-                    if ($("#reptcontra").val().length > 0)
-                    {
-                        $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>LLene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
-                    }
-                    else
-                    {
-                         if (password != confirm) {
-                    $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Las contraseñas deben coincidir</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
-
                 }
                 else {
 
-                     $.ajax({
-                    url: "/User/OlvideContra",
-                    type: "POST",
-                    data: {
-                        "correo": correo,
-                    },
-                    dataType: "json",
-                    success: function (response) {
-                        console.log(response)
-                        if (response.success == true) {
-
-                             $.ajax({
-                    url: "/User/updatecontra",
-                    type: "POST",
-                    data: {
-                        "correo": correo,
-                        "contraseñaDes": password,
-                    },
-                    dataType: "json",
-                    success: function (response) {
-                        console.log(response)
-                        if (response.success == true) {
-
-                            window.location.href = "@Url.Action("Login", "User")";
-                        }
-                        else
-                            $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Error inesperado intentelo de nuevo mas tarde</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
-                    },
-                    error: function () {
-                        console.log('Login Fail    !!!!');
+                    if ($("#ncontra").val().length <= 0) {
+                        $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>LLene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
                     }
-                });
+                    else {
+                        if ($("#reptcontra").val().length <= 0) {
+                            $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>LLene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
                         }
-                        else
-                            $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>El correo no existe</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
-                    },
-                    error: function () {
-                        console.log('Login Fail    !!!!');
-                    }
-                });
+                        else {
+                            if (password != confirm) {
+                                $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Las contraseñas deben coincidir</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
+                            }
+                              else {
+
+                                 $.ajax({
+                                    url: "/User/OlvideContra",
+                                    type: "POST",
+                                      data: {
+                                         "correo": correo,
+                                      },
+                                    dataType: "json",
+                                     success: function (response) {
+                                       console.log(response)
+                                          if (response.success == true) {
+
+                                             $.ajax({
+                                                url: "/User/updatecontra",
+                                                 type: "POST",
+                                                  data: {
+                                                      "correo": correo,
+                                                       "contraseñaDes": password,
+                                                  },
+                                                  dataType: "json",
+                                                    success: function (response) {
+                                                         console.log(response)
+                                                          if (response.success == true) {
+
+                                                               window.location.href = "@Url.Action("Login", "User")";
+                                                          }
+                                                         else
+                                                             $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Error inesperado intentelo de nuevo mas tarde</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
+                                                         },
+                                                        error: function () {
+                                                           console.log('Login Fail    !!!!');
+                                                         }
+                                             });
+                                          }
+                                                      else
+                                                      $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>El correo no existe</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
+                                     },
+                                                               error: function () {
+                                                            console.log('Login Fail    !!!!');
+                                                               }
+                                 });
 
 
-                }
+                            }
+                        }
+
                     }
                 }
             }
+
+
         });
     });
 </script>
+
+
+
+
