@@ -8,6 +8,12 @@ namespace PFmyschool.Models.Reporte
        
         public int PkEscuela { get; set; }
 
+        public int FkUbicacion { get; set; }
+
+        public int FkNivel { get; set; }
+
+        public int FkSostenimiento { get; set; }
+
         public string NomEscuela { get; set; }
         public string ImagEscuela { get; set; }
 

@@ -302,4 +302,10 @@ label #sidebar_btn {
     .active {
         display: block;
     }
+
+
+    .tlbcontentinod{
+        margin-left:10%;
+        margin-right:10%;
+    }
 }

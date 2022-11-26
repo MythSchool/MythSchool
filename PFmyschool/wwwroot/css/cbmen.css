@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+
+.cbbusop{
+    margin: auto;
+     text-align: center;
+     padding: 2%;
+     background-color:#F0F1F3;
+     margin-top: 3%;
+     padding-bottom: 15%;
+     opacity: 0.8;
+   }
+
+.form-select{
+    background: url(http://sharpik.com/wip/cuteselect/arrow.png) 295px 12px no-repeat white;
+border-radius: 10px;
+color: #002d3f;
+border-style: solid;
+border-color: #002d3f;
+border-width: 2px ;
+padding: 3%;
+cursor: pointer;
+font-weight: bold;
+font-style: NeueHaasUnicaPro-Medium,sans-serif;
+box-shadow: 6px 6px 0 #002d3f;
+}
+
+.form-select:hover{
+    background-color:transparent;
+    color: #002d3f;
+    border-style: solid;
+    border-color: #002d3f;
+    padding: 3%;
+    transition: 0.5s;
+    
+    }
+
+
+    .form-label{
+        color: #002d3f;
+        font-weight: bold;  
+        font-size: 18px; 
+    }
+
+
+    .optionssc{
+        background-color: #f3f3f3;
+border-radius: 10px;
+color: #002d3f;
+border-style: solid;
+border-color: rgb(160, 160, 160);
+padding: 3%;
+cursor: pointer;
+font-weight: bold;
+font-style: NeueHaasUnicaPro-Medium,sans-serif;
+    }

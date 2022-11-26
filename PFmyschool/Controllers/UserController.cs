@@ -14,6 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
 using System.Security.Cryptography;
+using PFmyschool.Models.Reporte;
 
 namespace PFmyschool.Controllers
 {
@@ -198,7 +199,7 @@ namespace PFmyschool.Controllers
             try
             {
 
-                var response = await connection.QueryAsync<Usuario>("SpGetUsuario", new { }, commandType: CommandType.StoredProcedure);
+                var response = await connection.QueryAsync<ReporteUsuarios>("SpGetUsuario", new { }, commandType: CommandType.StoredProcedure);
 
                 return View(response);
 

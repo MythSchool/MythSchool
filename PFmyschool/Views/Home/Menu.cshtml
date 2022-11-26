@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PFmyschool.Models.Escuelas>
+﻿@model IEnumerable<PFmyschool.Models.Reporte.ReporteEscuela>
 @{
     ViewData["Title"] = "Menu";
 }
@@ -37,43 +37,6 @@
 
 
     <div class="containerGH">
-        @{int i = 0;
-            foreach (var item in Model)
-            {
-                if (i < 1)
-                {
-                    <section class="divfiltrado">
-                        <div id="filt" class="btn-group">
-                            <div class="dropdown">
-                                <select asp-items="ViewBag.EscuelasUbi" id="Sl_Ubi" class="btn btn-secondary dropdown-toggle" data-placeholder="Municipio">
-                                    <option value="">--Selecciona--</option>
-                                </select>
-
-                            </div>
-                            <div class="dropdown">
-
-                                <select asp-items="ViewBag.EscuelasNivel" id="Sl_Nivel" class="btn btn-secondary dropdown-toggle" data-placeholder="Nivel Educativo">
-                                    <option value="">--Selecciona--</option>
-                                </select>
-
-                            </div>
-
-                            <div class="dropdown">
-                                <select asp-items="ViewBag.EscuelasSos" id="Sl_Sostenimiento" class="btn btn-secondary dropdown-toggle" data-placeholder="Sostenimiento">
-                                    <option value="">--Selecciona--</option>
-                                </select>
-
-                            </div>
-                            <!-- BOTON DE Filtrar (temporal...)-->
-                            <button id="btnFiltro" class="filtar-btn"><i class="fa-solid fa-filter"></i>   Filtrar</button>
-                        </div>
-                    </section>
-                }
-                i++;
-
-            }
-
-        }
         <!--FIN DEL AREA DE FILTROS  -->
         <!-- AREA DE LAS PAGINITAS DE ESCUELAS -->
 
@@ -91,9 +54,9 @@
                                     <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
                                     <div class="cardboy">
                                         <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> @Html.DisplayFor(x => item.NomEscuela)</p></li>
-                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"> @Html.DisplayFor(x => item.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Ubicacion.Localidad.NomLocalidad)</p></li>
-                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">  @Html.DisplayFor(x => item.Nivel.NomNivel)</p></li>
-                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">  @Html.DisplayFor(x => item.Sostenimiento.NomSostenimiento)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"> @Html.DisplayFor(x => item.NombreUbi) / @Html.DisplayFor(x => item.NomLocalidad)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">  @Html.DisplayFor(x => item.NomNivel)</p></li>
+                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">  @Html.DisplayFor(x => item.NomSostenimiento)</p></li>
                                         <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-star"></i>Puntuacion media: </h1><p class="texto">  @Html.DisplayFor(x => item.PuntEscuela) / 5</p></li>
                                     </div>
                                 </div>
