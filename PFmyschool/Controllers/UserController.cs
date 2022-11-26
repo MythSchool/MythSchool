@@ -38,7 +38,7 @@ namespace PFmyschool.Controllers
             return View();
         }
 
-        
+
 
 
         [HttpPost]
@@ -59,13 +59,13 @@ namespace PFmyschool.Controllers
 
         [HttpPost]
 
-        public JsonResult updatecontra(string correo,string contraseñaDes)
+        public JsonResult updatecontra(string correo, string contraseñaDes)
         {
             string contraseña = Encrip(contraseñaDes);
 
             try
             {
-                connection.QueryAsync<Usuario>("Sp_RecuperarContraseña", new { correo,contraseña }, commandType: CommandType.StoredProcedure);
+                connection.QueryAsync<Usuario>("Sp_RecuperarContraseña", new { correo, contraseña }, commandType: CommandType.StoredProcedure);
                 return Json(new { Success = true });
             }
             catch (Exception ex)
@@ -100,17 +100,17 @@ namespace PFmyschool.Controllers
             try
             {
                 var response = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == contraseña).ToList();
-                
+
                 if (response.Count > 0)
                 {
 
                     var usuario = _context.Usuario.Where(x => x.NicknameU == user && x.Contraseña == contraseña && x.FkRol == 2).ToList();
-                    if(usuario.Count > 0)
+                    if (usuario.Count > 0)
                     {
                         return Json(new { Success = 1 });
                     }
                     return Json(new { Success = 2 });
-                    
+
 
 
                 }
@@ -190,6 +190,57 @@ namespace PFmyschool.Controllers
                 return Json(new { Success = false });
             }
         }
+
+        //Zona de Admin
+        [HttpGet]
+        public async Task<IActionResult> Bienvenido()
+        {
+            try
+            {
+
+                var response = await connection.QueryAsync<Usuario>("SpGetUsuario", new { }, commandType: CommandType.StoredProcedure);
+
+                return View(response);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> AdminEsc()
+        {
+            try
+            {
+
+                var response = await connection.QueryAsync<Usuario>("SpGetEscuelas", new { }, commandType: CommandType.StoredProcedure);
+
+                return View(response);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> AdminRol()
+        {
+            try
+            {
+
+                var response = await connection.QueryAsync<Usuario>("SpGetRol", new { }, commandType: CommandType.StoredProcedure);
+
+                return View(response);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
+            }
+        }
+
 
 
         //Zona de Encriptado
