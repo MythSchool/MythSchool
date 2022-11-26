@@ -32,7 +32,7 @@ namespace PFmyschool.Controllers
             _context = context;
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2NBP7F1; initial catalog=MythSchoolDB; Integrated Security= True");
+        SqlConnection connection = new SqlConnection("Data Source=LAPKINGZ; initial catalog=MythSchoolDB; Integrated Security= True");
         public IActionResult Index()
         {
             return View();
@@ -190,6 +190,57 @@ namespace PFmyschool.Controllers
                 return Json(new { Success = false });
             }
         }
+
+        //Zona de Admin
+        [HttpGet]
+        public async Task<IActionResult> Bienvenido()
+        {
+            try
+            {
+
+                var response = await connection.QueryAsync<Usuario>("SpGetUsuario", new { }, commandType: CommandType.StoredProcedure);
+
+                return View(response);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
+            }
+        }
+        [HttpGet]
+        public async Task <IActionResult> AdminEsc()
+        {
+            try
+            {
+
+                var response = await connection.QueryAsync<Usuario>("SpGetEscuelas", new { }, commandType: CommandType.StoredProcedure);
+
+                return View(response);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
+            }
+        }
+        [HttpGet]
+        public async Task <IActionResult> AdminRol()
+        {
+            try
+            {
+
+                var response = await connection.QueryAsync<Usuario>("SpGetRol", new { }, commandType: CommandType.StoredProcedure);
+
+                return View(response);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
+            }
+        }
+
 
 
         //Zona de Encriptado
