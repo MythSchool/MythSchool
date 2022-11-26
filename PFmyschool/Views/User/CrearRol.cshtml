@@ -1,0 +1,52 @@
+﻿@model PFmyschool.Models.Rol
+
+@{
+    ViewData["Title"] = "Roles Page";
+    Layout = "_LayoutDashboard";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="~/css/sitedashboard.css">
+
+<br></br>
+<br></br>
+<br></br>
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Nuevo Rol</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+
+                <form asp-action="CrearRolES" method="post">
+                    <div class="form-group">
+                        <label asp-for="Nombre">Nombre</label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Ingresar el nombre del nuevo Rol" required />
+
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-check"></i>Crear </button></div>
+                        <div class="col-6"><a class="btn btn-outline-dark" asp-controller="User" asp-action="AdminRol"><i class="fa-duotone fa-turn-down-left"></i>Volver </a></div>
+                    </div>
+                    
+
+                </form>
+                <br />
+                
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+

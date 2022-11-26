@@ -235,7 +235,7 @@ namespace PFmyschool.Controllers
             try
             {
 
-                var response = await connection.QueryAsync<ReporteUsuarios>("SpGetRol", new { }, commandType: CommandType.StoredProcedure);
+                var response = await connection.QueryAsync<Rol>("SpGetRol", new { }, commandType: CommandType.StoredProcedure);
 
                 return View(response);
 
@@ -245,6 +245,10 @@ namespace PFmyschool.Controllers
                 throw new Exception("Surgio un error " + ex.Message);
             }
         }
+
+
+
+
 
 
 
@@ -282,5 +286,28 @@ namespace PFmyschool.Controllers
 
             return UTF8Encoding.UTF8.GetString(result);
         }
+
+        [HttpGet]
+        public IActionResult CrearRol()
+        {
+            return View();
+        }
+
+
+        public async Task<IActionResult> CrearRolES(Rol request)
+        {
+            if (request != null)
+            {
+                Rol rol = new Rol();
+                rol.Nombre = request.Nombre;
+
+                _context.Rol.Add(request);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(AdminRol));
+            }
+            return View();
+        }
+
     }
 }
