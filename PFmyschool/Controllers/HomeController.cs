@@ -128,12 +128,12 @@ namespace PFmyschool.Controllers
 
 
 
-        [HttpGet]
-        public async Task<IActionResult> Buscar(string parametro)
+        [HttpPost]
+        public async Task<IActionResult> Buscar(OfertasEdu e)
         {
             try
             {
-                var response = await connection.QueryAsync<ReporteEscuela>("spBus", new {parametro}, commandType: CommandType.StoredProcedure);
+                var response = await connection.QueryAsync<OfertasEdu>("pruebafil", new { e.Escuelas.FkUbicacion, e.Escuelas.FkNivel, e.Escuelas.FkSostenimiento }, commandType: CommandType.StoredProcedure);
                 return View(response);
             }
             catch (Exception ex)
