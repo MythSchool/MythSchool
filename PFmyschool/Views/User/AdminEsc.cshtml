@@ -37,14 +37,9 @@
                             <thead>
                                 <tr>
                                     @* <th> Id</th>*@
+                                    <th> @Html.DisplayNameFor(x => x.ImagEscuela)</th>
                                     <th> @Html.DisplayNameFor(x => x.NomEscuela)</th>
-                                    <th> @Html.DisplayNameFor(x => x.ImagEscuela )</th>
-                                    <th> @Html.DisplayNameFor(x => x.DescEscuela )</th>
-                                    <th> @Html.DisplayNameFor(x => x.PuntEscuela)</th>
-                                    <th> @Html.DisplayNameFor(x => x.LinkEscuela)</th>
-                                    <th> @Html.DisplayNameFor(x => x.FkUbicacion )</th>
-                                    <th> @Html.DisplayNameFor(x => x.FkSostenimiento)</th>
-                                    <th> @Html.DisplayNameFor(x => x.FkNivel)</th>
+
 
                                     <th> Acciones</th>
                                 </tr>
@@ -57,27 +52,21 @@
                                 {
 
 
-                                    <tr>
+                                <tr>
 
-                                        @*<td>(@i++)</td>*@
+                                    @*<td>(@i++)</td>*@
 
-
-                                        <td> @Html.DisplayFor(x => Item.NomEscuela )</td>
-                                        <td> <img width="25" src="@Html.DisplayFor(x => Item.ImagEscuela)"> </td>
-                                        <td> @Html.DisplayFor(x => Item.DescEscuela)</td>
-                                        <th> @Html.DisplayNameFor(x => x.PuntEscuela )</th>
-                                        <th> @Html.DisplayNameFor(x => x.LinkEscuela )</th>
-                                        <th> @Html.DisplayFor(x => Item.Ubicacion.NombreUbi) / @Html.DisplayFor(x => Item.Ubicacion.Localidad.NomLocalidad)</th>
-                                        <td> @Html.DisplayFor(x => Item.Sostenimiento.NomSostenimiento)</td>
-                                        <td> @Html.DisplayFor(x => Item.Nivel.NomNivel)</td>
+                                    <td> <img height="120px" width="230px" src="@Html.DisplayFor(x => Item.ImagEscuela)"> </td>
+                                    <td> @Html.DisplayFor(x => Item.NomEscuela)</td>
 
 
-                                        <td>
-                                            <a class=" btn btn-warning" asp-route-id=@Item.PkEscuela><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                                            <a class=" btn btn-danger" asp-route-id=@Item.PkEscuela id="Obtener"><i class="fa-solid fa-trash"></i> Eliminar</a>
-                                        </td>
 
-                                    </tr>
+                                    <td>
+                                        <a class=" btn btn-warning" asp-route-id=@Item.PkEscuela><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                                        <a class=" btn btn-danger" asp-route-id=@Item.PkEscuela id="Obtener"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                                    </td>
+
+                                </tr>
 
 
                                 }

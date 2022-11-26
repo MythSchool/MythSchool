@@ -48,8 +48,12 @@ namespace PFmyschool.Controllers
         {
             try
             {
-                _context.Usuario.Where(x => x.CorreoUser == correo);
-                return Json(new { Success = true });
+                var usuario = _context.Usuario.Where(x => x.CorreoUser == correo).ToList();
+                if(usuario.Count > 0)
+                {
+                    return Json(new { Success = true });
+                }
+                return Json(new { Success = false });
             }
             catch (Exception ex)
             {
@@ -215,7 +219,7 @@ namespace PFmyschool.Controllers
             try
             {
 
-                var response = await connection.QueryAsync<Usuario>("SpGetEscuelas", new { }, commandType: CommandType.StoredProcedure);
+                var response = await connection.QueryAsync<Escuelas>("SpGetEscuelas", new { }, commandType: CommandType.StoredProcedure);
 
                 return View(response);
 
@@ -231,7 +235,7 @@ namespace PFmyschool.Controllers
             try
             {
 
-                var response = await connection.QueryAsync<Usuario>("SpGetRol", new { }, commandType: CommandType.StoredProcedure);
+                var response = await connection.QueryAsync<ReporteUsuarios>("SpGetRol", new { }, commandType: CommandType.StoredProcedure);
 
                 return View(response);
 

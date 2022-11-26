@@ -10,15 +10,17 @@
 }
 
 
-.cbbusop{
+.cbbusop {
     margin: auto;
-     text-align: center;
-     padding: 2%;
-     background-color:#F0F1F3;
-     margin-top: 3%;
-     padding-bottom: 15%;
-     opacity: 0.8;
-   }
+    text-align: center;
+    padding: 2%;
+    background-color: transparent;
+    margin-top: 3%;
+    padding-bottom: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
+    opacity: 0.8;
+}
 
 .form-select{
     background: url(http://sharpik.com/wip/cuteselect/arrow.png) 295px 12px no-repeat white;

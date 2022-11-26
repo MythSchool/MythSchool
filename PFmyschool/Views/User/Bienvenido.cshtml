@@ -36,14 +36,12 @@
                             <thead>
                                 <tr>
                                     @* <th> Id</th>*@
-                                    <th> @Html.DisplayNameFor(x => x.PkUsuario)</th>
-                                    <th> @Html.DisplayNameFor(x => x.NombreUser)</th>
-                                    <th> @Html.DisplayNameFor(x => x.ApellidoUser)</th>
-                                    <th> @Html.DisplayNameFor(x => x.CorreoUser)</th>
-                                    <th> @Html.DisplayNameFor(x => x.FotoperfUser)</th>
-                                    <th> @Html.DisplayNameFor(x => x.NicknameU)</th>
+                                    <th>Foto de perfil</th>
+                                    <th>Correo</th>
+
+                                    <th>Usuario</th>
                                     <th> @Html.DisplayNameFor(x => x.Contraseña)</th>
-                                    <th> @Html.DisplayNameFor(x => x.Nombre)</th>
+                                    <th>Rol</th>
 
                                     <th> Acciones</th>
                                 </tr>
@@ -59,12 +57,8 @@
                                 <tr>
 
                                     @*<td>(@i++)</td>*@
-
-                                    <td> @Html.DisplayFor(x => Item.PkUsuario)</td>
-                                    <td> @Html.DisplayFor(x => Item.NombreUser)</td>
-                                    <td> @Html.DisplayFor(x => Item.ApellidoUser)</td>
+                                    <td> <img height="90px" src="@Html.DisplayFor(x => Item.FotoperfUser)"> </td>
                                     <th> @Html.DisplayFor(x => Item.CorreoUser)</th>
-                                    <td> <img height="60px" src="@Html.DisplayFor(x => Item.FotoperfUser)"> </td>
                                     <th> @Html.DisplayFor(x => Item.NicknameU)</th>
                                     <th> @Html.DisplayFor(x => Item.Contraseña)</th>
                                     <td> @Html.DisplayFor(x => Item.Nombre)</td>
@@ -137,15 +131,6 @@
             }
 
             var table = $('#tblUsuario').DataTable();
-
-
-
-            $('#tblUsuario').on('click', 'tr', function () {
-                var id = table.row(this).id();
-
-                alert('Clicked row id ' + id);
-            });
-
         });
 
 

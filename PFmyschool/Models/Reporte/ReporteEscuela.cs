@@ -25,8 +25,5 @@ namespace PFmyschool.Models.Reporte
 
         public string NomSostenimiento { get; set; }
         public int PuntEscuela { get; set; }
-
-
-        public string NomOferta { get; set; }
     }
 }

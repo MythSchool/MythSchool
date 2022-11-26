@@ -105,13 +105,32 @@
 
             var user = $("#user").val();
             var password = $("#password").val();
-            if (user == null && password == null) {
-                alert("Llene todos lo campos");
+
+
+
+            if (user == null && password == null)
+            {
+                $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Llene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
             }
-            else {
+            else
+            {
+                if ($("#user").val().length <= 0)
+                {
+                    $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Llene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
 
 
-                $.ajax({
+                }
+                else
+                {
+                    if ($("#password").val().length <= 0) {
+
+                        $("#Wrong").html("<div class='alert alert-warning alert-dismissible fade show' role='alert'><strong>Llene todos los campos</strong><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
+
+                    }
+                    else
+                    {
+
+                         $.ajax({
                     url: "/User/LoginUser",
                     type: "POST",
                     data: {
@@ -136,6 +155,15 @@
                         console.log('Login Fail    !!!!');
                     }
                 });
+
+
+                    }
+
+
+                }
+
+
+
             }
         });
     });

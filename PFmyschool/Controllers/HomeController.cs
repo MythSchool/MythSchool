@@ -78,6 +78,15 @@ namespace PFmyschool.Controllers
             return View();
         }
 
+
+        [HttpGet]
+
+        public IActionResult Contactanos()
+        {
+            return View();
+        }
+
+
         [HttpGet]
 
         public IActionResult Informacion(int? id)
