@@ -12,13 +12,15 @@
 <br />
 
 <div class="row">
-    <div class="offset-10 col-3 mb-3">
-        <a asp-action="RegistrarEsc" asp-controller="User" class="btn-success mx-auto btn-lg"><i class="fa-solid fa-school"></i>   Registrar escuela</a>
-    </div>
+        <div class="col-6"> <a asp-action="RegistrarEsc" asp-controller="User" class="btn-success mx-auto btn-lg"><i class="fa-solid fa-school"></i>   Registrar escuela</a></div>
+           
+        <div class="col-6">
+            <a asp-action="RegistrarOfer" asp-controller="User" class="btn-success mx-auto btn-lg"><i class="fa-sharp fa-solid fa-graduation-cap"></i>   Añadir Oferta educativa</a>
+        </div>
 </div>
 
 
-
+<br />
 <div class="container-fluid">
     <div class="offset-12">
         <div class="card border">
@@ -62,8 +64,8 @@
 
 
                                     <td>
-                                        <a class=" btn btn-warning" asp-route-id=@Item.PkEscuela><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                                        <a class=" btn btn-danger" asp-action="EliminarEscuela" asp-route-id=@Item.PkEscuela id="Obtener"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                                        <a class=" btn btn-warning" style="color:white" asp-route-id=@Item.PkEscuela><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a class=" btn btn-danger" asp-action="EliminarEscuela" asp-route-id=@Item.PkEscuela id="Obtener"><i class="fa-solid fa-trash"></i></a>
                                     </td>
 
                                 </tr>

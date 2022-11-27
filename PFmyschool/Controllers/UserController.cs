@@ -428,18 +428,26 @@ namespace PFmyschool.Controllers
 
         public async Task<IActionResult> RegistrarEscuela(Escuelas request)
         {
-            try
+            if (request.FkUbicacion <= 0 || request.FkNivel <= 0 || request.FkUbicacion <= 0)
             {
-
-                var response = await connection.QueryAsync<Escuelas>("StpInsertar_Escuela", new {request.NomEscuela,request.ImagEscuela,request.DescEscuela,request.PuntEscuela,request.LinkEscuela,request.FkUbicacion,request.FkNivel,request.FkSostenimiento}, commandType: CommandType.StoredProcedure);
-
-                return RedirectToAction(nameof(AdminEsc));
-
+                return RedirectToAction(nameof(RegistrarEsc));
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception("Surgio un error " + ex.Message);
+                try
+                {
+
+                    var response = await connection.QueryAsync<Escuelas>("StpInsertar_Escuela", new { request.NomEscuela, request.ImagEscuela, request.DescEscuela, request.PuntEscuela, request.LinkEscuela, request.FkUbicacion, request.FkNivel, request.FkSostenimiento }, commandType: CommandType.StoredProcedure);
+
+                    return RedirectToAction(nameof(AdminEsc));
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Surgio un error " + ex.Message);
+                }
             }
+          
         }
 
 
@@ -486,6 +494,55 @@ namespace PFmyschool.Controllers
 
             return NotFound();
 
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        public IActionResult RegistrarOfer()
+        {
+            ViewBag.Escuelas = _context.Escuelas.Select(p => new SelectListItem()
+            {
+                Text = p.NomEscuela,
+                Value = p.PkEscuela.ToString()
+            });
+
+            return View();
+        }
+
+
+        public async Task<IActionResult> RegistrarOfertaE(OfertasEdu request)
+        {
+            if(request.FkEscuela <= 0)
+            {
+                return RedirectToAction(nameof(RegistrarOfer));
+            }
+            else
+            {
+                try
+                {
+
+                    var response = await connection.QueryAsync<OfertasEdu>("Sp_InsertarOfertasEdu", new { request.NomOferta, request.DescOferta, request.FkEscuela }, commandType: CommandType.StoredProcedure);
+
+                    return RedirectToAction(nameof(AdminEsc));
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Surgio un error " + ex.Message);
+                }
+            }
+
+          
         }
 
 

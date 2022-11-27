@@ -78,13 +78,13 @@
                     if (g < 1)
                     {
                         <div class="cardboy">
-                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.NomEscuela)</p></li>
-                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Escuelas.Ubicacion.Localidad.NomLocalidad)</p></li>
-                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Nivel.NomNivel)</p></li>
-                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Sostenimiento.NomSostenimiento)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>  Nombre: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.NomEscuela)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>  Ubicación: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Escuelas.Ubicacion.Localidad.NomLocalidad)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>  Nivel: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Nivel.NomNivel)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>  Sostenimiento: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Sostenimiento.NomSostenimiento)</p></li>
                             <div class="puntuacion">
                                 <li class="cardlist">
-                                    <h1 class="cardtitulo">Puntuacion media: </h1>
+                                    <h1 class="cardtitulo">  Puntuacion media: </h1>
                                     @for (var i = 0; i < Convert.ToInt32(Html.ValueFor(x => item.Escuelas.PuntEscuela)); i++)
                                     {
                                         <img src="~/images/Informacion/silueta-de-estrella-negra.png" height="20px" width="20px">
