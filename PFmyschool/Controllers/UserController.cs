@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Text;
 using System.Security.Cryptography;
 using PFmyschool.Models.Reporte;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PFmyschool.Controllers
 {
@@ -361,13 +362,123 @@ namespace PFmyschool.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult> EliminarRol(int? id)
+        public async Task<ActionResult> EliminarUsuario(int? id)
         {
-            Rol rol = new Rol();
-            rol = _context.Rol.Find(id);
-            if (rol != null)
+            Usuario user = new Usuario();
+            user = _context.Usuario.Find(id);
+            if (user != null)
             {
-                _context.Rol.Remove(rol);
+                _context.Usuario.Remove(user);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Bienvenido));
+            }
+
+            return NotFound();
+
+        }
+
+
+
+        [HttpGet]
+        public async Task<ActionResult> EliminarEscuela(int? id)
+        {
+            Escuelas escuela = new Escuelas();
+            escuela = _context.Escuelas.Find(id);
+            if (escuela != null)
+            {
+                _context.Escuelas.Remove(escuela);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(AdminEsc));
+            }
+
+            return NotFound();
+
+        }
+
+
+
+        [HttpGet]
+        public IActionResult RegistrarEsc()
+        {
+            ViewBag.Ubicacion = _context.Ubicacion.Select(p => new SelectListItem()
+            {
+                Text = p.NombreUbi,
+                Value = p.PkUbicacion.ToString()
+            });
+
+
+            ViewBag.Nivel = _context.Nivel.Select(p => new SelectListItem()
+            {
+                Text = p.NomNivel,
+                Value = p.PkNivel.ToString()
+            });
+
+
+            ViewBag.Sostenimiento = _context.Sostenimiento.Select(p => new SelectListItem()
+            {
+                Text = p.NomSostenimiento,
+                Value = p.PkSostenimiento.ToString()
+            });
+
+            return View();
+        }
+
+
+        public async Task<IActionResult> RegistrarEscuela(Escuelas request)
+        {
+            try
+            {
+
+                var response = await connection.QueryAsync<Escuelas>("StpInsertar_Escuela", new {request.NomEscuela,request.ImagEscuela,request.DescEscuela,request.PuntEscuela,request.LinkEscuela,request.FkUbicacion,request.FkNivel,request.FkSostenimiento}, commandType: CommandType.StoredProcedure);
+
+                return RedirectToAction(nameof(AdminEsc));
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
+            }
+        }
+
+
+
+
+
+        [HttpGet]
+
+        public IActionResult EditarUser(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var rol = _context.Usuario.Find(id);
+
+            if (rol == null)
+            {
+                return NotFound();
+            }
+            return View(rol);
+
+        }
+
+
+        [HttpPost]
+
+        public async Task<ActionResult> EditarUsuario(Usuario response)
+        {
+            Usuario usuario = new Usuario();
+            usuario = _context.Usuario.Find(response.PkUsuario);
+
+            if (usuario != null)
+            {
+                usuario.NombreUser = response.NombreUser;
+                usuario.ApellidoUser = response.ApellidoUser;
+                usuario.CorreoUser = response.CorreoUser;
+
+                _context.Entry(usuario).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(AdminRol));
@@ -376,6 +487,11 @@ namespace PFmyschool.Controllers
             return NotFound();
 
         }
+
+
+
+
+
 
     }
 }

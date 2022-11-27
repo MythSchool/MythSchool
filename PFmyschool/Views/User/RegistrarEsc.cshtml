@@ -1,0 +1,102 @@
+﻿@model PFmyschool.Models.Escuelas
+
+@{
+    ViewData["Title"] = "Roles Page";
+    Layout = "_LayoutDashboard";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="~/css/sitedashboard.css">
+
+<br></br>
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Nueva escuela</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+
+                <form asp-action="RegistrarEscuela" method="post">
+                    <div class="form-group">
+                        <label asp-for="NomEscuela">Nombre de la institución</label>
+                        <input asp-for="NomEscuela" class="form-control" placeholder="Ingresar el nombre de la escuela" required />
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ImagEscuela">Imagen de la institución</label>
+                        <input asp-for="ImagEscuela" class="form-control" placeholder="Ingresar la url" required />
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="DescEscuela">Descripción</label>
+                        <input asp-for="DescEscuela" class="form-control" placeholder="Ingresar una breve introducción/descripción de la insituación" required />
+
+                    </div>
+
+
+                    <div class="row g-2">
+                        <div class="col-sm">
+                            <label asp-for="PuntEscuela">Puntuacion media</label>
+                            <input asp-for="PuntEscuela" step="1" min="1" max="5" type="number" class="form-control" placeholder="puntucacion segun valoraciones" required />
+                        </div>
+                        <div class="col-sm-7">
+                            <label asp-for="LinkEscuela">Link de la pagina oficial</label>
+                            <input asp-for="LinkEscuela" class="form-control" placeholder="Ingresa el link de la pagina oficial o una pagina de red social relacionada" required />
+                        </div>
+
+
+                    </div>
+                    <br></br>
+                    <div class="row gy-2 gx-3 align-items-center">
+                        <div class="col-auto">
+                            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            <select asp-for="FkUbicacion" asp-items="ViewBag.Ubicacion" class="form-select" id="autoSizingSelect">
+                                <option value="">--Selecciona--</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            <select asp-for="FkNivel" asp-items="ViewBag.Nivel" class="form-select" id="autoSizingSelect">
+                                <option value="">--Selecciona--</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            <select asp-for="FkSostenimiento" asp-items="ViewBag.Sostenimiento" class="form-select" id="autoSizingSelect">
+                                <option value="">--Selecciona--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
+                    <div class="row">
+                        <div class="col-6"><button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-check"></i>Crear </button></div>
+                        <div class="col-6"><a class="btn btn-outline-dark" asp-controller="User" asp-action="AdminEsc"><i class="fa-duotone fa-turn-down-left"></i>Volver </a></div>
+                    </div>
+
+
+                </form>
+                <br />
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
