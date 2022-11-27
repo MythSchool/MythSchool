@@ -309,5 +309,73 @@ namespace PFmyschool.Controllers
             return View();
         }
 
+
+
+
+
+
+
+        [HttpGet]
+
+        public IActionResult EditarRol(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var rol = _context.Rol.Find(id);
+
+            if (rol == null)
+            {
+                return NotFound();
+            }
+            return View(rol);
+
+        }
+
+
+        [HttpPost]
+
+        public async Task<ActionResult> EditarRolES(Rol response)
+        {
+            Rol rol = new Rol();
+            rol = _context.Rol.Find(response.PkRol);
+
+            if (rol != null)
+            {
+                rol.Nombre = response.Nombre;
+
+                _context.Entry(rol).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(AdminRol));
+            }
+
+            return NotFound();
+
+        }
+
+
+
+
+
+
+        [HttpGet]
+        public async Task<ActionResult> EliminarRol(int? id)
+        {
+            Rol rol = new Rol();
+            rol = _context.Rol.Find(id);
+            if (rol != null)
+            {
+                _context.Rol.Remove(rol);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(AdminRol));
+            }
+
+            return NotFound();
+
+        }
+
     }
 }

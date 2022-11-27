@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 <link rel="stylesheet" href="~/css/sitedashboard.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <br />
 
@@ -56,8 +57,26 @@
                                         <td> @Html.DisplayFor(x => Item.Nombre )</td>
 
                                         <td>
-                                            <a class=" btn btn-warning" asp-route-id=@Item.PkRol><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                                            <a class=" btn btn-danger" asp-route-id=@Item.PkRol id="Obtener"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                                            <a class=" btn btn-warning" asp-action="EditarRol" asp-route-id=@Item.PkRol><i class="fa-solid fa-file-pen"></i> Editar</a>
+
+                                            <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Eliminar</button>
+
+                                            <div id="id01" class="w3-modal">
+                                                <div class="w3-modal-content">
+                                                    <div class="w3-container">
+                                                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                                        <br />
+                                                        <br />
+                                                        <strong>¿Estas seguro que deseas eliminar este registro?</strong>
+                                                        <p>Esta accion no se puede deshacer</p>
+                                                        <br />
+                                                        <a class=" btn btn-warning" asp-action="EliminarRol" asp-route-id=@Item.PkRol><i class="fa-solid fa-pen-to-square"></i> Aceptar</a>
+                                                        <br />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                         </td>
 
                                     </tr>
@@ -157,14 +176,6 @@
             }
 
             var table = $('#tblRol').DataTable();
-
-
-
-            $('#tblRol').on('click', 'tr', function () {
-                var id = table.row(this).id();
-
-                alert('Clicked row id ' + id);
-            });
 
         });
 
