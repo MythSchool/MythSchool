@@ -106,7 +106,11 @@ nav {
     width: 100px;
 }
 
-.links {
+.links{
+    text-decoration: none;
+}
+
+.links:hover {
     text-decoration: none;
 }
 
@@ -218,6 +222,7 @@ nav .Buscar {
 
 .selecthoover:hover {
     height: 50px;
+    text-decoration:none;
 }
 
 

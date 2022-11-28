@@ -46,23 +46,23 @@
                                 {
 
 
-                                <tr>
+                                    <tr>
 
-                                    @*<td>(@i++)</td>*@
-                                    <td> <img height="90px" src="@Html.DisplayFor(x => Item.FotoperfUser)"> </td>
-                                    <th> @Html.DisplayFor(x => Item.CorreoUser)</th>
-                                    <th> @Html.DisplayFor(x => Item.NicknameU)</th>
-                                    <th> @Html.DisplayFor(x => Item.Contraseña)</th>
-                                    <td> @Html.DisplayFor(x => Item.Nombre)</td>
+                                        @*<td>(@i++)</td>*@
+                                        <td> <img height="120px" width="130px" style="transform: scale(1.1);" src="@Html.DisplayFor(x => Item.FotoperfUser)"> </td>
+                                        <th> @Html.DisplayFor(x => Item.CorreoUser)</th>
+                                        <th> @Html.DisplayFor(x => Item.NicknameU)</th>
+                                        <th> @Html.DisplayFor(x => Item.Contraseña)</th>
+                                        <td> @Html.DisplayFor(x => Item.Nombre)</td>
 
 
-                                    <td>
+                                        <td>
                                             <a asp-action="EditUser" asp-controller="User" class=" btn btn-warning" style="color:white" asp-route-id=@Item.PkUsuario><i class="fa-solid fa-pen-to-square"></i></a>
 
-                                        <a asp-action="EliminarUsuario" asp-route-id=@Item.PkUsuario class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
+                                            <a asp-action="EliminarUsuario" asp-route-id=@Item.PkUsuario class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                        </td>
 
-                                </tr>
+                                    </tr>
 
 
                                 }
@@ -70,6 +70,12 @@
                             </tbody>
 
                         </table>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
 
                     }
                     else

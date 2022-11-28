@@ -73,7 +73,19 @@ namespace PFmyschool.Controllers
         }
 
         [HttpGet]
+        public IActionResult Terminos()
+        {
+            return View();
+        }
 
+
+        [HttpGet]
+        public IActionResult Acerca()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Privacy()
         {
             return View();

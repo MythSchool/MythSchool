@@ -454,6 +454,8 @@ namespace PFmyschool.Controllers
         [HttpGet]
         public IActionResult EditUser(int? id)
         {
+         
+
             if (id == null)
             {
                 return NotFound();
@@ -464,6 +466,12 @@ namespace PFmyschool.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.Rol = _context.Rol.Select(p => new SelectListItem()
+            {
+                Text = p.Nombre,
+                Value = p.PkRol.ToString()
+            });
             return View(rol);
         }
 
@@ -473,7 +481,7 @@ namespace PFmyschool.Controllers
         {
             Usuario usuario = new Usuario();
             usuario = _context.Usuario.Find(response.PkUsuario);
-
+            string Con = Encrip(response.Contraseña);
             if (usuario != null)
             {
                 usuario.NombreUser = response.NombreUser;
@@ -481,7 +489,8 @@ namespace PFmyschool.Controllers
                 usuario.CorreoUser = response.CorreoUser;
                 usuario.FotoperfUser = response.FotoperfUser;
                 usuario.NicknameU=response.NicknameU;
-                usuario.Contraseña = response.Contraseña;
+                usuario.Contraseña = Con;
+                usuario.FkRol = response.FkRol;
 
                 _context.Entry(usuario).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
@@ -544,6 +553,24 @@ namespace PFmyschool.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Ubicacion = _context.Ubicacion.Select(p => new SelectListItem()
+            {
+                Text = p.NombreUbi,
+                Value = p.PkUbicacion.ToString()
+            });
+
+            ViewBag.Nivel = _context.Nivel.Select(p => new SelectListItem()
+            {
+                Text = p.NomNivel,
+                Value = p.PkNivel.ToString()
+            });
+
+            ViewBag.Sostenimiento = _context.Sostenimiento.Select(p => new SelectListItem()
+            {
+                Text = p.NomSostenimiento,
+                Value = p.PkSostenimiento.ToString()
+            });
+
             return View(escuela);
 
         }
@@ -560,7 +587,10 @@ namespace PFmyschool.Controllers
                     i.ImagEscuela,
                     i.DescEscuela,
                     i.PuntEscuela,
-                    i.LinkEscuela
+                    i.LinkEscuela,
+                    i.FkUbicacion,
+                    i.FkNivel,
+                    i.FkSostenimiento
                 }, commandType: CommandType.StoredProcedure);
                 return RedirectToAction(nameof(AdminEsc));
 

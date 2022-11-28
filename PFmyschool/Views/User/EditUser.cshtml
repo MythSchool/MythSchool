@@ -41,10 +41,19 @@
                         <input asp-for="Contraseña" class="form-control" placeholder="Ingresa la nueva Contraseña" required />
 
                     </div>
+
+
+                    <div class="col-sm">
+                        <label class="visually-hidden" for="autoSizingSelect">Editar privilegios</label>
+                        <select asp-for="FkRol" asp-items="ViewBag.Rol" class="form-select" id="autoSizingSelect" class="select2-placeholder-multiple form-control">
+                            <option value="">--Selecciona--</option>
+                        </select>
+
+                    </div>
                     <div class="row">
                         <div class="col-6"><button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-file-pen"></i>Editar</button></div>
-@*                        <div class="col-6"><button type="submit" class="btn btn-outline-success" ><i class="fa-solid fa-file-pen"></i> Editar </button></div>
-*@                        <div class="col-6"><a class="btn btn-outline-dark" asp-controller="User" asp-action="Bienvenido"><i class="fa-duotone fa-turn-down-left"></i>Volver </a></div>
+                        @*                        <div class="col-6"><button type="submit" class="btn btn-outline-success" ><i class="fa-solid fa-file-pen"></i> Editar </button></div>
+                        *@                        <div class="col-6"><a class="btn btn-outline-dark" asp-controller="User" asp-action="Bienvenido"><i class="fa-duotone fa-turn-down-left"></i>Volver </a></div>
                     </div>
 
 
