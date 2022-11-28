@@ -78,10 +78,10 @@
                     if (g < 1)
                     {
                         <div class="cardboy">
-                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>  Nombre: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.NomEscuela)</p></li>
-                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>  Ubicación: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Escuelas.Ubicacion.Localidad.NomLocalidad)</p></li>
-                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>  Nivel: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Nivel.NomNivel)</p></li>
-                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>  Sostenimiento: </h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Sostenimiento.NomSostenimiento)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag">  </i><p style="margin-left:8%;">  Nombre: </p></h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.NomEscuela)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot">  </i><p style="margin-left:8%;">  Ubicación: </p></h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Ubicacion.NombreUbi) / @Html.DisplayFor(x => item.Escuelas.Ubicacion.Localidad.NomLocalidad)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down">  </i><p style="margin-left:8%;">  Nivel: </p></h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Nivel.NomNivel)</p></li>
+                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar">  </i><p style="margin-left:8%;">  Sostenimiento: </p></h1><p class="texto">@Html.DisplayFor(x => item.Escuelas.Sostenimiento.NomSostenimiento)</p></li>
                             <div class="puntuacion">
                                 <li class="cardlist">
                                     <h1 class="cardtitulo">  Puntuacion media: </h1>
@@ -141,8 +141,11 @@
                 {
                     @foreach (var item in Model)
                     {
-
-                        <li><a tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="@Html.DisplayFor(x => item.NomOferta)" data-bs-content="@Html.DisplayFor(x => item.DescOferta)">@Html.DisplayFor(x => item.NomOferta)</a></li>
+            
+            <li>
+                @Html.DisplayFor(x => item.NomOferta)
+            </li>
+                       
                     }
                 }
                 i++;

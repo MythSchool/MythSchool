@@ -123,27 +123,103 @@
 /* loader-fin */
 
 .first-sc1 {
-    color: #ffffff;
+    color: #e4e4e4;
     font-size: 20px;
-    border-style: solid;
     border-radius: 10px;
     padding: 2%;
-    border-width: 2px;
-    background-color: #08b9ff;
+    background-color: #005f9e;
     animation: fadeIn 5s;
+    margin-bottom: 3%;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #005f9e;
+    box-shadow: 6px 6px 0 #002d3f;
 }
+
+
+    .first-sc1:hover {
+        transform: scale(1.05);
+        border-style: solid;
+        border-width: 1px;
+        border-color: #002d3f;
+    }
 
 .second-sc2 {
     color: #ffffff;
     font-size: 20px;
-    margin-left: 2%;
-    border-style: solid;
     border-radius: 10px;
     padding: 2%;
     border-width: 2px;
-    background-color: #ff7708;
+    background-color: #ff9100;
     animation: fadeIn 5s;
+    height: 100%;
+    margin-bottom: 3%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ff9100;
+    font-style: NeueHaasUnicaPro-Medium,sans-serif;
+    box-shadow: 6px 6px 0 #002d3f;
 }
+
+    .second-sc2:hover {
+        transform: scale(1.05);
+        border-style: solid;
+        border-width: 1px;
+        border-color: #002d3f;
+    }
+
+
+
+.first-sc3 {
+    color: #002d3f;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 2%;
+    height: 100%;
+    background-color: #ffffff;
+    animation: fadeIn 5s;
+    margin-bottom: 1%;
+    margin-top: 10%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    box-shadow: 6px 6px 0 #002d3f;
+}
+
+
+    .first-sc3:hover {
+        transform: scale(1.05);
+        border-style: solid;
+        border-width: 1px;
+        border-color: #002d3f;
+    }
+
+
+.second-sc4 {
+    height: 100%;
+    margin-top: 10%;
+    color: #ffffff;
+    margin-bottom: 1%;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 2%;
+    border-width: 2px;
+    background-color: #2eb997;
+    animation: fadeIn 5s;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #2eb997;
+    box-shadow: 6px 6px 0 #002d3f;
+}
+
+    .second-sc4:hover {
+        transform: scale(1.05);
+        border-style: solid;
+        border-width: 1px;
+        border-color: #002d3f;
+    }
 
 
 @keyframes fadeIn {
@@ -231,7 +307,6 @@
     padding-left: 10%;
     display: flex;
     opacity: 0.95;
-    margin-bottom: 5%;
 }
 
 .txtbienvenida {
@@ -307,7 +382,8 @@ nav .Main {
 
     .link:hover {
         border-radius: 90px;
-        opacity: 0.9
+        opacity: 0.9;
+        text-decoration: none;
     }
 
 
@@ -319,7 +395,6 @@ nav .Main {
     text-decoration: none;
     margin: 2%;
     max-width: 90%;
-    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
     overflow: hidden;
     border-style: solid;
     border-color: rgb(212, 212, 212);
@@ -329,11 +404,9 @@ nav .Main {
         background-color: #343A40;
         border-radius: 10px;
         transition: 0.2s;
-        margin-left: -3%;
-        margin-right: 3%;
+        transform: scale(1.1);
         text-decoration: none;
         opacity: 1;
-        box-shadow: 6px 6px 4px 6px #888;
         position: relative;
         border-style: solid;
         border-color: rgb(216, 122, 0);

@@ -16,16 +16,16 @@
         <nav class="hidden">
 
             <a asp-action="Index" asp-controller="Home" class="logopequeno"><img src="~/images/LogoCorto.png" height="45" width="50"></a><img title="xdf" src="~/images/Menu/MythSchool.png" id="logcort" class="Mythlogo"><a class="espacio2"></a>
-            <div class="buscarMain">
-                <input id="param" placeholder="Buscar por nombres, carreras, niveles, etc..." class="bar" type="search"><a class="abus"><button id="btnBuscar" type="submit" class="Buscar"><img src="~/images/Main/Lupa2.png" class="lupa" height="20" width="20"></button></a>
-            </div>
+            <form asp-action="BuscarB" class="buscarMain" method="post">
+                <input name="parametro" id="param" placeholder="Buscar por nombre, ubicacion, nivel,etc..." class="bar" type="search"><a class="abus"><button type="submit" class="Buscar"><img src="~/images/Main/Lupa2.png" class="lupa" height="20" width="20"></button></a>
+            </form>
             <a class="espacio"></a>
 
             <div class="dropdown">
                 <img src="~/images/Menu/user.png" class="logo" height="40" width="40">
                 <div class="dropdown-content">
-                    <a asp-action="Login" asp-controller="User" class="linkuser"><p><img src="~/images/Menu/enter.png" class="logo" height="20" width="20"> Iniciar Sesion</p></a>
-                    <a asp-action="Registro" asp-controller="User" class="linkuser"><p><img src="~/images/Menu/edit.png" class="logo" height="20" width="20"> Registrarse</p></a>
+                    <a asp-action="Login" asp-controller="User" class="linkuser"><p><img src="~/images/Menu/enter.png" class="logo" height="20" width="20"> Iniciar Sesion   </p></a>
+                    <a asp-action="Registro" asp-controller="User" class="linkuser"><p><img src="~/images/Menu/edit.png" class="logo" height="20" width="20"> Registrarse    </p></a>
                 </div>
             </div>
 
@@ -83,25 +83,6 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
-
-
-    <script>
-        $(document).ready(function () {
-
-            $("#btnBuscar").click(function () {
-
-                var Parametro = $("#param").val();
-
-                $.get("/Home/Buscar",
-                    {
-                        "parametro": Parametro
-                    }, function (response) { }).done(function (data) { });
-            });
-
-
-        });
-    </script>
 
 
 

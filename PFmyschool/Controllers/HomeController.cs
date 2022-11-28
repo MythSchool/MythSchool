@@ -137,6 +137,22 @@ namespace PFmyschool.Controllers
         }
 
 
+        [HttpPost]
+        public async Task<IActionResult> BuscarB(string parametro)
+        {
+            try
+            {
+                var response = await connection.QueryAsync<ReporteEscuela>("spBus", new {parametro}, commandType: CommandType.StoredProcedure);
+                return View(response);
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+
+            }
+        }
+
+
 
         [HttpPost]
         public async Task<IActionResult> Buscar(OfertasEdu e)
