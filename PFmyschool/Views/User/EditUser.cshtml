@@ -1,0 +1,66 @@
+﻿@model PFmyschool.Models.Usuario
+
+@{
+    ViewData["Title"] = "User Page";
+    Layout = "_LayoutDashboard";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="~/css/sitedashboard.css">
+
+<br></br>
+<br></br>
+<br></br>
+<div class="container-fluid">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h1 class="text-white"><strong>Editar Usuario</strong></h1>
+
+            </div>
+
+            <div class="card-body">
+
+
+                <form asp-action="EditarUsuario" method="post">
+                    <input type="hidden" asp-for="PkUsuario" />
+
+
+                    <div class="form-group">
+                        <label asp-for="NombreUser">Nombre</label>
+                        <input asp-for="NombreUser" class="form-control" placeholder="Ingresa El Nuevo Nombre de Usuario" required />
+                        <label asp-for="ApellidoUser">Apellido</label>
+                        <input asp-for="ApellidoUser" class="form-control" placeholder="Ingresa El Nuevo Apellido de Usuario" required />
+                        <label asp-for="CorreoUser">Correo</label>
+                        <input asp-for="CorreoUser" class="form-control" placeholder="Ingresa El Nuevo Correo de Usuario" required />
+                        <label asp-for="FotoperfUser">Foto de Perfil</label>
+                        <input asp-for="FotoperfUser" class="form-control" placeholder="Ingresa la Foto de perfil Nueva" required />
+                        <label asp-for="NicknameU">NickName</label>
+                        <input asp-for="NicknameU" class="form-control" placeholder="Ingresa el nuevo NickName" required />
+                        <label asp-for="Contraseña">Contraseña</label>
+                        <input asp-for="Contraseña" class="form-control" placeholder="Ingresa la nueva Contraseña" required />
+
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-file-pen"></i>Editar</button></div>
+@*                        <div class="col-6"><button type="submit" class="btn btn-outline-success" ><i class="fa-solid fa-file-pen"></i> Editar </button></div>
+*@                        <div class="col-6"><a class="btn btn-outline-dark" asp-controller="User" asp-action="Bienvenido"><i class="fa-duotone fa-turn-down-left"></i>Volver </a></div>
+                    </div>
+
+
+                </form>
+                <br />
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+

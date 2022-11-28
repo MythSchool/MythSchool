@@ -34,7 +34,7 @@ namespace PFmyschool.Controllers
             _context = context;
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2NBP7F1; initial catalog=MythSchoolDB; Integrated Security= True");
+        SqlConnection connection = new SqlConnection("Data Source=LAPKINGZ; initial catalog=MythSchoolDB; Integrated Security= True");
         public IActionResult Index()
         {
             return View();
@@ -451,12 +451,8 @@ namespace PFmyschool.Controllers
         }
 
 
-
-
-
         [HttpGet]
-
-        public IActionResult EditarUser(int? id)
+        public IActionResult EditUser(int? id)
         {
             if (id == null)
             {
@@ -469,9 +465,7 @@ namespace PFmyschool.Controllers
                 return NotFound();
             }
             return View(rol);
-
         }
-
 
         [HttpPost]
 
@@ -485,28 +479,20 @@ namespace PFmyschool.Controllers
                 usuario.NombreUser = response.NombreUser;
                 usuario.ApellidoUser = response.ApellidoUser;
                 usuario.CorreoUser = response.CorreoUser;
+                usuario.FotoperfUser = response.FotoperfUser;
+                usuario.NicknameU=response.NicknameU;
+                usuario.Contraseña = response.Contraseña;
 
                 _context.Entry(usuario).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(AdminRol));
+                return RedirectToAction(nameof(Bienvenido));
             }
 
             return NotFound();
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
+        
         [HttpGet]
         public IActionResult RegistrarOfer()
         {
@@ -543,6 +529,46 @@ namespace PFmyschool.Controllers
             }
 
           
+        }
+        [HttpGet]
+        public IActionResult EditarEsc(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var escuela = _context.Escuelas.Find(id);
+
+            if (escuela == null)
+            {
+                return NotFound();
+            }
+            return View(escuela);
+
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> EditarEscuelas(Escuelas i)
+        {
+            try
+            {
+                await connection.QueryAsync<Usuario>("StpUpdate_Escuela", new
+                {
+                    i.PkEscuela,
+                    i.NomEscuela,
+                    i.ImagEscuela,
+                    i.DescEscuela,
+                    i.PuntEscuela,
+                    i.LinkEscuela
+                }, commandType: CommandType.StoredProcedure);
+                return RedirectToAction(nameof(AdminEsc));
+
+            }
+            catch (Exception ex)
+            {
+                throw new System.Exception("Surgio un problema" + ex.Message);
+            }
         }
 
 
