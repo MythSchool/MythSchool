@@ -1,4 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
 
 /* loader */
 
@@ -388,28 +398,33 @@ nav .Main {
 
 
 .resul {
-    background-color: #343A40;
+    background-color: #DFDFDE;
     border-radius: 10px;
     height: 100%;
     transition: 0.2s;
     text-decoration: none;
     margin: 2%;
     max-width: 90%;
+    border-width: 2px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
     overflow: hidden;
     border-style: solid;
-    border-color: rgb(212, 212, 212);
+    border-color: #183153;
+    font-style: NeueHaasUnicaPro-Medium,sans-serif;
+    box-shadow: 6px 6px 0 #183153;
 }
 
     .resul:hover {
-        background-color: #343A40;
         border-radius: 10px;
+        border-style: solid;
+        border-color: #F4BC33;
+        border-width: 2px;
+        cursor: pointer;
         transition: 0.2s;
         transform: scale(1.1);
-        text-decoration: none;
+        font-style: NeueHaasUnicaPro-Medium,sans-serif;
+        box-shadow: 6px 6px 0 #F4BC33;
         opacity: 1;
-        position: relative;
-        border-style: solid;
-        border-color: rgb(216, 122, 0);
     }
 
 .card-image {
@@ -429,7 +444,7 @@ nav .Main {
 
 
 .cardboy {
-    background-color: #343A40;
+    background-color: transparent;
     padding: 5px 15px 5px 15px;
     max-height: 100%;
 }
@@ -448,9 +463,9 @@ nav .Main {
 
 .texto {
     display: inline;
-    color: rgb(216, 122, 0);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    color: #e29301;
+    font-family: NeueHaasUnicaPro-Medium,sans-serif;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -463,9 +478,10 @@ nav .Main {
 }
 
 .cardtitulo {
-    color: white;
-    font-size: 13px;
+    color: #183153;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     display: inline-flex;
 }
 

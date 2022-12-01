@@ -34,7 +34,7 @@ namespace PFmyschool.Controllers
             _context = context;
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-C9RU2J6; initial catalog=MythSchoolDB; Integrated Security= True");
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2NBP7F1; initial catalog=MythSchoolDB; Integrated Security= True");
         public IActionResult Index()
         {
             return View();

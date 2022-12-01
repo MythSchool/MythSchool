@@ -1,3 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+
+
 .InformacionP{
 z-index: 1;
 position: relative;
@@ -175,16 +188,14 @@ background-color: transparent;
   height: auto;
 }
 
-.informacionb{
-width: 100%;
-height: auto;
-border-radius: 10px;
-margin-top: 2%;
-background-color: #343A40;
-box-shadow: 8px 8px 16px 8px rgba(43, 43, 43, 0.2);
-margin-bottom: 2%;
-
-
+.informacionb {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 2%;
+    background-image: url('/Images/Main/pastpost.png');
+    margin-bottom: 2%;
+    box-shadow: 0 0 16px 0 rgb(43 43 43 / 20%);
 }
 
 .pot {
@@ -195,28 +206,28 @@ margin-bottom: 2%;
     border-width: 2px;
     border-radius: 10px;
 }
- 
-.cardtitulo{
-  color: white;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  display:inline-flex;
-  text-decoration: none;
-  font-weight: bold;
+
+.cardtitulo {
+    color: white;
+    font-size: 15px;
+    font-family: NeueHaasUnicaPro-Medium,sans-serif;
+    display: inline-flex;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .cardlist{
-  margin-top: 3%;
+  margin-top: 1%;
   list-style: none;
-  margin-left: 1%;
+  margin-left: 4%;
 
 }
 
 .texto {
     margin-top: 1%;
     display: inline;
-    color: rgb(216, 122, 0);
-    font-family: segoe-vf,sans-serif;
+    color: #D36918;
+    font-family: NeueHaasUnicaPro-Medium,sans-serif;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 1%;
@@ -359,13 +370,13 @@ margin-bottom: 2%;
     .containerMen{
       padding: 2% 1% 1% 2%;
     }
-    
-    .cardtitulo{
-      color: white;
-      position: static;
-      font-size: 15px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+
+.cardtitulo {
+    color: white;
+    position: static;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
   
 
     nav .IniciarSesion{
@@ -569,6 +580,7 @@ margin-bottom: 2%;
 .accordion {
     background-color: transparent;
     color: #444;
+    border-radius: 10px;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -577,13 +589,15 @@ margin-bottom: 2%;
     outline: none;
     font-size: 16px;
     font-weight: bold;
+    transition:0s;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
     .active, .accordion:hover {
-        background-color: rgb(216, 122, 0);
+        background-color: #e29301;
         border-radius: 10px;
         color: white;
+        transition: 0s;
     }
 
 /* Style the accordion panel. Note: hidden by default */

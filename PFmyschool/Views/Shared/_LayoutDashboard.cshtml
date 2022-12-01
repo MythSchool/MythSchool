@@ -14,9 +14,9 @@
 
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+    <header >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" >
+            <div class="container" >
                 <a asp-action="Index" asp-controller="Home" class="logopequeno"><img src="~/Images/LogoCorto.png" height="45" width="50"></a>@*<img src="~/Imagen/MythSchool.png" id="logcort" class="Mythlogo"><a class="espacio2"></a>*@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
                     <ul class="navbar-nav flex-grow-1">
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">MythSchool</a>
+                            <a style="font-weight:bold;font-size:16px;" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">MythSchool</a>
                         </li>
 
                     </ul>
@@ -66,9 +66,9 @@
     </div>
 
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted"  style="background-color: #FFD43B; color: darkorange; ">
         <div class="container">
-            &copy; 2022 - WebApplication1 - <a asp-area="" asp-controller="Home" asp-action="Terminos">Terminos</a>
+            &copy; 2022 - AdminViews - <a asp-area="" asp-controller="Home" asp-action="Terminos">Terminos</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
