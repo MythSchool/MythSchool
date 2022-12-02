@@ -594,10 +594,10 @@ background-color: transparent;
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
     .active, .accordion:hover {
-        background-color: #e29301;
+        background-color: #E96D00;
         border-radius: 10px;
         color: white;
-        transition: 0s;
+        transition: 0.05s;
     }
 
 /* Style the accordion panel. Note: hidden by default */
@@ -609,11 +609,13 @@ background-color: transparent;
 }
 
 .panel {
-  padding: 18px;
-  background-color: transparent;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+    padding: 18px;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-family:NeueHaasUnicaPro-Medium,sans-serif;
+    
 }
 .panel li{
   padding: 10px;

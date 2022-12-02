@@ -42,26 +42,32 @@
 
 
         <div class="containerMen">
-            <div id="contant" class="row row-cols-1 row-cols-md-3 g-4">
-
+            <div id="contant" class="row row-cols-1 row-cols-md-3 g-5">
                 @if (Model.Count() > 0)
                 {
+                    int anterior = 0;
                     @foreach (var item in Model)
                     {
-                        <div id="elemento" class="col">
-                            <a asp-action="Informacion" asp-route-id="@item.PkEscuela" class="link">
-                                <div class="resul">
-                                    <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
-                                    <div class="cardboy">
-                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> @Html.DisplayFor(x => item.NomEscuela)</p></li>
-                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"> @Html.DisplayFor(x => item.NombreUbi) / @Html.DisplayFor(x => item.NomLocalidad)</p></li>
-                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">  @Html.DisplayFor(x => item.NomNivel)</p></li>
-                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">  @Html.DisplayFor(x => item.NomSostenimiento)</p></li>
-                                        <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-star"></i>Puntuación media: </h1><p class="texto">  @Html.DisplayFor(x => item.PuntEscuela) / 5</p></li>
+                        
+                                if (item.PkEscuela != anterior)
+                        {
+                            <div id="elemento" class="col">
+                                <a asp-action="Informacion" asp-route-id="@item.PkEscuela" class="link">
+                                    <div class="resul">
+                                        <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
+                                        <div class="cardboy">
+                                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> @Html.DisplayFor(x => item.NomEscuela)</p></li>
+                                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"> @Html.DisplayFor(x => item.NombreUbi) / @Html.DisplayFor(x => item.NomLocalidad)</p></li>
+                                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-up-down"></i>Nivel: </h1><p class="texto">  @Html.DisplayFor(x => item.NomNivel)</p></li>
+                                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-sack-dollar"></i>Sostenimiento: </h1><p class="texto">  @Html.DisplayFor(x => item.NomSostenimiento)</p></li>
+                                            <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-star"></i>Puntuación media: </h1><p class="texto">  @Html.DisplayFor(x => item.PuntEscuela) / 5</p></li>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        }
+                        anterior = item.PkEscuela;
+
 
                     }
                 }

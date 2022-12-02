@@ -417,13 +417,13 @@ nav .Main {
     .resul:hover {
         border-radius: 10px;
         border-style: solid;
-        border-color: #F4BC33;
+        border-color: #E96D00;
         border-width: 2px;
         cursor: pointer;
         transition: 0.2s;
         transform: scale(1.1);
         font-style: NeueHaasUnicaPro-Medium,sans-serif;
-        box-shadow: 6px 6px 0 #F4BC33;
+        box-shadow: 6px 6px 0 #E96D00;
         opacity: 1;
     }
 
@@ -463,7 +463,7 @@ nav .Main {
 
 .texto {
     display: inline;
-    color: #e29301;
+    color: #E96D00;
     font-family: NeueHaasUnicaPro-Medium,sans-serif;
     font-size: 16px;
     font-weight: bold;

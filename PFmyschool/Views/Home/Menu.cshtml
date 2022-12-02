@@ -160,3 +160,46 @@
 
     });
 </script>
+
+@*<script type="text/javascript">
+    function getPageList(totalPages, pages maxLenght) {
+                function range(start, end) {
+                    return Array.from(Array(end - start + 1), (_, i) => i + start);
+                }
+
+                var sideWidth = maxLenght < 9 ? 1 : 2;
+                var leftWidth = (maxLenght - sideWidth * 2 - 3) >> 1;
+                var rightWidth = (maxLenght - sideWidth * 2 - 3) >> 1;
+
+                if (totalPages <= maxLenght) {
+                    return range(1, totalPages);
+                }
+                if (pages <= maxLenght - sideWidth - 1 - rightWidth) {
+                    return range(1, maxLenght - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
+                }
+                if (pages >= totalPages - sideWidth - 1 - rightWidth) {
+                    return range(1, sideWidth).concat(0, range(totalPages - sideWidth - 1 - rightWidth - leftWidth, totalPages));
+                }
+
+                return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
+            }
+
+    $(function () {
+        var numberOfItems = $(".contant .elemento").length;
+        var limitperPage = 9;
+        var totalPages = Math.ceil(numberOfItems / limitperPage);
+        var paginationSize = 7;
+        var currentPage;
+
+        function showPage(whichpage) {
+            if (whichpage < 1 || whichpage > totalPages) return false;
+
+            currentPage = whichpage;
+
+            $(".contant .elemento").hide().slice((currentPage - 1) * limitperPage, cur)
+        }
+
+
+            });
+
+</script>*@
