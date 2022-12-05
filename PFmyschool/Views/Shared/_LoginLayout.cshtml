@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - PFmyschool</title>
+    <link rel="icon" type="image/x-icon" href="/Images/LogoCorto.png">
     <link rel="stylesheet" href="~/css/FooterLogin.css">
     <script src="https://kit.fontawesome.com/590d7b9e48.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -23,24 +24,24 @@
                 <div class="col">
                     <br></br>
                     <ul>
-                        <a asp-action="Acerca" class="link">
-                        <li>Acerca de nosotros</li>
+                        <a asp-controller="Home" asp-action="Acerca" class="link">
+                        <li>Acerca de nosotros   <i class="fa-solid fa-circle-info"></i></li>
                         </a>
                     </ul>
                 </div>
                 <div class="col">
                     <br></br>
                     <ul>
-                        <a asp-action="Terminos" class="link">
-                        <li>Terminos y condiciones</li>
+                        <a asp-controller="Home" asp-action="Terminos" class="link">
+                        <li>Terminos y condiciones   <i class="fa-solid fa-book"></i></li>
                         </a>
                     </ul>
                 </div>
                 <div class="col">
                     <br></br>
                     <ul>
-                        <a class="link" asp-action="Contactanos">
-                        <li>Contactanos</li>
+                        <a class="link" asp-controller="Home" asp-action="Contactanos">
+                        <li>Contactanos   <i class="fa-solid fa-envelope"></i></li>
                         </a>
                         <br></br>
                         <br></br>

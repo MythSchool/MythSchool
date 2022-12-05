@@ -37,9 +37,17 @@
 
 
     <div class="containerGH">
+        @{
+            int r = Model.Count();
+        }
+
         <!--FIN DEL AREA DE FILTROS  -->
         <!-- AREA DE LAS PAGINITAS DE ESCUELAS -->
-
+        <div class="bttreetwo">
+            <p>@r coincidencias</p>
+            <button onclick="treecards()"><i class="fa-solid fa-grip"></i></button>
+            <button onclick="twocards()"><i class="fa-solid fa-grip-vertical"></i></button>
+        </div>
 
         <div class="containerMen">
             <div id="contant" class="row row-cols-1 row-cols-md-3 g-5">
@@ -48,8 +56,8 @@
                     int anterior = 0;
                     @foreach (var item in Model)
                     {
-                        
-                                if (item.PkEscuela != anterior)
+
+                        if (item.PkEscuela != anterior)
                         {
                             <div id="elemento" class="col">
                                 <a asp-action="Informacion" asp-route-id="@item.PkEscuela" class="link">
@@ -74,6 +82,22 @@
                 else
                 {
                     <p>No hay registros</p>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 }
 
             </div>
@@ -101,3 +125,15 @@
 </body>
 
 </html>
+
+<script>
+    var img = document.getElementById('card-img-top');
+    function treecards() {
+        document.getElementById('contant').className = "row row-cols-1 row-cols-md-3 g-5";
+    }
+    function twocards() {
+        document.getElementById('contant').className = "row row-cols-1 row-cols-md-2 g-5";
+    }
+
+
+</script>

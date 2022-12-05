@@ -244,12 +244,12 @@ nav .buscarMain {
 }
 
 .footerMain {
-    background-color: rgba(0,0,0,.9);
+    background-image: url('../Images/Main/FooterGreyIMG.png');
+    background-size:45%;
     width: 100%;
     height: auto;
     z-index: 5;
     position: relative;
-    opacity: 0.95;
     bottom: 0;
 }
 
@@ -276,9 +276,8 @@ nav .buscarMain {
         }
 
         .footerMain .col h6 {
-            color: #999999;
-            font-size: 12;
-            font-family: Arial, Helvetica, sans-serif;
+            color: #919191;
+            font-size: 16px;
             cursor: default;
         }
 
@@ -292,9 +291,9 @@ nav .buscarMain {
 
 
             .footerMain .col ul li {
-                color: #999999;
-                font-size: 14px;
-                font-family: Arial, Helvetica, sans-serif;
+                color: #919191;
+                font-size: 16px;
+                font-family: Bahnschrift;
                 padding: 0px 0px 5px 0px;
                 cursor: pointer;
                 transition: .2s;

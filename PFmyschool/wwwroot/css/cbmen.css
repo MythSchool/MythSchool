@@ -10,6 +10,15 @@
 }
 
 
+.animationmen {
+    font-family: Bahnschrift Light;
+}
+
+    .animationmen span {
+        font-family: Bahnschrift SemiBold;
+        color: orange;
+    }
+
 .cbbusop {
     margin: auto;
     text-align: center;

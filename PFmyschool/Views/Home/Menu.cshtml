@@ -37,9 +37,17 @@
 
 
     <div class="containerGH">
+        @{ 
+            int r = Model.Count();
+        }
+    
         <!--FIN DEL AREA DE FILTROS  -->
         <!-- AREA DE LAS PAGINITAS DE ESCUELAS -->
-
+        <div class="bttreetwo">
+            <p>@r Resultados</p>
+            <button onclick="treecards()" type="button" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="3 Lineas" data-mdb-trigger="hover"><i class="fa-solid fa-grip" ></i></button>
+            <button  onclick="twocards()" type="button" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="2 Lineas" data-mdb-trigger="hover"><i class="fa-solid fa-grip-vertical"></i></button>
+        </div>
 
         <div class="containerMen">
             <div id="contant" class="row row-cols-1 row-cols-md-3 g-5">
@@ -51,7 +59,7 @@
                         <div id="elemento" class="col">
                             <a asp-action="Informacion" asp-route-id="@item.PkEscuela" class="link">
                                 <div class="resul">
-                                    <img src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
+                                    <img id="imagentop" src="@Html.DisplayFor(x => item.ImagEscuela)" class="card-img-top" alt="...">
                                     <div class="cardboy">
                                         <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-school-flag"></i>Nombre: </h1><p class="texto"> @Html.DisplayFor(x => item.NomEscuela)</p></li>
                                         <li class="cardlist"><h1 class="cardtitulo"><i class="fa-solid fa-location-dot"></i>Ubicación: </h1><p class="texto"> @Html.DisplayFor(x => item.NombreUbi) / @Html.DisplayFor(x => item.NomLocalidad)</p></li>
@@ -62,12 +70,27 @@
                                 </div>
                             </a>
                         </div>
-
                     }
                 }
                 else
                 {
                     <p>No hay registros</p>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 }
 
             </div>
@@ -91,6 +114,16 @@
 </html>
 
 <script>
+    var img = document.getElementById('card-img-top');
+    function treecards() {
+        document.getElementById('contant').className = "row row-cols-1 row-cols-md-3 g-5";
+    }
+    function twocards() {
+        document.getElementById('contant').className = "row row-cols-1 row-cols-md-2 g-5";
+    }
+
+
+
     //SCRIPT OBTENER EL ALTO Y ANCHO DE LA PAGINA WEB
 
 

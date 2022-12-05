@@ -101,22 +101,20 @@
 
         </div>
         <div class="pot">
-            <button class="accordion"><i class="fa-solid fa-comments"></i> Comentarios</button>
-            <div class="panel">
-                <script src="https://utteranc.es/client.js"
-                        repo="MythSchool/gestion-comentarios"
-                        issue-term="pathname"
-                        theme="github-light"
-                        crossorigin="anonymous"
-                        async>
-                </script>
-            </div>
+            <button id="ac0" class="fakeacord"><i class="fa-solid fa-comments"></i> Comentarios</button>
         </div>
+        <script src="https://utteranc.es/client.js"
+                repo="MythSchool/gestion-comentarios"
+                issue-term="pathname"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
     </div>
 
 
     <div id="mainRel" class="InfRelevante">
-        <button class="accordion"><i class="fa-solid fa-circle-info"></i> Información</button>
+        <button id="ac1" class="accordion"><i class="fa-solid fa-circle-info"></i> Información</button>
         <div class="panel">
 
             @if (Model.Count() > 0)
@@ -138,7 +136,7 @@
 
         </div>
 
-        <button class="accordion"><i class="fa-sharp fa-solid fa-graduation-cap"></i> Ofertas Educativas</button>
+        <button id="ac2" class="accordion"><i class="fa-sharp fa-solid fa-graduation-cap"></i> Ofertas Educativas</button>
         <div class="panel">
             @if (Model.Count() > 0)
             {
@@ -213,5 +211,9 @@
     var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
         trigger: 'focus'
     })
+
+
+
+    
 
 </script>
