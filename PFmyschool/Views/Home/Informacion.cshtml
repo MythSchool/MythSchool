@@ -146,9 +146,11 @@
                     @foreach (var item in Model)
                     {
             
-            <li>
-                @Html.DisplayFor(x => item.NomOferta)
-            </li>
+            <a style="text-decoration:none;" asp-action="DescripcionCarrera" asp-route-id=@item.PkOfertasEdu>
+                <li>
+                    @Html.DisplayFor(x => item.NomOferta)
+                </li>
+            </a>
                        
                     }
                 }

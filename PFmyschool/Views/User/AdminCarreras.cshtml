@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PFmyschool.Models.Escuelas>
+﻿@model IEnumerable<PFmyschool.Models.OfertasEdu>
 
 
 @{
@@ -13,7 +13,7 @@
 <br />
 
 <div class="row" style="margin-left:0%;">
-        <div class="col-6"> <a asp-action="RegistrarEsc" asp-controller="User" class="btn-success mx-auto btn-lg"><i class="fa-solid fa-school"></i>   Registrar escuela</a></div>
+    <a asp-action="RegistrarOfer" asp-controller="User" class="btn-success mx-auto btn-lg"><i class="fa-sharp fa-solid fa-graduation-cap"></i>   Añadir Oferta educativa</a>
 </div>
 
 
@@ -36,8 +36,9 @@
                             <thead>
                                 <tr>
                                     @* <th> Id</th>*@
-                                    <th> @Html.DisplayNameFor(x => x.ImagEscuela)</th>
-                                    <th> @Html.DisplayNameFor(x => x.NomEscuela)</th>
+                                    <th> Nombre</th>
+                                    <th> Descripción</th>
+                                    <th> Institución</th>
 
 
                                     <th> Acciones</th>
@@ -55,14 +56,12 @@
 
                                     @*<td>(@i++)</td>*@
 
-                                    <td> <img height="140px" width="260px" style="transform: scale(1.1);" src="@Html.DisplayFor(x => Item.ImagEscuela)"> </td>
-                                    <td> @Html.DisplayFor(x => Item.NomEscuela)</td>
-
-
-
+                                    <td>  @Html.DisplayFor(x => Item.NomOferta) </td>
+                                    <td> @Html.DisplayFor(x => Item.DescOferta)</td>
+                                    <td> @Html.DisplayFor(x => Item.Escuelas.NomEscuela)</td>
                                     <td>
-                                            <a class=" btn btn-warning" asp-action="EditarEsc" asp-controller="User" style="color:white" asp-route-id=@Item.PkEscuela><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <a class=" btn btn-danger" asp-action="EliminarEscuela" asp-route-id=@Item.PkEscuela id="Obtener"><i class="fa-solid fa-trash"></i></a>
+                                        <a class=" btn btn-warning" asp-action="EditarCar" asp-controller="User" style="color:white" asp-route-id=@Item.PkOfertasEdu><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a class=" btn btn-danger" asp-action="EliminarOferta" asp-route-id=@Item.PkOfertasEdu id="Obtener"><i class="fa-solid fa-trash"></i></a>
                                     </td>
 
                                 </tr>

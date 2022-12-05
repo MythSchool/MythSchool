@@ -1,0 +1,22 @@
+﻿@model PFmyschool.Models.OfertasEdu
+
+<link rel="stylesheet" href="~/css/descripO.css">
+
+<div class="xd">
+    <a onclick="history.back()" class="flecha"><img id="flechaid" src="~/Images/left-arrow.png" height="40" width="30"></a>
+</div>
+
+
+<div style="margin-top: 5%;">
+    <div style="text-align:center;margin-bottom: 1%;"><h4>@Html.DisplayFor(x => x.Escuelas.NomEscuela)</h4></div>
+
+    <img src="@Html.DisplayFor(x => x.Escuelas.ImagEscuela)" class="rounded mx-auto d-block" style="box-shadow: 8px 8px 16px 8px rgba(43, 43, 43, 0.2);" height="400" alt="...">
+
+</div>
+
+<div class="contenedordes">
+    <h4>@Html.DisplayFor(x => x.NomOferta)</h4>
+    <p style="margin-top:3%;">
+        @Html.DisplayFor(x => x.DescOferta)
+    </p>
+</div>

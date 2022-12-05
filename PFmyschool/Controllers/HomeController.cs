@@ -93,6 +93,27 @@ namespace PFmyschool.Controllers
 
 
         [HttpGet]
+        public IActionResult DescripcionCarrera(int? id)
+        {
+            int? pkoferta = id;
+            if (pkoferta == null)
+            {
+                return NotFound();
+            }
+
+            var informacion = _context.OfertasEdu.Include(z => z.Escuelas).Where(x => x.PkOfertasEdu == pkoferta).FirstOrDefault();
+
+            if (informacion == null)
+            {
+                return NotFound();
+            }
+            return View(informacion);
+        }
+
+
+
+
+        [HttpGet]
 
         public IActionResult Contactanos()
         {

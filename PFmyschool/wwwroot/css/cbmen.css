@@ -19,6 +19,24 @@
         color: orange;
     }
 
+
+.btnira {
+    padding: 1%;
+    background-color: #3294ba;
+    border-radius: 10px;
+    color: white;
+    width:100px;
+    text-align:center;
+    text-decoration:none;
+    margin-left:20%;
+    font-weight:bold;
+    margin-top:2%;
+}
+.btnira:hover {
+    background-color: #3294ba;
+    text-decoration: none;
+}
+
 .cbbusop {
     margin: auto;
     text-align: center;

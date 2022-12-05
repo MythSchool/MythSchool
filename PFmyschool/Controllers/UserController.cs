@@ -92,6 +92,7 @@ namespace PFmyschool.Controllers
         }
 
 
+
         public IActionResult Main()
         {
             return View();
@@ -528,7 +529,7 @@ namespace PFmyschool.Controllers
 
                     var response = await connection.QueryAsync<OfertasEdu>("Sp_InsertarOfertasEdu", new { request.NomOferta, request.DescOferta, request.FkEscuela }, commandType: CommandType.StoredProcedure);
 
-                    return RedirectToAction(nameof(AdminEsc));
+                    return RedirectToAction(nameof(AdminCarreras));
 
                 }
                 catch (Exception ex)
@@ -599,6 +600,82 @@ namespace PFmyschool.Controllers
             {
                 throw new System.Exception("Surgio un problema" + ex.Message);
             }
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> AdminCarreras()
+        {
+            try
+            {
+
+                var response = await _context.OfertasEdu.Include(x => x.Escuelas).ToListAsync();
+
+                return View(response);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Surgio un error " + ex.Message);
+            }
+        }
+
+
+
+        [HttpGet]
+        public IActionResult EditarCar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var escuela = _context.OfertasEdu.Find(id);
+
+            if (escuela == null)
+            {
+                return NotFound();
+            }
+            return View(escuela);
+
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> EditarCarrera(OfertasEdu i)
+        {
+            try
+            {
+                await connection.QueryAsync<OfertasEdu>("Stp_UpdateOferta", new
+                {
+                    i.PkOfertasEdu,
+                    i.NomOferta,
+                    i.DescOferta
+                }, commandType: CommandType.StoredProcedure);
+                return RedirectToAction(nameof(AdminCarreras));
+
+            }
+            catch (Exception ex)
+            {
+                throw new System.Exception("Surgio un problema" + ex.Message);
+            }
+        }
+
+
+        [HttpGet]
+        public async Task<ActionResult> EliminarOferta(int? id)
+        {
+            OfertasEdu oferta = new OfertasEdu();
+            oferta = _context.OfertasEdu.Find(id);
+            if (oferta != null)
+            {
+                _context.OfertasEdu.Remove(oferta);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(AdminCarreras));
+            }
+
+            return NotFound();
+
         }
 
 
