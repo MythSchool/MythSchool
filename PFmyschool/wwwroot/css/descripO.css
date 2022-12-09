@@ -1,8 +1,26 @@
-.contenedordes{
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+
+.estit {
+    font-style: NeueHaasUnicaPro-Medium,sans-serif;
+    font-weight: bold;
+    color:darkorange;
+}
+
+.contenedordes {
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 1%;
-    margin-bottom:5%;
+    margin-bottom: 5%;
     padding: 2%;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -10,6 +28,12 @@
     border-width: 1px;
     border-color: gainsboro;
 }
+
+
+    .contenedordes h4 {
+        font-style: NeueHaasUnicaPro-Medium,sans-serif;
+        font-weight:bold;
+    }
 
 .xd {
     position: fixed;
