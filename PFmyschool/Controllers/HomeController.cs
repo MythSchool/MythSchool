@@ -56,6 +56,7 @@ namespace PFmyschool.Controllers
         }
 
 
+        //Menu con procedimiento alamacenado
 
         [HttpPost]
         public async Task<IActionResult> Menu(ReporteEscuela e)
@@ -72,12 +73,15 @@ namespace PFmyschool.Controllers
             }
         }
 
+        //pantalla de terminos y condiciones
+
         [HttpGet]
         public IActionResult Terminos()
         {
             return View();
         }
 
+        //pantalla de acerca
 
         [HttpGet]
         public IActionResult Acerca()
@@ -91,6 +95,7 @@ namespace PFmyschool.Controllers
             return View();
         }
 
+        //pantalla de descripcion carrera
 
         [HttpGet]
         public IActionResult DescripcionCarrera(int? id)

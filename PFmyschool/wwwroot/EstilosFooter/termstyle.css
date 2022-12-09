@@ -36,25 +36,38 @@ nav {
     z-index: 9;
     height: 100%;
     padding: 40px 0px 0px 0px;
-    background: #263c5e;
+    background-image:url('/Images/Main/pastpost.png');
+    background-size:400%;
+
 }
 
+.col {
+    height: 100%;
+    transition: 0.2s;
+}
 
-nav a{
-  display:flex;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight:500;
-  text-transform:uppercase;
-  text-decoration:none;
-  color:white;
-  margin:0 15px;
-  font-size:16px;
-  letter-spacing:1px;
-  position:relative;
-  font-weight: bold;
-  transition: 0.5s;
-  padding: 0px 0px 0px 5px;
-  margin-bottom: 20%;
+    .col:hover {
+        transition: 0.2s;
+        height: 100%;
+        transform: scale(1.1);
+    }
+
+
+nav a {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: relative;
+    font-weight: bold;
+    transition: 0.5s;
+    padding: 0px 0px 0px 5px;
+    margin-bottom: 20%;
 }
 
 
